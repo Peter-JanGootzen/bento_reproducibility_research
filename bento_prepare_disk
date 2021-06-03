@@ -1,0 +1,4 @@
+#!/bin/bash
+make -C bento/xv6fs/mkfs
+./bento/xv6fs/mkfs/mkfs xv6fs.img
+sudo dd if=xv6fs.img of=/dev/nvme0n1 bs=4096 status=progress

@@ -1,0 +1,5 @@
+#!/bin/bash
+sudo rmmod bentofs
+sudo rmmod xv6fs
+(cd bento/bentofs; make; sudo insmod ./bentofs.ko)
+(cd bento/xv6fs/rust; make; sudo insmod ./kernel/xv6fs.ko)

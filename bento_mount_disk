@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo mkdir -p /mnt/xv6fsll
+sudo mount -t bentoblk -o rootmode=40000,user_id=0,group_id=0,blksize=4096,name=xv6fs_ll /dev/nvme0n1 /mnt/xv6fsll
