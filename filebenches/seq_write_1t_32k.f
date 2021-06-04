@@ -33,14 +33,15 @@ set $count=128000
 set $iosize=32k
 set $nthreads=1
 set $sync=false
+set $fn=seq_write_1t_32k
 
-define file name=bigfile,path=$dir,size=0,prealloc
+define file name=$fn,path=$dir,size=0,prealloc
 
 define process name=filewriter,instances=1
 {
   thread name=filewriterthread,memsize=10m,instances=$nthreads
   {
-    flowop appendfile name=write-file,dsync=$sync,filename=bigfile,iosize=$iosize,iters=$count
+    flowop appendfile name=write-file,dsync=$sync,filename=$fn,iosize=$iosize,iters=$count
     flowop finishoncount name=finish,value=1
   }
 }

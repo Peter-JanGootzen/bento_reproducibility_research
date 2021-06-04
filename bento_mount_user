@@ -1,4 +1,3 @@
 #!/bin/bash
-
-sudo mkdir -p /mnt/xv6fsll
-sudo mount -t bentoblk -o loop -o rootmode=40000,user_id=0,group_id=0,blksize=4096,name=xv6fs_ll xv6fs.img /mnt/xv6fsll
+sudo mkdir -p $MNT
+sudo mount -t bentoblk -o loop -o rootmode=40000,user_id=0,group_id=0,blksize=4096,name=xv6fs_ll xv6fs.img $MNT

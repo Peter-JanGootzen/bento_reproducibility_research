@@ -1,4 +1,4 @@
 #!/bin/bash
-MNT=/mnt/xv6fsll
+
 sudo mkdir $MNT/rocksdb_bench
 sudo ~/rocksdb/db_bench -benchmarks fillrandom,readrandom -num 1000000 -value_size 100 -wal_dir=$MNT --db=$MNT/rocksdb_bench -threads 8

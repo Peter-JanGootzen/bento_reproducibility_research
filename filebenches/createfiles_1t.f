@@ -24,25 +24,32 @@
 #
 # ident	"%Z%%M%	%I%	%E% SMI"
 
-# Single threaded asynchronous ($sync) sequential writes (1MB I/Os) to
-# a 1GB file.
-# Stops after 1 series of 1024 ($count) writes has been done.
+# Creates a fileset with 20,000 entries ($nfiles), but only preallocates
+# 50% of the files.  Each file's size is set via a gamma distribution with
+# a median size of 1KB ($filesize).
+#
+# The single thread then creates a new file and writes the whole file with
+# 1MB I/Os.  The thread stops after 5000 files ($count/num of flowops) have
+# been created and written to.
 
-set $dir=/mnt/xv6fsll
-set $count=4000
-set $iosize=1024k
+set $dir=/tmp
+set $count=15000
+set $filesize=1k
+set $iosize=1m
+set $meandirwidth=100000
+set $nfiles=20000
 set $nthreads=1
-set $sync=false
-set $fn=seq_write_1t_1024k
 
-define file name=$fn,path=$dir,size=0,prealloc
+define fileset name=bigfileset,path=$dir,size=$filesize,entries=$nfiles,dirwidth=$meandirwidth,prealloc=50
 
-define process name=filewriter,instances=1
+define process name=filecreate,instances=1
 {
-  thread name=filewriterthread,memsize=10m,instances=$nthreads
+  thread name=filecreatethread,memsize=10m,instances=$nthreads
   {
-    flowop appendfile name=write-file,dsync=$sync,filename=$fn,iosize=$iosize,iters=$count
-    flowop finishoncount name=finish,value=1
+    flowop createfile name=createfile1,filesetname=bigfileset,fd=1
+    flowop writewholefile name=writefile1,filesetname=bigfileset,fd=1,iosize=$iosize
+    flowop closefile name=closefile1,fd=1
+    flowop finishoncount name=finish,value=$count
   }
 }
 

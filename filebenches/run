@@ -2,8 +2,6 @@
 
 sudo sh -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
 
-export MNT=\/mnt\/xv6fsll
-
 for f in ./*.f; do
 	echo "Running $f"
 	sed -i -e "s#set \$dir=.*#set \$dir=$MNT#g" $f
