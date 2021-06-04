@@ -1,0 +1,244 @@
+14:18:13 execve("/usr/bin/sudo", ["sudo", "/home/pj/rocksdb/db_bench", "-benchmarks", "fillrandom,readrandom", "-num", "1000000", "-value_size", "100", "-wal_dir=/mnt/xv6fsll/", "--db=/mnt/xv6fsll//rocksdb_bench", "-threads", "8"], 0x7fff732fc5d8 /* 14 vars */) = 0
+14:18:13 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/tls/haswell/avx512_1/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/tls/haswell/avx512_1/x86_64", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/tls/haswell/avx512_1/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/tls/haswell/avx512_1", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/tls/haswell/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/tls/haswell/x86_64", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/tls/haswell/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/tls/haswell", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/tls/avx512_1/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/tls/avx512_1/x86_64", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/tls/avx512_1/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/tls/avx512_1", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/tls/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/tls/x86_64", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/tls/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/tls", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/haswell/avx512_1/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/haswell/avx512_1/x86_64", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/haswell/avx512_1/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/haswell/avx512_1", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/haswell/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/haswell/x86_64", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/haswell/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/haswell", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/avx512_1/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/avx512_1/x86_64", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/avx512_1/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/avx512_1", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/x86_64/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo/x86_64", 0x7ffed7337360) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/libaudit.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 stat("/usr/lib/sudo", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+14:18:13 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+14:18:13 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libaudit.so.1", O_RDONLY|O_CLOEXEC) = 3
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/libselinux.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libselinux.so.1", O_RDONLY|O_CLOEXEC) = 3
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/libutil.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libutil.so.1", O_RDONLY|O_CLOEXEC) = 3
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/libsudo_util.so.0", O_RDONLY|O_CLOEXEC) = 3
+14:18:13 openat(AT_FDCWD, "/usr/lib/sudo/libc.so.6", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:13 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+14:18:13 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcap-ng.so.0", O_RDONLY|O_CLOEXEC) = 3
+14:18:13 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = 3
+14:18:13 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+14:18:13 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+14:18:14 statfs("/sys/fs/selinux", 0x7ffed7338060) = -1 ENOENT (No such file or directory)
+14:18:14 statfs("/selinux", 0x7ffed7338060) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/proc/filesystems", O_RDONLY|O_CLOEXEC) = 3
+14:18:14 access("/etc/selinux/config", F_OK) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+14:18:14 openat(AT_FDCWD, "/etc/localtime", O_RDONLY|O_CLOEXEC) = 3
+14:18:14 stat("/etc/sudo.conf", 0x7ffed7337d60) = -1 ENOENT (No such file or directory)
+14:18:14 stat("/etc/sudo.conf", 0x7ffed7337d60) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/dev/tty", O_RDWR) = 3
+14:18:14 openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY|O_CLOEXEC) = 3
+14:18:14 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnss_files.so.2", O_RDONLY|O_CLOEXEC) = 3
+14:18:14 openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+14:18:14 openat(AT_FDCWD, "/proc/sys/kernel/ngroups_max", O_RDONLY) = 3
+14:18:14 getcwd("/home/pj/bento_bench", 4096) = 21
+14:18:14 openat(AT_FDCWD, "/proc/self/stat", O_RDONLY|O_NOFOLLOW) = 3
+14:18:14 stat("/dev/console", {st_mode=S_IFCHR|0600, st_rdev=makedev(0x5, 0x1), ...}) = 0
+14:18:14 stat("/dev/pts/0", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+14:18:14 stat("/usr/lib/sudo/sudoers.so", {st_mode=S_IFREG|0644, st_size=392976, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/usr/lib/sudo/sudoers.so", O_RDONLY|O_CLOEXEC) = 3
+14:18:14 openat(AT_FDCWD, "/usr/lib/sudo/libpam.so.0", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpam.so.0", O_RDONLY|O_CLOEXEC) = 3
+14:18:14 stat("/usr/lib/sudo/sudoers.so", {st_mode=S_IFREG|0644, st_size=392976, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3
+14:18:14 openat(AT_FDCWD, "/usr/share/locale/en_US.UTF-8/LC_MESSAGES/sudoers.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/usr/share/locale/en_US.utf8/LC_MESSAGES/sudoers.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/usr/share/locale/en_US/LC_MESSAGES/sudoers.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/usr/share/locale/en.UTF-8/LC_MESSAGES/sudoers.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/usr/share/locale/en.utf8/LC_MESSAGES/sudoers.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/usr/share/locale/en/LC_MESSAGES/sudoers.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/usr/share/locale-langpack/en_US.UTF-8/LC_MESSAGES/sudoers.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/usr/share/locale-langpack/en_US.utf8/LC_MESSAGES/sudoers.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/usr/share/locale-langpack/en_US/LC_MESSAGES/sudoers.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/usr/share/locale-langpack/en.UTF-8/LC_MESSAGES/sudoers.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/usr/share/locale-langpack/en.utf8/LC_MESSAGES/sudoers.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/usr/share/locale-langpack/en/LC_MESSAGES/sudoers.mo", O_RDONLY) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 3
+14:18:14 openat(AT_FDCWD, "/etc/nsswitch.conf", O_RDONLY) = 3
+14:18:14 stat("/etc/sudoers", {st_mode=S_IFREG|0440, st_size=755, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/etc/sudoers", O_RDONLY) = 3
+14:18:14 stat("/etc/sudoers.d", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/etc/sudoers.d", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 4
+14:18:14 stat("/etc/sudoers.d/README", {st_mode=S_IFREG|0440, st_size=958, ...}) = 0
+14:18:14 stat("/etc/sudoers.d/README", {st_mode=S_IFREG|0440, st_size=958, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/etc/sudoers.d/README", O_RDONLY) = 4
+14:18:14 stat("/etc/resolv.conf", {st_mode=S_IFREG|0644, st_size=717, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/etc/host.conf", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/resolv.conf", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/hosts", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/proc/sys/kernel/ngroups_max", O_RDONLY) = 4
+14:18:14 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnss_systemd.so.2", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 stat("/home/pj/rocksdb/db_bench", {st_mode=S_IFREG|0775, st_size=226320208, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 stat("/etc/pam.d", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/etc/pam.d/sudo", O_RDONLY) = 4
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/security/pam_env.so", O_RDONLY|O_CLOEXEC) = 5
+14:18:14 stat("/etc/pam.d", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/etc/pam.d/common-auth", O_RDONLY) = 5
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/security/pam_unix.so", O_RDONLY|O_CLOEXEC) = 6
+14:18:14 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 6
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcrypt.so.1", O_RDONLY|O_CLOEXEC) = 6
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libnsl.so.1", O_RDONLY|O_CLOEXEC) = 6
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/security/pam_deny.so", O_RDONLY|O_CLOEXEC) = 6
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/security/pam_permit.so", O_RDONLY|O_CLOEXEC) = 6
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/security/pam_cap.so", O_RDONLY|O_CLOEXEC) = 6
+14:18:14 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 6
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcap.so.2", O_RDONLY|O_CLOEXEC) = 6
+14:18:14 stat("/etc/pam.d", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/etc/pam.d/common-account", O_RDONLY) = 5
+14:18:14 stat("/etc/pam.d", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/etc/pam.d/common-session-noninteractive", O_RDONLY) = 5
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/security/pam_umask.so", O_RDONLY|O_CLOEXEC) = 6
+14:18:14 openat(AT_FDCWD, "/etc/pam.d/other", O_RDONLY) = 4
+14:18:14 stat("/etc/pam.d", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/etc/pam.d/common-auth", O_RDONLY) = 5
+14:18:14 stat("/etc/pam.d", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/etc/pam.d/common-account", O_RDONLY) = 5
+14:18:14 stat("/etc/pam.d", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/etc/pam.d/common-password", O_RDONLY) = 5
+14:18:14 stat("/etc/pam.d", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+14:18:14 openat(AT_FDCWD, "/etc/pam.d/common-session", O_RDONLY) = 5
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/security/pam_systemd.so", O_RDONLY|O_CLOEXEC) = 6
+14:18:14 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 6
+14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpam_misc.so.0", O_RDONLY|O_CLOEXEC) = 6
+14:18:14 openat(AT_FDCWD, "/etc/login.defs", O_RDONLY) = 4
+14:18:14 openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/shadow", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 readlink("/proc/self/exe", "/usr/bin/sudo", 4096) = 13
+14:18:14 openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/proc/sys/kernel/ngroups_max", O_RDONLY) = 4
+14:18:14 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/run/systemd/userdb/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 4
+14:18:14 openat(AT_FDCWD, "/proc/sys/kernel/random/boot_id", O_RDONLY|O_NOCTTY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/home/pj/.sudo_as_admin_successful", O_WRONLY|O_CREAT|O_EXCL|O_NONBLOCK, 0644) = -1 EEXIST (File exists)
+14:18:14 readlink("/proc/self/fd/0", "/dev/pts/0", 31) = 10
+14:18:14 stat("/dev/pts/0", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+14:18:14 lstat("/dev/pts/0", {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+14:18:14 getcwd("/home/pj/bento_bench", 4096) = 21
+14:18:14 openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/login.defs", O_RDONLY) = 4
+14:18:14 openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/group", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/security/capability.conf", O_RDONLY) = 4
+14:18:14 openat(AT_FDCWD, "/etc/security/pam_env.conf", O_RDONLY) = 4
+14:18:14 openat(AT_FDCWD, "/etc/environment", O_RDONLY) = 4
+14:18:14 openat(AT_FDCWD, "/etc/security/pam_env.conf", O_RDONLY) = 4
+14:18:14 openat(AT_FDCWD, "/etc/default/locale", O_RDONLY) = 4
+14:18:14 openat(AT_FDCWD, "/etc/login.defs", O_RDONLY) = 4
+14:18:14 openat(AT_FDCWD, "/etc/login.defs", O_RDONLY) = 4
+14:18:14 openat(AT_FDCWD, "/etc/passwd", O_RDONLY|O_CLOEXEC) = 4
+14:18:14 openat(AT_FDCWD, "/etc/login.defs", O_RDONLY) = 4
+14:18:14 access("/var/run/utmpx", F_OK) = -1 ENOENT (No such file or directory)
+14:18:14 openat(AT_FDCWD, "/var/run/utmp", O_RDONLY|O_CLOEXEC) = 4
+strace: Process 2265 attached
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/proc/self/fd", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+[pid  2265] 14:18:14 execve("/home/pj/rocksdb/db_bench", ["/home/pj/rocksdb/db_bench", "-benchmarks", "fillrandom,readrandom", "-num", "1000000", "-value_size", "100", "-wal_dir=/mnt/xv6fsll/", "--db=/mnt/xv6fsll//rocksdb_bench", "-threads", "8"], 0x5574583568a0 /* 14 vars */) = 0
+[pid  2265] 14:18:14 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libsnappy.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgflags.so.2.2", O_RDONLY|O_CLOEXEC) = 3
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libstdc++.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 3
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll//rocksdb_bench", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+[pid  2265] 14:18:14 mkdir("/mnt/xv6fsll//rocksdb_bench", 0755) = -1 EEXIST (File exists)
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll//rocksdb_bench", {st_mode=S_IFDIR|077, st_size=268, ...}) = 0
+[pid  2265] 14:18:14 rename("/mnt/xv6fsll//rocksdb_bench/LOG", "/mnt/xv6fsll//rocksdb_bench/LOG.old.1622816294072858") = -1 ENOENT (No such file or directory)
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll//rocksdb_bench/LOG", O_WRONLY|O_CREAT|O_TRUNC|O_CLOEXEC, 0644) = 3
+strace: Process 2266 attached
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/proc/self/task/2266/comm", O_RDWR) = 4
+strace: Process 2267 attached
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/proc/self/task/2267/comm", O_RDWR) = 4
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll", {st_mode=S_IFDIR|077, st_size=8320, ...}) = 0
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll//rocksdb_bench", {st_mode=S_IFDIR|077, st_size=8320, ...}) = 0
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 4
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll//rocksdb_bench", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 4
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll", {st_mode=S_IFDIR|077, st_size=8320, ...}) = 0
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll//rocksdb_bench", {st_mode=S_IFDIR|077, st_size=8320, ...}) = 0
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll//rocksdb_bench", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 4
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll//rocksdb_bench/LOCK", O_RDWR|O_CREAT|O_CLOEXEC, 0644) = 4
+[pid  2265] 14:18:14 unlink("/mnt/xv6fsll//rocksdb_bench/LOG") = 0
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 5
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll/archive", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = -1 ENOENT (No such file or directory)
+[pid  2265] 14:18:14 rmdir("/mnt/xv6fsll") = -1 EBUSY (Device or resource busy)
+[pid  2265] 14:18:14 unlink("/mnt/xv6fsll//rocksdb_bench/LOCK") = 0
+[pid  2265] 14:18:14 rmdir("/mnt/xv6fsll//rocksdb_bench") = 0
+[pid  2265] 14:18:14 rmdir("/mnt/xv6fsll/") = -1 EBUSY (Device or resource busy)
+[pid  2265] 14:18:14 mkdir("/mnt/xv6fsll//rocksdb_bench", 0755) = 0
+[pid  2265] 14:18:14 rename("/mnt/xv6fsll//rocksdb_bench/LOG", "/mnt/xv6fsll//rocksdb_bench/LOG.old.1622816294078689") = -1 ENOENT (No such file or directory)
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll//rocksdb_bench/LOG", O_WRONLY|O_CREAT|O_TRUNC|O_CLOEXEC, 0644) = -1 ENOENT (No such file or directory)
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll", {st_mode=S_IFDIR|077, st_size=8320, ...}) = 0
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll//rocksdb_bench", {st_mode=S_IFDIR|077, st_size=268, ...}) = 0
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll//rocksdb_bench", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll", {st_mode=S_IFDIR|077, st_size=8320, ...}) = 0
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll//rocksdb_bench", {st_mode=S_IFDIR|077, st_size=268, ...}) = 0
+[pid  2265] 14:18:14 access("/proc/sys/kernel/random/uuid", F_OK) = 0
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/proc/sys/kernel/random/uuid", O_RDONLY|O_CLOEXEC) = 3
+[pid  2265] 14:18:14 mkdir("/mnt/xv6fsll", 0755) = -1 EEXIST (File exists)
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll", {st_mode=S_IFDIR|077, st_size=8320, ...}) = 0
+[pid  2265] 14:18:14 mkdir("/mnt/xv6fsll//rocksdb_bench", 0755) = -1 EEXIST (File exists)
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll//rocksdb_bench", {st_mode=S_IFDIR|077, st_size=268, ...}) = 0
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll", {st_mode=S_IFDIR|077, st_size=8320, ...}) = 0
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll//rocksdb_bench", {st_mode=S_IFDIR|077, st_size=268, ...}) = 0
+[pid  2265] 14:18:14 mkdir("/mnt/xv6fsll//rocksdb_bench", 0755) = -1 EEXIST (File exists)
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll//rocksdb_bench", {st_mode=S_IFDIR|077, st_size=268, ...}) = 0
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll//rocksdb_bench", O_RDONLY|O_CLOEXEC) = 3
+[pid  2265] 14:18:14 mkdir("/mnt/xv6fsll", 0755) = -1 EEXIST (File exists)
+[pid  2265] 14:18:14 stat("/mnt/xv6fsll", {st_mode=S_IFDIR|077, st_size=8320, ...}) = 0
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll", O_RDONLY|O_CLOEXEC) = 4
+[pid  2265] 14:18:14 openat(AT_FDCWD, "/mnt/xv6fsll//rocksdb_bench/LOCK", O_RDWR|O_CREAT|O_CLOEXEC, 0644) = -1 ENOENT (No such file or directory)
+open error: IO error: No such file or directory: while open a file for lock: /mnt/xv6fsll//rocksdb_bench/LOCK: No such file or directory
+[pid  2266] 14:18:14 +++ exited with 0 +++
+[pid  2267] 14:18:14 +++ exited with 0 +++
+Initializing RocksDB Options from the specified file
+Initializing RocksDB Options from command-line flags
+[pid  2265] 14:18:14 +++ exited with 1 +++
+14:18:14 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=2265, si_uid=0, si_status=1, si_utime=0, si_stime=0} ---
+14:18:14 openat(AT_FDCWD, "/etc/login.defs", O_RDONLY) = 5
+14:18:14 openat(AT_FDCWD, "/etc/login.defs", O_RDONLY) = 5
+14:18:14 +++ exited with 1 +++
