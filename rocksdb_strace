@@ -1,4 +1,7 @@
 #!/bin/bash
 
-sudo mkdir $MNT/rocksdb_bench
-sudo strace -f -t -e trace=file sudo ~/rocksdb/db_bench -benchmarks fillrandom,readrandom -num 1000000 -value_size 100 -wal_dir=$MNT --db=$MNT/rocksdb_bench -threads 8
+rm -rf $MNT/rocksdb
+mkdir $MNT/rocksdb
+strace -f -t -e trace=file \
+	~/rocksdb/db_bench --benchmarks fillrandom,readrandom --num 1000000 --value_size 100 --threads 8 \
+ 		                --db=$MNT/rocks --disable_wal=0 --wal_dir=$MNT/rocks

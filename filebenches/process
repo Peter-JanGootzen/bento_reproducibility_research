@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+RESULTS=$SCRIPT_DIR/results
+P=$RESULTS/processed.csv
+touch $P
+echo "workload; i; stat" > tee $P
+for f in *.f; do
+	for i in {1..10}; do
+		R=""
+		if $(echo $f | grep -P "(create)|(delete)"); then
+			R=$(cat "$f\_$i.out" | grep -P "(?<=rd\/wr )\d*.\d*(?=mb\/s)")
+		else
+			R=$(cat "$f\_$i.out" | grep -P "\d*.\d*(?= ops\/s)")
+		fi
+		echo "$f; $i; $R" > tee $P
+	done
+done
+

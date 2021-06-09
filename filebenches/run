@@ -1,9 +1,16 @@
 #!/bin/bash
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+RESULTS=$SCRIPT_DIR/results
+mkdir -p $RESULTS
+rm -rf $RESULTS/*
+
 sudo sh -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
 
-for f in ./*.f; do
-	echo "Running $f"
+for f in *.f; do
 	sed -i -e "s#set \$dir=.*#set \$dir=$MNT#g" $f
-	sudo filebench -f $f
+	echo "Running $f"
+	for i in {1..10}; do
+		sudo filebench -f $f > $RESULTS/$f\_$i.out
+	done
 done

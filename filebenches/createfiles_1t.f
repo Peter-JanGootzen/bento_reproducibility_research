@@ -32,7 +32,7 @@
 # 1MB I/Os.  The thread stops after 5000 files ($count/num of flowops) have
 # been created and written to.
 
-set $dir=/tmp
+set $dir=/mnt/xv6fsll
 set $count=15000
 set $filesize=1k
 set $iosize=1m
