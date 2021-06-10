@@ -31,7 +31,7 @@
 set $dir=/mnt/xv6fsll
 set $count=4000
 set $iosize=1024k
-set $nthreads=1
+set $nthreads=20
 set $sync=false
 set $fn=seq_write_1t_1024k
 

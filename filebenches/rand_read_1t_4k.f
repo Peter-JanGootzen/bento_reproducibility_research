@@ -1,3 +1,4 @@
+
 #
 # CDDL HEADER START
 #
@@ -24,24 +25,23 @@
 #
 # ident	"%Z%%M%	%I%	%E% SMI"
 
-# Single threaded asynchronous ($sync) random writes (2KB I/Os) on a 1GB file.
-# Stops when 128MB ($bytes) has been written.
+# Single threaded random reads (2KB I/Os) on a 1GB file.
+# Stops after 128MB ($bytes) has been read.
 
 set $dir=/mnt/xv6fsll
 set $bytes=4g
 set $filesize=4g
 set $iosize=4k
 set $iters=1
-set $nthreads=1
-set $sync=false
+set $nthreads=20
 
 define file name=bigfile1,path=$dir,size=$filesize,prealloc,reuse
 
-define process name=filewriter,instances=1
+define process name=filereader,instances=1
 {
-  thread name=filewriterthread,memsize=10m,instances=$nthreads
+  thread name=filereaderthread,memsize=10m,instances=$nthreads
   {
-    flowop write name=write-file,filename=bigfile1,random,dsync=$sync,iosize=$iosize,iters=$iters
+    flowop read name=write-file,filesetname=bigfile1,random,iosize=$iosize,iters=$iters
     flowop finishonbytes name=finish,value=$bytes
   }
 }

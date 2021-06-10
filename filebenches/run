@@ -5,12 +5,26 @@ RESULTS=$SCRIPT_DIR/results
 mkdir -p $RESULTS
 rm -rf $RESULTS/*
 
+TSET=( 20 1 )
+REPS=10
+
 sudo sh -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
 
 for f in *.f; do
 	sed -i -e "s#set \$dir=.*#set \$dir=$MNT#g" $f
 	echo "Running $f"
-	for i in {1..10}; do
-		sudo filebench -f $f > $RESULTS/$f\_$i.out
-	done
+
+	if echo $f | grep "1t"; then
+		for T in "${TSET[@]}"; do
+			sed -i -e "s#set \$nthreads=.*#set \$nthreads=$T#g" $f
+			for i in $(seq 1 $REPS); do
+				sudo filebench -f $f > $RESULTS/$f\_$T\_$i.out
+			done
+		done
+	else
+		for i in $(seq 1 $REPS); do
+			sudo filebench -f $f > $RESULTS/$f\_$T\_$i.out
+		done
+	fi
+
 done

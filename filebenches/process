@@ -1,20 +1,34 @@
 #!/bin/bash
 
-
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 RESULTS=$SCRIPT_DIR/results
 P=$RESULTS/processed.csv
+mv $P $P\_old
 touch $P
-echo "workload; i; stat" > tee $P
+
+TSET=( 20 1 )
+REPS=10
+
+echo "workload; i; T; stat" | tee -a $P
+
 for f in *.f; do
-	for i in {1..10}; do
-		R=""
-		if $(echo $f | grep -P "(create)|(delete)"); then
-			R=$(cat "$f\_$i.out" | grep -P "(?<=rd\/wr )\d*.\d*(?=mb\/s)")
+	for i in $(seq 1 $REPS); do
+		REGEX=""
+		if echo "$f" | grep -P "(create)|(delete)" > /dev/null; then
+			REGEX='(?<=rd\/wr\s)\d*.\d*(?=mb\/s)'
 		else
-			R=$(cat "$f\_$i.out" | grep -P "\d*.\d*(?= ops\/s)")
+			REGEX='\d*.\d*(?=\sops\/s)'
 		fi
-		echo "$f; $i; $R" > tee $P
+
+		R=""
+		if echo $f | grep "1t" > /dev/null; then
+			for T in "${TSET[@]}"; do
+				R=$(cat ${RESULTS}/${f}\_$T\_$i.out | grep -P -o ${REGEX} )
+				echo "${f}; $i; $T; ${R}" | tee -a $P > /dev/null
+			done
+		else
+			R=$(cat ${RESULTS}/${f}\_$i.out | grep -P -o ${REGEX} )
+			echo "${f}; $i;; ${R}" | tee -a $P > /dev/null
+		fi
 	done
 done
-

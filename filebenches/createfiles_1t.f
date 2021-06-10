@@ -32,13 +32,13 @@
 # 1MB I/Os.  The thread stops after 5000 files ($count/num of flowops) have
 # been created and written to.
 
-set $dir=/mnt/xv6fsll
-set $count=15000
+set $dir=/mnt/xv6fsll/
+set $count=1000000
 set $filesize=1k
-set $iosize=1m
-set $meandirwidth=100000
-set $nfiles=20000
-set $nthreads=1
+set $iosize=16k
+set $meandirwidth=1000000
+set $nfiles=800000
+set $nthreads=20
 
 define fileset name=bigfileset,path=$dir,size=$filesize,entries=$nfiles,dirwidth=$meandirwidth,prealloc=50
 

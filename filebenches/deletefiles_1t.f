@@ -24,25 +24,29 @@
 #
 # ident	"%Z%%M%	%I%	%E% SMI"
 
-# Single threaded asynchronous ($sync) sequential writes (1MB I/Os) to
-# a 1GB file.
-# Stops after 1 series of 1024 ($count) writes has been done.
+# Create a fileset of 50,000 entries ($nfiles), where each file's size is set
+# via a gamma distribution with the median size of 16KB ($filesize).
+# Fire off 16 threads ($nthreads), where each thread stops after
+# deleting 1000 ($count) files.
 
 set $dir=/mnt/xv6fsll
-set $count=128000
-set $iosize=32k
+set $count=55000
+set $filesize=16k
+set $nfiles=600000
+set $meandirwidth=100
 set $nthreads=20
-set $sync=false
-set $fn=seq_write_1t_32k
 
-define file name=$fn,path=$dir,size=0,prealloc
+set mode quit firstdone
 
-define process name=filewriter,instances=1
+define fileset name=bigfileset,path=$dir,size=$filesize,entries=$nfiles,dirwidth=$meandirwidth,prealloc=100,paralloc
+
+define process name=filedelete,instances=1
 {
-  thread name=filewriterthread,memsize=10m,instances=$nthreads
+  thread name=filedeletethread,memsize=10m,instances=$nthreads
   {
-    flowop appendfile name=write-file,dsync=$sync,filename=$fn,iosize=$iosize,iters=$count
-    flowop finishoncount name=finish,value=1
+    flowop deletefile name=deletefile1,filesetname=bigfileset
+    flowop opslimit name=limit
+    flowop finishoncount name=finish,value=$count
   }
 }
 

@@ -29,7 +29,7 @@
 set $dir=/mnt/xv6fsll
 set $filesize=4g
 set $iosize=128k
-set $nthreads=1
+set $nthreads=20
 
 define file name=largefile,path=$dir,size=$filesize,prealloc,reuse
 
