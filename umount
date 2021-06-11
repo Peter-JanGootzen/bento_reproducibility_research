@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo umount /mnt/xv6fsll
+sudo umount /mnt/xv6fsll_user
+sudo umount /mnt/ext4

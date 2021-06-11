@@ -29,15 +29,15 @@
 set $dir=/mnt/xv6fsll
 set $filesize=4g
 set $iosize=32k
-set $nthreads=20
+set $nthreads=1
 
-define file name=largefile,path=$dir,size=$filesize,prealloc,reuse
+define file name=winnerwinnerchickendinner,path=$dir,size=$filesize,prealloc
 
 define process name=filereader,instances=1
 {
   thread name=filereaderthread,memsize=10m,instances=$nthreads
   {
-    flowop read name=seqread-file,filename=largefile,iosize=$iosize
+    flowop read name=seqread-file,filename=winnerwinnerchickendinner,iosize=$iosize
   }
 }
 

@@ -33,7 +33,7 @@ set $bytes=4g
 set $filesize=4g
 set $iosize=4k
 set $iters=1
-set $nthreads=20
+set $nthreads=1
 
 define file name=bigfile1,path=$dir,size=$filesize,prealloc,reuse
 

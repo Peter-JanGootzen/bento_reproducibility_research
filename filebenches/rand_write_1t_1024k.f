@@ -32,7 +32,7 @@ set $bytes=4g
 set $filesize=4g
 set $iosize=1024k
 set $iters=1
-set $nthreads=20
+set $nthreads=1
 set $sync=false
 
 define file name=bigfile1,path=$dir,size=$filesize,prealloc,reuse
