@@ -26,7 +26,7 @@
 
 # Single threaded sequential reads (4KB I/Os) on a 4G file.
 
-set $dir=/mnt/xv6fsll
+set $dir=/mnt/ext4
 set $filesize=4g
 set $iosize=4k
 set $nthreads=1
@@ -37,7 +37,7 @@ define process name=filereader,instances=1
 {
   thread name=filereaderthread,memsize=10m,instances=$nthreads
   {
-    flowop read name=seqread-file,filename=largefile,iosize=$iosize,directio
+    flowop read name=seqread-file,filename=largefile,iosize=$iosize
   }
 }
 

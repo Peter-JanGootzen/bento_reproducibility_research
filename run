@@ -1,0 +1,68 @@
+#!/bin/bash
+
+./bento_init
+
+sudo mkdir -p /mnt/xv6fsll
+sudo mkdir -p /mnt/xv6fsll-prov
+sudo mkdir -p /mnt/xv6fsll-user
+sudo mkdir -p /mnt/ext4-o
+sudo mkdir -p /mnt/ext4-j
+
+export MNT=/mnt/xv6fsll
+./bento_prepare_disk
+./bento_mount_disk
+./redis
+./rocksdb
+#./filebenches/run
+#./filebenches/process
+./otherapps
+cp -r $MNT/results ./results/xv6fsll
+./umount
+
+
+export MNT=/mnt/xv6fsll-user
+./bento_mount_user
+./redis
+./rocksdb
+#./filebenches/run
+#./filebenches/process
+./otherapps
+cp -r $MNT/results ./results/xv6fsll-user
+./umount
+
+export MNT=/mnt/xv6fsll-prov
+./bento-prov_init
+./bento_prepare_disk
+./bento_mount_disk
+./redis
+./rocksdb
+#./filebenches/run
+#./filebenches/process
+./otherapps
+cp -r $MNT/results ./results/xv6fsll-prov
+./umount
+
+
+export MNT=/mnt/ext4-o
+./ext4_prepare_disk
+./ext4-o_mount_disk
+./redis
+./rocksdb
+#./filebenches/run
+#./filebenches/process
+./otherapps
+cp -r $MNT/results ./results/ext4-o
+./umount
+
+export MNT=/mnt/ext4-j
+./ext4_prepare_disk
+./ext4_prepare_disk
+./ext4-j_mount_disk
+./redis
+./rocksdb
+#./filebenches/run
+#./filebenches/process
+./otherapps
+cp -r $MNT/results ./results/ext4-j
+./umount
+

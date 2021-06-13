@@ -1,5 +1,6 @@
 #!/bin/bash
 
-redis-server --port 8089 --appendonly yes --appendfsync everysec --dir $MNT &
-redis-benchmark -d 100 -n 1000000 -p 8089
-pkill redis-server
+sudo redis-server --port 3248 --appendonly yes --appendfsync everysec --dir /mnt/ext4 &
+sleep 5
+sudo sh -c "redis-benchmark -t set,get -d 100 -n 1000000 -p 3248 > $MNT/results/redis"
+sudo pkill redis-server

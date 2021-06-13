@@ -3,4 +3,4 @@ sudo rmmod xv6fs_prov
 sudo rmmod xv6fs
 sudo rmmod bentofs
 (cd bento/bentofs; make; sudo insmod ./bentofs.ko)
-(cd bento/xv6fs/rust; make; sudo insmod ./kernel/xv6fs.ko)
+(cd bento/xv6fs_prov/rust; make; sudo insmod ./kernel/xv6fs_prov.ko)

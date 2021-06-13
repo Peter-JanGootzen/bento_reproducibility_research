@@ -1,0 +1,6 @@
+#!/bin/bash
+cd $MNT
+sudo sh -c "time -o results/gitclone git clone https://github.com/foreverbell/xv6fs.git"
+sudo sh -c "git clone https://github.com/torvalds/linux.git"
+sudo sh -c "time -o results/tar tar -cf linux.tar.gz linux"
+sudo sh -c "time -o results/untar tar -xf linux.tar.gz"
