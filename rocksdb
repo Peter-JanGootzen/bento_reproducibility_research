@@ -1,4 +1,7 @@
 #!/bin/bash
 
-sudo sh -c "~/rocksdb/db_bench --benchmarks fillrandom,readrandom --num 1000000 --value_size 100 --threads 8 \
-	                --db=/mnt/ext4 --disable_wal=0 --wal_dir=/mnt/ext4 > $MNT/results/rocksdb"
+REPS=10
+for i in $(seq 1 $REPS); do
+	sudo sh -c "~/rocksdb/db_bench --benchmarks fillrandom,readrandom --num 1000000 --value_size 100 --threads 8 \
+	                --db=$MNT --disable_wal=0 --wal_dir=$MNT > $MNT/results/rocksdb_$i"
+done

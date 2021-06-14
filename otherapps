@@ -1,6 +1,11 @@
 #!/bin/bash
 cd $MNT
-sudo sh -c "time -o results/gitclone git clone https://github.com/foreverbell/xv6fs.git"
 sudo sh -c "git clone https://github.com/torvalds/linux.git"
-sudo sh -c "time -o results/tar tar -cf linux.tar.gz linux"
-sudo sh -c "time -o results/untar tar -xf linux.tar.gz"
+REPS=10
+for i in $(seq 1 $REPS); do
+	sudo sh -c "time -o results/gitclone_$i git clone https://github.com/foreverbell/xv6fs.git"
+	sudo sh -c "time -o results/grep_$i grep -r 'jbd2_journal_start' linux > grep"
+	sudo sh -c "time -o results/tar_$i tar -czf linux.tar.gz linux"
+	sudo sh -c "time -o results/untar_$i tar -xzf linux.tar.gz"
+	sudo rm -rf linux.tar.gz xv6fs
+done

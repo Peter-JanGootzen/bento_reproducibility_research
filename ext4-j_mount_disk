@@ -1,3 +1,4 @@
 #!/bin/bash
 sudo mkdir -p $MNT
 sudo mount -o data=journal $DISK $MNT
+sudo mkdir -p $MNT/results

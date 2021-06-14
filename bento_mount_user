@@ -1,3 +1,4 @@
 #!/bin/bash
 sudo mkdir -p $MNT
 sudo mount -t bentoblk -o loop -o rootmode=40000,user_id=0,group_id=0,allow_other,blksize=4096,name=xv6fs_ll xv6fs.img $MNT
+sudo mkdir -p $MNT/results

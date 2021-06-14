@@ -2,11 +2,11 @@
 
 ./bento_init
 
-sudo mkdir -p /mnt/xv6fsll
-sudo mkdir -p /mnt/xv6fsll-prov
-sudo mkdir -p /mnt/xv6fsll-user
-sudo mkdir -p /mnt/ext4-o
-sudo mkdir -p /mnt/ext4-j
+mkdir results
+if [ "$(ls -A results)" ]; then
+	echo "uuh results is not empty"
+	exit
+fi
 
 export MNT=/mnt/xv6fsll
 ./bento_prepare_disk
@@ -16,7 +16,7 @@ export MNT=/mnt/xv6fsll
 #./filebenches/run
 #./filebenches/process
 ./otherapps
-cp -r $MNT/results ./results/xv6fsll
+cp -r $MNT/results ./results/Bento-fs
 ./umount
 
 
@@ -27,7 +27,7 @@ export MNT=/mnt/xv6fsll-user
 #./filebenches/run
 #./filebenches/process
 ./otherapps
-cp -r $MNT/results ./results/xv6fsll-user
+cp -r $MNT/results ./results/Bento-user
 ./umount
 
 export MNT=/mnt/xv6fsll-prov
@@ -39,7 +39,7 @@ export MNT=/mnt/xv6fsll-prov
 #./filebenches/run
 #./filebenches/process
 ./otherapps
-cp -r $MNT/results ./results/xv6fsll-prov
+cp -r $MNT/results ./results/Bento-prov
 ./umount
 
 
@@ -51,7 +51,7 @@ export MNT=/mnt/ext4-o
 #./filebenches/run
 #./filebenches/process
 ./otherapps
-cp -r $MNT/results ./results/ext4-o
+cp -r $MNT/results ./results/ext4-ordered
 ./umount
 
 export MNT=/mnt/ext4-j
@@ -63,6 +63,6 @@ export MNT=/mnt/ext4-j
 #./filebenches/run
 #./filebenches/process
 ./otherapps
-cp -r $MNT/results ./results/ext4-j
+cp -r $MNT/results ./results/ext4-journal
 ./umount
 

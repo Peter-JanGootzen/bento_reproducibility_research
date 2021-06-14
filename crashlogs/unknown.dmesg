@@ -1,0 +1,1486 @@
+-- Logs begin at Fri 2021-06-04 14:41:44 UTC, end at Mon 2021-06-14 11:27:36 UTC. --
+Jun 14 11:12:35.983330 u415 kernel: Linux version 4.15.0-144-generic (buildd@lgw01-amd64-031) (gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04)) #148-Ubuntu SMP Sat May 8 02:33:43 UTC 2021 (Ubuntu 4.15.0-144.148-generic 4.15.18)
+Jun 14 11:12:35.983370 u415 kernel: Command line: BOOT_IMAGE=/boot/vmlinuz-4.15.0-144-generic root=UUID=e1ce0265-2869-42cf-b9cd-16f0ad6def81 ro maybe-ubiquity
+Jun 14 11:12:35.983382 u415 kernel: KERNEL supported cpus:
+Jun 14 11:12:35.983390 u415 kernel:   Intel GenuineIntel
+Jun 14 11:12:35.983402 u415 kernel:   AMD AuthenticAMD
+Jun 14 11:12:35.983419 u415 kernel:   Centaur CentaurHauls
+Jun 14 11:12:35.983440 u415 kernel: x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+Jun 14 11:12:35.983449 u415 kernel: x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+Jun 14 11:12:35.983457 u415 kernel: x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+Jun 14 11:12:35.983467 u415 kernel: x86/fpu: Supporting XSAVE feature 0x008: 'MPX bounds registers'
+Jun 14 11:12:35.983483 u415 kernel: x86/fpu: Supporting XSAVE feature 0x010: 'MPX CSR'
+Jun 14 11:12:35.983501 u415 kernel: x86/fpu: Supporting XSAVE feature 0x020: 'AVX-512 opmask'
+Jun 14 11:12:35.983513 u415 kernel: x86/fpu: Supporting XSAVE feature 0x040: 'AVX-512 Hi256'
+Jun 14 11:12:35.983523 u415 kernel: x86/fpu: Supporting XSAVE feature 0x080: 'AVX-512 ZMM_Hi256'
+Jun 14 11:12:35.983540 u415 kernel: x86/fpu: Supporting XSAVE feature 0x200: 'Protection Keys User registers'
+Jun 14 11:12:35.983549 u415 kernel: x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+Jun 14 11:12:35.983557 u415 kernel: x86/fpu: xstate_offset[3]:  832, xstate_sizes[3]:   64
+Jun 14 11:12:35.983565 u415 kernel: x86/fpu: xstate_offset[4]:  896, xstate_sizes[4]:   64
+Jun 14 11:12:35.983573 u415 kernel: x86/fpu: xstate_offset[5]:  960, xstate_sizes[5]:   64
+Jun 14 11:12:35.983581 u415 kernel: x86/fpu: xstate_offset[6]: 1024, xstate_sizes[6]:  512
+Jun 14 11:12:35.983589 u415 kernel: x86/fpu: xstate_offset[7]: 1536, xstate_sizes[7]: 1024
+Jun 14 11:12:35.983597 u415 kernel: x86/fpu: xstate_offset[9]: 2560, xstate_sizes[9]:    8
+Jun 14 11:12:35.983607 u415 kernel: x86/fpu: Enabled xstate features 0x2ff, context size is 2568 bytes, using 'compacted' format.
+Jun 14 11:12:35.983621 u415 kernel: e820: BIOS-provided physical RAM map:
+Jun 14 11:12:35.983629 u415 kernel: BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+Jun 14 11:12:35.983638 u415 kernel: BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+Jun 14 11:12:35.983646 u415 kernel: BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+Jun 14 11:12:35.983654 u415 kernel: BIOS-e820: [mem 0x0000000000100000-0x00000000bffd3fff] usable
+Jun 14 11:12:35.983662 u415 kernel: BIOS-e820: [mem 0x00000000bffd4000-0x00000000bfffffff] reserved
+Jun 14 11:12:35.983671 u415 kernel: BIOS-e820: [mem 0x00000000feffc000-0x00000000feffffff] reserved
+Jun 14 11:12:35.983684 u415 kernel: BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+Jun 14 11:12:35.983692 u415 kernel: BIOS-e820: [mem 0x0000000100000000-0x000000103fffffff] usable
+Jun 14 11:12:35.983700 u415 kernel: NX (Execute Disable) protection: active
+Jun 14 11:12:35.983709 u415 kernel: SMBIOS 2.8 present.
+Jun 14 11:12:35.983718 u415 kernel: DMI: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:12:35.983731 u415 kernel: Hypervisor detected: KVM
+Jun 14 11:12:35.983740 u415 kernel: e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+Jun 14 11:12:35.983752 u415 kernel: e820: remove [mem 0x000a0000-0x000fffff] usable
+Jun 14 11:12:35.983761 u415 kernel: e820: last_pfn = 0x1040000 max_arch_pfn = 0x400000000
+Jun 14 11:12:35.983769 u415 kernel: MTRR default type: write-back
+Jun 14 11:12:35.983785 u415 kernel: MTRR fixed ranges enabled:
+Jun 14 11:12:35.983794 u415 kernel:   00000-9FFFF write-back
+Jun 14 11:12:35.983802 u415 kernel:   A0000-BFFFF uncachable
+Jun 14 11:12:35.983817 u415 kernel:   C0000-FFFFF write-protect
+Jun 14 11:12:35.983826 u415 kernel: MTRR variable ranges enabled:
+Jun 14 11:12:35.983834 u415 kernel:   0 base 0000C0000000 mask 3FFFC0000000 uncachable
+Jun 14 11:12:35.983842 u415 kernel:   1 disabled
+Jun 14 11:12:35.983850 u415 kernel:   2 disabled
+Jun 14 11:12:35.983859 u415 kernel:   3 disabled
+Jun 14 11:12:35.983867 u415 kernel:   4 disabled
+Jun 14 11:12:35.983875 u415 kernel:   5 disabled
+Jun 14 11:12:35.983883 u415 kernel:   6 disabled
+Jun 14 11:12:35.983892 u415 kernel:   7 disabled
+Jun 14 11:12:35.983900 u415 kernel: x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+Jun 14 11:12:35.983908 u415 kernel: e820: last_pfn = 0xbffd4 max_arch_pfn = 0x400000000
+Jun 14 11:12:35.983916 u415 kernel: Scanning 1 areas for low memory corruption
+Jun 14 11:12:35.983931 u415 kernel: Using GB pages for direct mapping
+Jun 14 11:12:35.983939 u415 kernel: RAMDISK: [mem 0x30c9f000-0x34646fff]
+Jun 14 11:12:35.983948 u415 kernel: ACPI: Early table checksum verification disabled
+Jun 14 11:12:35.983957 u415 kernel: ACPI: RSDP 0x00000000000F5B50 000014 (v00 BOCHS )
+Jun 14 11:12:35.983966 u415 kernel: ACPI: RSDT 0x00000000BFFE1876 000034 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+Jun 14 11:12:35.983974 u415 kernel: ACPI: FACP 0x00000000BFFE1692 000074 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+Jun 14 11:12:35.983982 u415 kernel: ACPI: DSDT 0x00000000BFFDF8C0 001DD2 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+Jun 14 11:12:35.983991 u415 kernel: ACPI: FACS 0x00000000BFFDF880 000040
+Jun 14 11:12:35.984000 u415 kernel: ACPI: APIC 0x00000000BFFE1706 000110 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+Jun 14 11:12:35.984008 u415 kernel: ACPI: HPET 0x00000000BFFE1816 000038 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+Jun 14 11:12:35.984022 u415 kernel: ACPI: WAET 0x00000000BFFE184E 000028 (v01 BOCHS  BXPC     00000001 BXPC 00000001)
+Jun 14 11:12:35.984031 u415 kernel: ACPI: Local APIC address 0xfee00000
+Jun 14 11:12:35.984039 u415 kernel: No NUMA configuration found
+Jun 14 11:12:35.984047 u415 kernel: Faking a node at [mem 0x0000000000000000-0x000000103fffffff]
+Jun 14 11:12:35.984055 u415 kernel: NODE_DATA(0) allocated [mem 0x103ffd5000-0x103fffffff]
+Jun 14 11:12:35.984065 u415 kernel: kvm-clock: cpu 0, msr 10:3ff54001, primary cpu clock
+Jun 14 11:12:35.984077 u415 kernel: kvm-clock: Using msrs 4b564d01 and 4b564d00
+Jun 14 11:12:35.984085 u415 kernel: kvm-clock: using sched offset of 2212456147 cycles
+Jun 14 11:12:35.984094 u415 kernel: clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+Jun 14 11:12:35.984103 u415 kernel: Zone ranges:
+Jun 14 11:12:35.984111 u415 kernel:   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+Jun 14 11:12:35.984119 u415 kernel:   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+Jun 14 11:12:35.984133 u415 kernel:   Normal   [mem 0x0000000100000000-0x000000103fffffff]
+Jun 14 11:12:35.984142 u415 kernel:   Device   empty
+Jun 14 11:12:35.984151 u415 kernel: Movable zone start for each node
+Jun 14 11:12:35.984159 u415 kernel: Early memory node ranges
+Jun 14 11:12:35.984168 u415 kernel:   node   0: [mem 0x0000000000001000-0x000000000009efff]
+Jun 14 11:12:35.984176 u415 kernel:   node   0: [mem 0x0000000000100000-0x00000000bffd3fff]
+Jun 14 11:12:35.984184 u415 kernel:   node   0: [mem 0x0000000100000000-0x000000103fffffff]
+Jun 14 11:12:35.984192 u415 kernel: Reserved but unavailable: 98 pages
+Jun 14 11:12:35.984201 u415 kernel: Initmem setup node 0 [mem 0x0000000000001000-0x000000103fffffff]
+Jun 14 11:12:35.984210 u415 kernel: On node 0 totalpages: 16777074
+Jun 14 11:12:35.984218 u415 kernel:   DMA zone: 64 pages used for memmap
+Jun 14 11:12:35.984226 u415 kernel:   DMA zone: 21 pages reserved
+Jun 14 11:12:35.984235 u415 kernel:   DMA zone: 3998 pages, LIFO batch:0
+Jun 14 11:12:35.984249 u415 kernel:   DMA32 zone: 12224 pages used for memmap
+Jun 14 11:12:35.984257 u415 kernel:   DMA32 zone: 782292 pages, LIFO batch:31
+Jun 14 11:12:35.984266 u415 kernel:   Normal zone: 249856 pages used for memmap
+Jun 14 11:12:35.984274 u415 kernel:   Normal zone: 15990784 pages, LIFO batch:31
+Jun 14 11:12:35.984282 u415 kernel: ACPI: PM-Timer IO Port: 0x608
+Jun 14 11:12:35.984304 u415 kernel: ACPI: Local APIC address 0xfee00000
+Jun 14 11:12:35.984313 u415 kernel: ACPI: LAPIC_NMI (acpi_id[0xff] dfl dfl lint[0x1])
+Jun 14 11:12:35.984322 u415 kernel: IOAPIC[0]: apic_id 0, version 17, address 0xfec00000, GSI 0-23
+Jun 14 11:12:35.984331 u415 kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+Jun 14 11:12:35.984349 u415 kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 5 global_irq 5 high level)
+Jun 14 11:12:35.984360 u415 kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 high level)
+Jun 14 11:12:35.984368 u415 kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 10 global_irq 10 high level)
+Jun 14 11:12:35.986180 u415 kernel: ACPI: INT_SRC_OVR (bus 0 bus_irq 11 global_irq 11 high level)
+Jun 14 11:12:35.986207 u415 kernel: ACPI: IRQ0 used by override.
+Jun 14 11:12:35.986226 u415 kernel: ACPI: IRQ5 used by override.
+Jun 14 11:12:35.986247 u415 kernel: ACPI: IRQ9 used by override.
+Jun 14 11:12:35.986266 u415 kernel: ACPI: IRQ10 used by override.
+Jun 14 11:12:35.986283 u415 kernel: ACPI: IRQ11 used by override.
+Jun 14 11:12:35.986301 u415 kernel: Using ACPI (MADT) for SMP configuration information
+Jun 14 11:12:35.986318 u415 kernel: ACPI: HPET id: 0x8086a201 base: 0xfed00000
+Jun 14 11:12:35.986340 u415 kernel: TSC deadline timer available
+Jun 14 11:12:35.986359 u415 kernel: smpboot: Allowing 20 CPUs, 0 hotplug CPUs
+Jun 14 11:12:35.986381 u415 kernel: PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+Jun 14 11:12:35.986408 u415 kernel: PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+Jun 14 11:12:35.986427 u415 kernel: PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
+Jun 14 11:12:35.986457 u415 kernel: PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+Jun 14 11:12:35.986477 u415 kernel: PM: Registered nosave memory: [mem 0xbffd4000-0xbfffffff]
+Jun 14 11:12:35.986526 u415 kernel: PM: Registered nosave memory: [mem 0xc0000000-0xfeffbfff]
+Jun 14 11:12:35.986554 u415 kernel: PM: Registered nosave memory: [mem 0xfeffc000-0xfeffffff]
+Jun 14 11:12:35.986575 u415 kernel: PM: Registered nosave memory: [mem 0xff000000-0xfffbffff]
+Jun 14 11:12:35.986597 u415 kernel: PM: Registered nosave memory: [mem 0xfffc0000-0xffffffff]
+Jun 14 11:12:35.986620 u415 kernel: e820: [mem 0xc0000000-0xfeffbfff] available for PCI devices
+Jun 14 11:12:35.986637 u415 kernel: Booting paravirtualized kernel on KVM
+Jun 14 11:12:35.986646 u415 kernel: clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+Jun 14 11:12:35.986655 u415 kernel: random: get_random_bytes called from start_kernel+0x99/0x500 with crng_init=0
+Jun 14 11:12:35.986664 u415 kernel: setup_percpu: NR_CPUS:8192 nr_cpumask_bits:20 nr_cpu_ids:20 nr_node_ids:1
+Jun 14 11:12:35.986674 u415 kernel: percpu: Embedded 45 pages/cpu s147456 r8192 d28672 u262144
+Jun 14 11:12:35.986682 u415 kernel: pcpu-alloc: s147456 r8192 d28672 u262144 alloc=1*2097152
+Jun 14 11:12:35.986690 u415 kernel: pcpu-alloc: [0] 00 01 02 03 04 05 06 07 [0] 08 09 10 11 12 13 14 15 
+Jun 14 11:12:35.986699 u415 kernel: pcpu-alloc: [0] 16 17 18 19 -- -- -- -- 
+Jun 14 11:12:35.986728 u415 kernel: KVM setup async PF for cpu 0
+Jun 14 11:12:35.986740 u415 kernel: kvm-stealtime: cpu 0, msr fff023040
+Jun 14 11:12:35.986748 u415 kernel: PV qspinlock hash table entries: 256 (order: 0, 4096 bytes)
+Jun 14 11:12:35.986756 u415 kernel: Built 1 zonelists, mobility grouping on.  Total pages: 16514909
+Jun 14 11:12:35.986764 u415 kernel: Policy zone: Normal
+Jun 14 11:12:35.986774 u415 kernel: Kernel command line: BOOT_IMAGE=/boot/vmlinuz-4.15.0-144-generic root=UUID=e1ce0265-2869-42cf-b9cd-16f0ad6def81 ro maybe-ubiquity
+Jun 14 11:12:35.986783 u415 kernel: Calgary: detecting Calgary via BIOS EBDA area
+Jun 14 11:12:35.986792 u415 kernel: Calgary: Unable to locate Rio Grande table in EBDA - bailing!
+Jun 14 11:12:35.986801 u415 kernel: Memory: 65901960K/67108296K available (12300K kernel code, 2483K rwdata, 4316K rodata, 2448K init, 2724K bss, 1206336K reserved, 0K cma-reserved)
+Jun 14 11:12:35.986810 u415 kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=20, Nodes=1
+Jun 14 11:12:35.986819 u415 kernel: ftrace: allocating 39453 entries in 155 pages
+Jun 14 11:12:35.986827 u415 kernel: Hierarchical RCU implementation.
+Jun 14 11:12:35.986843 u415 kernel:         RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=20.
+Jun 14 11:12:35.986853 u415 kernel:         Tasks RCU enabled.
+Jun 14 11:12:35.986861 u415 kernel: RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=20
+Jun 14 11:12:35.986869 u415 kernel: NR_IRQS: 524544, nr_irqs: 584, preallocated irqs: 16
+Jun 14 11:12:35.986877 u415 kernel: Console: colour dummy device 80x25
+Jun 14 11:12:35.986887 u415 kernel: console [tty0] enabled
+Jun 14 11:12:35.986895 u415 kernel: ACPI: Core revision 20170831
+Jun 14 11:12:35.986904 u415 kernel: ACPI: 1 ACPI AML tables successfully acquired and loaded
+Jun 14 11:12:35.986913 u415 kernel: clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604467 ns
+Jun 14 11:12:35.986971 u415 kernel: hpet clockevent registered
+Jun 14 11:12:35.986981 u415 kernel: APIC: Switch to symmetric I/O mode setup
+Jun 14 11:12:35.986997 u415 kernel: x2apic enabled
+Jun 14 11:12:35.987006 u415 kernel: Switched APIC routing to physical x2apic.
+Jun 14 11:12:35.987019 u415 kernel: ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+Jun 14 11:12:35.987028 u415 kernel: tsc: Detected 2399.990 MHz processor
+Jun 14 11:12:35.987037 u415 kernel: Calibrating delay loop (skipped) preset value.. 4799.98 BogoMIPS (lpj=9599960)
+Jun 14 11:12:35.987053 u415 kernel: pid_max: default: 32768 minimum: 301
+Jun 14 11:12:35.987062 u415 kernel: Security Framework initialized
+Jun 14 11:12:35.987070 u415 kernel: Yama: becoming mindful.
+Jun 14 11:12:35.987079 u415 kernel: AppArmor: AppArmor initialized
+Jun 14 11:12:35.987089 u415 kernel: Dentry cache hash table entries: 8388608 (order: 14, 67108864 bytes)
+Jun 14 11:12:35.987100 u415 kernel: Inode-cache hash table entries: 4194304 (order: 13, 33554432 bytes)
+Jun 14 11:12:35.987109 u415 kernel: Mount-cache hash table entries: 131072 (order: 8, 1048576 bytes)
+Jun 14 11:12:35.987119 u415 kernel: Mountpoint-cache hash table entries: 131072 (order: 8, 1048576 bytes)
+Jun 14 11:12:35.987129 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987138 u415 kernel: Last level iTLB entries: 4KB 0, 2MB 0, 4MB 0
+Jun 14 11:12:35.987146 u415 kernel: Last level dTLB entries: 4KB 0, 2MB 0, 4MB 0, 1GB 0
+Jun 14 11:12:35.987161 u415 kernel: Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+Jun 14 11:12:35.987171 u415 kernel: Spectre V2 : Mitigation: Enhanced IBRS
+Jun 14 11:12:35.987180 u415 kernel: Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+Jun 14 11:12:35.987189 u415 kernel: Spectre V2 : mitigation: Enabling conditional Indirect Branch Prediction Barrier
+Jun 14 11:12:35.987199 u415 kernel: Speculative Store Bypass: Mitigation: Speculative Store Bypass disabled via prctl and seccomp
+Jun 14 11:12:35.987208 u415 kernel: TAA: Mitigation: TSX disabled
+Jun 14 11:12:35.987216 u415 kernel: Freeing SMP alternatives memory: 36K
+Jun 14 11:12:35.987225 u415 kernel: smpboot: CPU0: Intel(R) Xeon(R) Silver 4210R CPU @ 2.40GHz (family: 0x6, model: 0x55, stepping: 0x7)
+Jun 14 11:12:35.987235 u415 kernel: Performance Events: Skylake events, full-width counters, Intel PMU driver.
+Jun 14 11:12:35.987252 u415 kernel: ... version:                2
+Jun 14 11:12:35.987261 u415 kernel: ... bit width:              48
+Jun 14 11:12:35.987271 u415 kernel: ... generic registers:      4
+Jun 14 11:12:35.987280 u415 kernel: ... value mask:             0000ffffffffffff
+Jun 14 11:12:35.987288 u415 kernel: ... max period:             00007fffffffffff
+Jun 14 11:12:35.987297 u415 kernel: ... fixed-purpose events:   3
+Jun 14 11:12:35.987306 u415 kernel: ... event mask:             000000070000000f
+Jun 14 11:12:35.987315 u415 kernel: Hierarchical SRCU implementation.
+Jun 14 11:12:35.987324 u415 kernel: smp: Bringing up secondary CPUs ...
+Jun 14 11:12:35.987338 u415 kernel: x86: Booting SMP configuration:
+Jun 14 11:12:35.987348 u415 kernel: .... node  #0, CPUs:        #1
+Jun 14 11:12:35.987357 u415 kernel: kvm-clock: cpu 1, msr 10:3ff54041, secondary cpu clock
+Jun 14 11:12:35.987365 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987374 u415 kernel: KVM setup async PF for cpu 1
+Jun 14 11:12:35.987384 u415 kernel: kvm-stealtime: cpu 1, msr fff063040
+Jun 14 11:12:35.987393 u415 kernel:   #2
+Jun 14 11:12:35.987402 u415 kernel: kvm-clock: cpu 2, msr 10:3ff54081, secondary cpu clock
+Jun 14 11:12:35.987411 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987420 u415 kernel: KVM setup async PF for cpu 2
+Jun 14 11:12:35.987433 u415 kernel: kvm-stealtime: cpu 2, msr fff0a3040
+Jun 14 11:12:35.987447 u415 kernel:   #3
+Jun 14 11:12:35.987457 u415 kernel: kvm-clock: cpu 3, msr 10:3ff540c1, secondary cpu clock
+Jun 14 11:12:35.987467 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987475 u415 kernel: KVM setup async PF for cpu 3
+Jun 14 11:12:35.987483 u415 kernel: kvm-stealtime: cpu 3, msr fff0e3040
+Jun 14 11:12:35.987493 u415 kernel:   #4
+Jun 14 11:12:35.987503 u415 kernel: kvm-clock: cpu 4, msr 10:3ff54101, secondary cpu clock
+Jun 14 11:12:35.987511 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987519 u415 kernel: KVM setup async PF for cpu 4
+Jun 14 11:12:35.987528 u415 kernel: kvm-stealtime: cpu 4, msr fff123040
+Jun 14 11:12:35.987538 u415 kernel:   #5
+Jun 14 11:12:35.987552 u415 kernel: kvm-clock: cpu 5, msr 10:3ff54141, secondary cpu clock
+Jun 14 11:12:35.987561 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987570 u415 kernel: KVM setup async PF for cpu 5
+Jun 14 11:12:35.987579 u415 kernel: kvm-stealtime: cpu 5, msr fff163040
+Jun 14 11:12:35.987587 u415 kernel:   #6
+Jun 14 11:12:35.987596 u415 kernel: kvm-clock: cpu 6, msr 10:3ff54181, secondary cpu clock
+Jun 14 11:12:35.987606 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987614 u415 kernel: KVM setup async PF for cpu 6
+Jun 14 11:12:35.987623 u415 kernel: kvm-stealtime: cpu 6, msr fff1a3040
+Jun 14 11:12:35.987633 u415 kernel:   #7
+Jun 14 11:12:35.987642 u415 kernel: kvm-clock: cpu 7, msr 10:3ff541c1, secondary cpu clock
+Jun 14 11:12:35.987656 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987665 u415 kernel: KVM setup async PF for cpu 7
+Jun 14 11:12:35.987674 u415 kernel: kvm-stealtime: cpu 7, msr fff1e3040
+Jun 14 11:12:35.987683 u415 kernel:   #8
+Jun 14 11:12:35.987691 u415 kernel: kvm-clock: cpu 8, msr 10:3ff54201, secondary cpu clock
+Jun 14 11:12:35.987699 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987709 u415 kernel: KVM setup async PF for cpu 8
+Jun 14 11:12:35.987718 u415 kernel: kvm-stealtime: cpu 8, msr fff223040
+Jun 14 11:12:35.987726 u415 kernel:   #9
+Jun 14 11:12:35.987736 u415 kernel: kvm-clock: cpu 9, msr 10:3ff54241, secondary cpu clock
+Jun 14 11:12:35.987745 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987754 u415 kernel: KVM setup async PF for cpu 9
+Jun 14 11:12:35.987768 u415 kernel: kvm-stealtime: cpu 9, msr fff263040
+Jun 14 11:12:35.987777 u415 kernel:  #10
+Jun 14 11:12:35.987786 u415 kernel: kvm-clock: cpu 10, msr 10:3ff54281, secondary cpu clock
+Jun 14 11:12:35.987796 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987804 u415 kernel: KVM setup async PF for cpu 10
+Jun 14 11:12:35.987813 u415 kernel: kvm-stealtime: cpu 10, msr fff2a3040
+Jun 14 11:12:35.987822 u415 kernel:  #11
+Jun 14 11:12:35.987834 u415 kernel: kvm-clock: cpu 11, msr 10:3ff542c1, secondary cpu clock
+Jun 14 11:12:35.987843 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987851 u415 kernel: KVM setup async PF for cpu 11
+Jun 14 11:12:35.987861 u415 kernel: kvm-stealtime: cpu 11, msr fff2e3040
+Jun 14 11:12:35.987875 u415 kernel:  #12
+Jun 14 11:12:35.987884 u415 kernel: kvm-clock: cpu 12, msr 10:3ff54301, secondary cpu clock
+Jun 14 11:12:35.987894 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987903 u415 kernel: KVM setup async PF for cpu 12
+Jun 14 11:12:35.987912 u415 kernel: kvm-stealtime: cpu 12, msr fff323040
+Jun 14 11:12:35.987920 u415 kernel:  #13
+Jun 14 11:12:35.987930 u415 kernel: kvm-clock: cpu 13, msr 10:3ff54341, secondary cpu clock
+Jun 14 11:12:35.987939 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987947 u415 kernel: KVM setup async PF for cpu 13
+Jun 14 11:12:35.987956 u415 kernel: kvm-stealtime: cpu 13, msr fff363040
+Jun 14 11:12:35.987965 u415 kernel:  #14
+Jun 14 11:12:35.987980 u415 kernel: kvm-clock: cpu 14, msr 10:3ff54381, secondary cpu clock
+Jun 14 11:12:35.987989 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.987997 u415 kernel: KVM setup async PF for cpu 14
+Jun 14 11:12:35.988007 u415 kernel: kvm-stealtime: cpu 14, msr fff3a3040
+Jun 14 11:12:35.988016 u415 kernel:  #15
+Jun 14 11:12:35.988024 u415 kernel: kvm-clock: cpu 15, msr 10:3ff543c1, secondary cpu clock
+Jun 14 11:12:35.988034 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.988043 u415 kernel: KVM setup async PF for cpu 15
+Jun 14 11:12:35.988052 u415 kernel: kvm-stealtime: cpu 15, msr fff3e3040
+Jun 14 11:12:35.988065 u415 kernel:  #16
+Jun 14 11:12:35.988075 u415 kernel: kvm-clock: cpu 16, msr 10:3ff54401, secondary cpu clock
+Jun 14 11:12:35.988085 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.988093 u415 kernel: KVM setup async PF for cpu 16
+Jun 14 11:12:35.988101 u415 kernel: kvm-stealtime: cpu 16, msr fff423040
+Jun 14 11:12:35.988110 u415 kernel:  #17
+Jun 14 11:12:35.988120 u415 kernel: kvm-clock: cpu 17, msr 10:3ff54441, secondary cpu clock
+Jun 14 11:12:35.988129 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.988137 u415 kernel: KVM setup async PF for cpu 17
+Jun 14 11:12:35.988146 u415 kernel: kvm-stealtime: cpu 17, msr fff463040
+Jun 14 11:12:35.988155 u415 kernel:  #18
+Jun 14 11:12:35.988169 u415 kernel: kvm-clock: cpu 18, msr 10:3ff54481, secondary cpu clock
+Jun 14 11:12:35.988179 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.988188 u415 kernel: KVM setup async PF for cpu 18
+Jun 14 11:12:35.988197 u415 kernel: kvm-stealtime: cpu 18, msr fff4a3040
+Jun 14 11:12:35.988205 u415 kernel:  #19
+Jun 14 11:12:35.988215 u415 kernel: kvm-clock: cpu 19, msr 10:3ff544c1, secondary cpu clock
+Jun 14 11:12:35.988225 u415 kernel: x86/cpu: Activated the Intel User Mode Instruction Prevention (UMIP) CPU feature
+Jun 14 11:12:35.988236 u415 kernel: KVM setup async PF for cpu 19
+Jun 14 11:12:35.988244 u415 kernel: kvm-stealtime: cpu 19, msr fff4e3040
+Jun 14 11:12:35.988253 u415 kernel: smp: Brought up 1 node, 20 CPUs
+Jun 14 11:12:35.988263 u415 kernel: smpboot: Max logical packages: 20
+Jun 14 11:12:35.988272 u415 kernel: smpboot: Total of 20 processors activated (95999.60 BogoMIPS)
+Jun 14 11:12:35.988286 u415 kernel: devtmpfs: initialized
+Jun 14 11:12:35.988296 u415 kernel: x86/mm: Memory block size: 2048MB
+Jun 14 11:12:35.988304 u415 kernel: evm: security.selinux
+Jun 14 11:12:35.988313 u415 kernel: evm: security.SMACK64
+Jun 14 11:12:35.988321 u415 kernel: evm: security.SMACK64EXEC
+Jun 14 11:12:35.988331 u415 kernel: evm: security.SMACK64TRANSMUTE
+Jun 14 11:12:35.988364 u415 kernel: evm: security.SMACK64MMAP
+Jun 14 11:12:35.988373 u415 kernel: evm: security.apparmor
+Jun 14 11:12:35.988382 u415 kernel: evm: security.ima
+Jun 14 11:12:35.988394 u415 kernel: evm: security.capability
+Jun 14 11:12:35.988419 u415 kernel: clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+Jun 14 11:12:35.988431 u415 kernel: futex hash table entries: 8192 (order: 7, 524288 bytes)
+Jun 14 11:12:35.988441 u415 kernel: pinctrl core: initialized pinctrl subsystem
+Jun 14 11:12:35.988449 u415 kernel: RTC time: 11:12:31, date: 06/14/21
+Jun 14 11:12:35.988458 u415 kernel: NET: Registered protocol family 16
+Jun 14 11:12:35.988467 u415 kernel: audit: initializing netlink subsys (disabled)
+Jun 14 11:12:35.988477 u415 kernel: audit: type=2000 audit(1623669152.217:1): state=initialized audit_enabled=0 res=1
+Jun 14 11:12:35.988487 u415 kernel: cpuidle: using governor ladder
+Jun 14 11:12:35.988501 u415 kernel: cpuidle: using governor menu
+Jun 14 11:12:35.988519 u415 kernel: ACPI: bus type PCI registered
+Jun 14 11:12:35.988536 u415 kernel: acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+Jun 14 11:12:35.988545 u415 kernel: PCI: Using configuration type 1 for base access
+Jun 14 11:12:35.988555 u415 kernel: HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+Jun 14 11:12:35.988564 u415 kernel: HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+Jun 14 11:12:35.988572 u415 kernel: ACPI: Added _OSI(Module Device)
+Jun 14 11:12:35.988584 u415 kernel: ACPI: Added _OSI(Processor Device)
+Jun 14 11:12:35.988604 u415 kernel: ACPI: Added _OSI(3.0 _SCP Extensions)
+Jun 14 11:12:35.988617 u415 kernel: ACPI: Added _OSI(Processor Aggregator Device)
+Jun 14 11:12:35.988626 u415 kernel: ACPI: Added _OSI(Linux-Dell-Video)
+Jun 14 11:12:35.988635 u415 kernel: ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+Jun 14 11:12:35.988644 u415 kernel: ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+Jun 14 11:12:35.988659 u415 kernel: ACPI: Interpreter enabled
+Jun 14 11:12:35.988668 u415 kernel: ACPI: (supports S0 S3 S4 S5)
+Jun 14 11:12:35.988678 u415 kernel: ACPI: Using IOAPIC for interrupt routing
+Jun 14 11:12:35.988687 u415 kernel: PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+Jun 14 11:12:35.988696 u415 kernel: ACPI: Enabled 2 GPEs in block 00 to 0F
+Jun 14 11:12:35.988704 u415 kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+Jun 14 11:12:35.988958 u415 kernel: acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI]
+Jun 14 11:12:35.989125 u415 kernel: acpi PNP0A03:00: _OSC failed (AE_NOT_FOUND); disabling ASPM
+Jun 14 11:12:35.989261 u415 kernel: acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+Jun 14 11:12:35.989274 u415 kernel: acpiphp: Slot [3] registered
+Jun 14 11:12:35.989283 u415 kernel: acpiphp: Slot [4] registered
+Jun 14 11:12:35.989292 u415 kernel: acpiphp: Slot [5] registered
+Jun 14 11:12:35.989301 u415 kernel: acpiphp: Slot [6] registered
+Jun 14 11:12:35.989311 u415 kernel: acpiphp: Slot [7] registered
+Jun 14 11:12:35.989320 u415 kernel: acpiphp: Slot [8] registered
+Jun 14 11:12:35.989328 u415 kernel: acpiphp: Slot [9] registered
+Jun 14 11:12:35.989337 u415 kernel: acpiphp: Slot [10] registered
+Jun 14 11:12:35.989347 u415 kernel: acpiphp: Slot [11] registered
+Jun 14 11:12:35.989362 u415 kernel: acpiphp: Slot [12] registered
+Jun 14 11:12:35.989371 u415 kernel: acpiphp: Slot [13] registered
+Jun 14 11:12:35.989380 u415 kernel: acpiphp: Slot [14] registered
+Jun 14 11:12:35.989390 u415 kernel: acpiphp: Slot [15] registered
+Jun 14 11:12:35.989398 u415 kernel: acpiphp: Slot [16] registered
+Jun 14 11:12:35.989407 u415 kernel: acpiphp: Slot [17] registered
+Jun 14 11:12:35.989417 u415 kernel: acpiphp: Slot [18] registered
+Jun 14 11:12:35.989426 u415 kernel: acpiphp: Slot [19] registered
+Jun 14 11:12:35.989434 u415 kernel: acpiphp: Slot [20] registered
+Jun 14 11:12:35.989444 u415 kernel: acpiphp: Slot [21] registered
+Jun 14 11:12:35.989459 u415 kernel: acpiphp: Slot [22] registered
+Jun 14 11:12:35.989468 u415 kernel: acpiphp: Slot [23] registered
+Jun 14 11:12:35.989477 u415 kernel: acpiphp: Slot [24] registered
+Jun 14 11:12:35.989486 u415 kernel: acpiphp: Slot [25] registered
+Jun 14 11:12:35.989496 u415 kernel: acpiphp: Slot [26] registered
+Jun 14 11:12:35.989504 u415 kernel: acpiphp: Slot [27] registered
+Jun 14 11:12:35.989547 u415 kernel: acpiphp: Slot [28] registered
+Jun 14 11:12:35.989564 u415 kernel: acpiphp: Slot [29] registered
+Jun 14 11:12:35.989573 u415 kernel: acpiphp: Slot [30] registered
+Jun 14 11:12:35.989582 u415 kernel: acpiphp: Slot [31] registered
+Jun 14 11:12:35.989590 u415 kernel: PCI host bridge to bus 0000:00
+Jun 14 11:12:35.989692 u415 kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+Jun 14 11:12:35.989798 u415 kernel: pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+Jun 14 11:12:35.989889 u415 kernel: pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+Jun 14 11:12:35.989974 u415 kernel: pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]
+Jun 14 11:12:35.990072 u415 kernel: pci_bus 0000:00: root bus resource [mem 0x1040000000-0x10bfffffff window]
+Jun 14 11:12:35.990158 u415 kernel: pci_bus 0000:00: root bus resource [bus 00-ff]
+Jun 14 11:12:35.990269 u415 kernel: pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+Jun 14 11:12:35.990388 u415 kernel: pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+Jun 14 11:12:35.990519 u415 kernel: pci 0000:00:01.1: [8086:7010] type 00 class 0x010180
+Jun 14 11:12:35.990652 u415 kernel: pci 0000:00:01.1: reg 0x20: [io  0xc0c0-0xc0cf]
+Jun 14 11:12:35.990800 u415 kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+Jun 14 11:12:35.991000 u415 kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+Jun 14 11:12:35.991113 u415 kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+Jun 14 11:12:35.991221 u415 kernel: pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+Jun 14 11:12:35.991346 u415 kernel: pci 0000:00:01.3: [8086:7113] type 00 class 0x068000
+Jun 14 11:12:35.991445 u415 kernel: pci 0000:00:01.3: quirk: [io  0x0600-0x063f] claimed by PIIX4 ACPI
+Jun 14 11:12:35.991550 u415 kernel: pci 0000:00:01.3: quirk: [io  0x0700-0x070f] claimed by PIIX4 SMB
+Jun 14 11:12:35.991654 u415 kernel: pci 0000:00:02.0: [1234:1111] type 00 class 0x030000
+Jun 14 11:12:35.991758 u415 kernel: pci 0000:00:02.0: reg 0x10: [mem 0xfd000000-0xfdffffff pref]
+Jun 14 11:12:35.991874 u415 kernel: pci 0000:00:02.0: reg 0x18: [mem 0xfebc4000-0xfebc4fff]
+Jun 14 11:12:35.991993 u415 kernel: pci 0000:00:02.0: reg 0x30: [mem 0xfeba0000-0xfebaffff pref]
+Jun 14 11:12:35.992092 u415 kernel: pci 0000:00:02.0: BAR 0: assigned to efifb
+Jun 14 11:12:35.992203 u415 kernel: pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
+Jun 14 11:12:35.992316 u415 kernel: pci 0000:00:03.0: reg 0x10: [mem 0xfeb80000-0xfeb9ffff]
+Jun 14 11:12:35.992465 u415 kernel: pci 0000:00:03.0: reg 0x14: [io  0xc080-0xc0bf]
+Jun 14 11:12:35.992577 u415 kernel: pci 0000:00:03.0: reg 0x30: [mem 0xfeb40000-0xfeb7ffff pref]
+Jun 14 11:12:35.992723 u415 kernel: pci 0000:00:04.0: [8086:2700] type 00 class 0x010802
+Jun 14 11:12:35.992869 u415 kernel: pci 0000:00:04.0: reg 0x10: [mem 0xfebc0000-0xfebc3fff 64bit]
+Jun 14 11:12:35.993014 u415 kernel: pci 0000:00:04.0: reg 0x30: [mem 0xfebb0000-0xfebbffff pref]
+Jun 14 11:12:35.993155 u415 kernel: pci 0000:00:05.0: [1af4:1001] type 00 class 0x010000
+Jun 14 11:12:35.993274 u415 kernel: pci 0000:00:05.0: reg 0x10: [io  0xc000-0xc07f]
+Jun 14 11:12:35.993371 u415 kernel: pci 0000:00:05.0: reg 0x14: [mem 0xfebc5000-0xfebc5fff]
+Jun 14 11:12:35.993483 u415 kernel: pci 0000:00:05.0: reg 0x20: [mem 0xfe000000-0xfe003fff 64bit pref]
+Jun 14 11:12:35.993496 u415 kernel: ACPI: PCI Interrupt Link [LNKA] (IRQs 5 *10 11)
+Jun 14 11:12:35.993507 u415 kernel: ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *10 11)
+Jun 14 11:12:35.993523 u415 kernel: ACPI: PCI Interrupt Link [LNKC] (IRQs 5 10 *11)
+Jun 14 11:12:35.993533 u415 kernel: ACPI: PCI Interrupt Link [LNKD] (IRQs 5 10 *11)
+Jun 14 11:12:35.993543 u415 kernel: ACPI: PCI Interrupt Link [LNKS] (IRQs *9)
+Jun 14 11:12:35.993552 u415 kernel: SCSI subsystem initialized
+Jun 14 11:12:35.993562 u415 kernel: libata version 3.00 loaded.
+Jun 14 11:12:35.993671 u415 kernel: pci 0000:00:02.0: vgaarb: setting as boot VGA device
+Jun 14 11:12:35.993779 u415 kernel: pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+Jun 14 11:12:35.993893 u415 kernel: pci 0000:00:02.0: vgaarb: bridge control possible
+Jun 14 11:12:35.993904 u415 kernel: vgaarb: loaded
+Jun 14 11:12:35.993920 u415 kernel: ACPI: bus type USB registered
+Jun 14 11:12:35.993930 u415 kernel: usbcore: registered new interface driver usbfs
+Jun 14 11:12:35.993939 u415 kernel: usbcore: registered new interface driver hub
+Jun 14 11:12:35.993947 u415 kernel: usbcore: registered new device driver usb
+Jun 14 11:12:35.993956 u415 kernel: EDAC MC: Ver: 3.0.0
+Jun 14 11:12:35.993966 u415 kernel: PCI: Using ACPI for IRQ routing
+Jun 14 11:12:35.993975 u415 kernel: PCI: pci_cache_line_size set to 64 bytes
+Jun 14 11:12:35.993988 u415 kernel: e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+Jun 14 11:12:35.993997 u415 kernel: e820: reserve RAM buffer [mem 0xbffd4000-0xbfffffff]
+Jun 14 11:12:35.994007 u415 kernel: NetLabel: Initializing
+Jun 14 11:12:35.994016 u415 kernel: NetLabel:  domain hash size = 128
+Jun 14 11:12:35.994025 u415 kernel: NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+Jun 14 11:12:35.994040 u415 kernel: NetLabel:  unlabeled traffic allowed by default
+Jun 14 11:12:35.994050 u415 kernel: hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0
+Jun 14 11:12:35.994059 u415 kernel: hpet0: 3 comparators, 64-bit 100.000000 MHz counter
+Jun 14 11:12:35.994069 u415 kernel: clocksource: Switched to clocksource kvm-clock
+Jun 14 11:12:35.994079 u415 kernel: VFS: Disk quotas dquot_6.6.0
+Jun 14 11:12:35.994090 u415 kernel: VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Jun 14 11:12:35.994099 u415 kernel: AppArmor: AppArmor Filesystem Enabled
+Jun 14 11:12:35.994108 u415 kernel: pnp: PnP ACPI init
+Jun 14 11:12:35.994236 u415 kernel: pnp 00:00: Plug and Play ACPI device, IDs PNP0303 (active)
+Jun 14 11:12:35.994364 u415 kernel: pnp 00:01: Plug and Play ACPI device, IDs PNP0f13 (active)
+Jun 14 11:12:35.994481 u415 kernel: pnp 00:02: [dma 2]
+Jun 14 11:12:35.994570 u415 kernel: pnp 00:02: Plug and Play ACPI device, IDs PNP0700 (active)
+Jun 14 11:12:35.994656 u415 kernel: pnp 00:03: Plug and Play ACPI device, IDs PNP0400 (active)
+Jun 14 11:12:35.994750 u415 kernel: pnp 00:04: Plug and Play ACPI device, IDs PNP0501 (active)
+Jun 14 11:12:35.994842 u415 kernel: pnp 00:05: Plug and Play ACPI device, IDs PNP0b00 (active)
+Jun 14 11:12:35.994861 u415 kernel: pnp: PnP ACPI: found 6 devices
+Jun 14 11:12:35.994871 u415 kernel: clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+Jun 14 11:12:35.994990 u415 kernel: pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+Jun 14 11:12:35.995123 u415 kernel: pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+Jun 14 11:12:35.995223 u415 kernel: pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+Jun 14 11:12:35.995347 u415 kernel: pci_bus 0000:00: resource 7 [mem 0xc0000000-0xfebfffff window]
+Jun 14 11:12:35.995433 u415 kernel: pci_bus 0000:00: resource 8 [mem 0x1040000000-0x10bfffffff window]
+Jun 14 11:12:35.995444 u415 kernel: NET: Registered protocol family 2
+Jun 14 11:12:35.995455 u415 kernel: TCP established hash table entries: 524288 (order: 10, 4194304 bytes)
+Jun 14 11:12:35.995472 u415 kernel: TCP bind hash table entries: 65536 (order: 8, 1048576 bytes)
+Jun 14 11:12:35.995482 u415 kernel: TCP: Hash tables configured (established 524288 bind 65536)
+Jun 14 11:12:35.995492 u415 kernel: UDP hash table entries: 32768 (order: 8, 1048576 bytes)
+Jun 14 11:12:35.995502 u415 kernel: UDP-Lite hash table entries: 32768 (order: 8, 1048576 bytes)
+Jun 14 11:12:35.995512 u415 kernel: NET: Registered protocol family 1
+Jun 14 11:12:35.995626 u415 kernel: pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+Jun 14 11:12:35.995758 u415 kernel: pci 0000:00:01.0: PIIX3: Enabling Passive Release
+Jun 14 11:12:35.995878 u415 kernel: pci 0000:00:01.0: Activating ISA DMA hang workarounds
+Jun 14 11:12:35.995997 u415 kernel: pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+Jun 14 11:12:35.996009 u415 kernel: PCI: CLS 32 bytes, default 64
+Jun 14 11:12:35.996019 u415 kernel: Unpacking initramfs...
+Jun 14 11:12:35.996028 u415 kernel: Freeing initrd memory: 59040K
+Jun 14 11:12:35.996038 u415 kernel: PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+Jun 14 11:12:35.996049 u415 kernel: software IO TLB: mapped [mem 0xbbfd4000-0xbffd4000] (64MB)
+Jun 14 11:12:35.996058 u415 kernel: clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x22982e1e4da, max_idle_ns: 440795324676 ns
+Jun 14 11:12:35.996075 u415 kernel: Scanning for low memory corruption every 60 seconds
+Jun 14 11:12:35.996085 u415 kernel: Initialise system trusted keyrings
+Jun 14 11:12:35.996094 u415 kernel: Key type blacklist registered
+Jun 14 11:12:35.996107 u415 kernel: workingset: timestamp_bits=36 max_order=24 bucket_order=0
+Jun 14 11:12:35.996117 u415 kernel: zbud: loaded
+Jun 14 11:12:35.996128 u415 kernel: squashfs: version 4.0 (2009/01/31) Phillip Lougher
+Jun 14 11:12:35.996137 u415 kernel: fuse init (API version 7.26)
+Jun 14 11:12:35.996147 u415 kernel: Key type asymmetric registered
+Jun 14 11:12:35.996163 u415 kernel: Asymmetric key parser 'x509' registered
+Jun 14 11:12:35.996173 u415 kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
+Jun 14 11:12:35.996183 u415 kernel: io scheduler noop registered
+Jun 14 11:12:35.996193 u415 kernel: io scheduler deadline registered
+Jun 14 11:12:35.996203 u415 kernel: io scheduler cfq registered (default)
+Jun 14 11:12:35.996214 u415 kernel: efifb: probing for efifb
+Jun 14 11:12:35.996224 u415 kernel: efifb: framebuffer at 0xfd000000, using 1408k, total 1408k
+Jun 14 11:12:35.996233 u415 kernel: efifb: mode is 800x600x24, linelength=2400, pages=1
+Jun 14 11:12:35.996243 u415 kernel: efifb: scrolling: redraw
+Jun 14 11:12:35.996252 u415 kernel: efifb: Truecolor: size=0:8:8:8, shift=0:16:8:0
+Jun 14 11:12:35.996266 u415 kernel: Console: switching to colour frame buffer device 100x37
+Jun 14 11:12:35.996276 u415 kernel: fb0: EFI VGA frame buffer device
+Jun 14 11:12:35.996287 u415 kernel: intel_idle: Please enable MWAIT in BIOS SETUP
+Jun 14 11:12:35.996296 u415 kernel: input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+Jun 14 11:12:35.996305 u415 kernel: ACPI: Power Button [PWRF]
+Jun 14 11:12:35.996315 u415 kernel: ACPI: PCI Interrupt Link [LNKA] enabled at IRQ 10
+Jun 14 11:12:35.996326 u415 kernel: Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+Jun 14 11:12:35.996335 u415 kernel: 00:04: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+Jun 14 11:12:35.996370 u415 kernel: Linux agpgart interface v0.103
+Jun 14 11:12:35.996386 u415 kernel: loop: module loaded
+Jun 14 11:12:35.996500 u415 kernel: ata_piix 0000:00:01.1: version 2.13
+Jun 14 11:12:35.996669 u415 kernel: scsi host0: ata_piix
+Jun 14 11:12:35.996838 u415 kernel: scsi host1: ata_piix
+Jun 14 11:12:35.996857 u415 kernel: ata1: PATA max MWDMA2 cmd 0x1f0 ctl 0x3f6 bmdma 0xc0c0 irq 14
+Jun 14 11:12:35.996871 u415 kernel: ata2: PATA max MWDMA2 cmd 0x170 ctl 0x376 bmdma 0xc0c8 irq 15
+Jun 14 11:12:35.996885 u415 kernel: libphy: Fixed MDIO Bus: probed
+Jun 14 11:12:35.996900 u415 kernel: tun: Universal TUN/TAP device driver, 1.6
+Jun 14 11:12:35.996913 u415 kernel: PPP generic driver version 2.4.2
+Jun 14 11:12:35.996938 u415 kernel: ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Jun 14 11:12:35.996954 u415 kernel: ehci-pci: EHCI PCI platform driver
+Jun 14 11:12:35.996969 u415 kernel: ehci-platform: EHCI generic platform driver
+Jun 14 11:12:35.996987 u415 kernel: ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+Jun 14 11:12:35.997001 u415 kernel: ohci-pci: OHCI PCI platform driver
+Jun 14 11:12:35.997016 u415 kernel: ohci-platform: OHCI generic platform driver
+Jun 14 11:12:35.997031 u415 kernel: uhci_hcd: USB Universal Host Controller Interface driver
+Jun 14 11:12:35.997045 u415 kernel: i8042: PNP: PS/2 Controller [PNP0303:KBD,PNP0f13:MOU] at 0x60,0x64 irq 1,12
+Jun 14 11:12:35.997059 u415 kernel: serio: i8042 KBD port at 0x60,0x64 irq 1
+Jun 14 11:12:35.997084 u415 kernel: serio: i8042 AUX port at 0x60,0x64 irq 12
+Jun 14 11:12:35.997100 u415 kernel: mousedev: PS/2 mouse device common for all mice
+Jun 14 11:12:35.997265 u415 kernel: rtc_cmos 00:05: RTC can wake from S4
+Jun 14 11:12:35.997432 u415 kernel: rtc_cmos 00:05: rtc core: registered rtc_cmos as rtc0
+Jun 14 11:12:35.997596 u415 kernel: rtc_cmos 00:05: alarms up to one day, y3k, 242 bytes nvram, hpet irqs
+Jun 14 11:12:35.997617 u415 kernel: input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input1
+Jun 14 11:12:35.997633 u415 kernel: i2c /dev entries driver
+Jun 14 11:12:35.997648 u415 kernel: device-mapper: uevent: version 1.0.3
+Jun 14 11:12:35.997662 u415 kernel: device-mapper: ioctl: 4.37.0-ioctl (2017-09-20) initialised: dm-devel@redhat.com
+Jun 14 11:12:35.997687 u415 kernel: ledtrig-cpu: registered to indicate activity on CPUs
+Jun 14 11:12:35.997703 u415 kernel: NET: Registered protocol family 10
+Jun 14 11:12:35.997716 u415 kernel: Segment Routing with IPv6
+Jun 14 11:12:35.997730 u415 kernel: NET: Registered protocol family 17
+Jun 14 11:12:35.997745 u415 kernel: Key type dns_resolver registered
+Jun 14 11:12:35.997761 u415 kernel: mce: Using 10 MCE banks
+Jun 14 11:12:35.997776 u415 kernel: RAS: Correctable Errors collector initialized.
+Jun 14 11:12:35.997790 u415 kernel: sched_clock: Marking stable (1016614202, 0)->(1882115665, -865501463)
+Jun 14 11:12:35.997806 u415 kernel: registered taskstats version 1
+Jun 14 11:12:35.997830 u415 kernel: Loading compiled-in X.509 certificates
+Jun 14 11:12:35.997845 u415 kernel: Loaded X.509 cert 'Build time autogenerated kernel key: 1e5516648b223d94d04ce7d99e6048c9b3ebcb77'
+Jun 14 11:12:35.997861 u415 kernel: Loaded X.509 cert 'Canonical Ltd. Live Patch Signing: 14df34d1a87cf37625abec039ef2bf521249b969'
+Jun 14 11:12:35.997877 u415 kernel: Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+Jun 14 11:12:35.997892 u415 kernel: zswap: loaded using pool lzo/zbud
+Jun 14 11:12:35.997906 u415 kernel: Key type big_key registered
+Jun 14 11:12:35.997921 u415 kernel: Key type trusted registered
+Jun 14 11:12:35.997936 u415 kernel: Key type encrypted registered
+Jun 14 11:12:35.997952 u415 kernel: AppArmor: AppArmor sha1 policy hashing enabled
+Jun 14 11:12:35.997974 u415 kernel: ima: No TPM chip found, activating TPM-bypass! (rc=-19)
+Jun 14 11:12:35.997990 u415 kernel: ima: Allocated hash algorithm: sha1
+Jun 14 11:12:35.998002 u415 kernel: evm: HMAC attrs: 0x1
+Jun 14 11:12:35.998015 u415 kernel:   Magic number: 9:385:226
+Jun 14 11:12:35.998131 u415 kernel: rtc_cmos 00:05: setting system clock to 2021-06-14 11:12:32 UTC (1623669152)
+Jun 14 11:12:35.998142 u415 kernel: BIOS EDD facility v0.16 2004-Jun-25, 0 devices found
+Jun 14 11:12:35.998152 u415 kernel: EDD information not available.
+Jun 14 11:12:35.998162 u415 kernel: ata2.01: NODEV after polling detection
+Jun 14 11:12:35.998172 u415 kernel: ata2.00: ATAPI: QEMU DVD-ROM, 2.5+, max UDMA/100
+Jun 14 11:12:35.998189 u415 kernel: ata2.00: configured for MWDMA2
+Jun 14 11:12:35.998349 u415 kernel: scsi 1:0:0:0: CD-ROM            QEMU     QEMU DVD-ROM     2.5+ PQ: 0 ANSI: 5
+Jun 14 11:12:35.998493 u415 kernel: sr 1:0:0:0: [sr0] scsi3-mmc drive: 4x/4x cd/rw xa/form2 tray
+Jun 14 11:12:35.998505 u415 kernel: cdrom: Uniform CD-ROM driver Revision: 3.20
+Jun 14 11:12:35.998645 u415 kernel: sr 1:0:0:0: Attached scsi CD-ROM sr0
+Jun 14 11:12:35.998760 u415 kernel: sr 1:0:0:0: Attached scsi generic sg0 type 5
+Jun 14 11:12:35.998772 u415 kernel: Freeing unused kernel image memory: 2448K
+Jun 14 11:12:35.998782 u415 kernel: Write protecting the kernel read-only data: 20480k
+Jun 14 11:12:35.998796 u415 kernel: Freeing unused kernel image memory: 2008K
+Jun 14 11:12:35.998819 u415 kernel: Freeing unused kernel image memory: 1828K
+Jun 14 11:12:35.998834 u415 kernel: x86/mm: Checked W+X mappings: passed, no W+X pages found.
+Jun 14 11:12:35.999015 u415 kernel: piix4_smbus 0000:00:01.3: SMBus Host Controller at 0x700, revision 0
+Jun 14 11:12:35.999036 u415 kernel: Floppy drive(s): fd0 is 2.88M AMI BIOS
+Jun 14 11:12:35.999052 u415 kernel: e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+Jun 14 11:12:35.999065 u415 kernel: e1000: Copyright (c) 1999-2006 Intel Corporation.
+Jun 14 11:12:35.999080 u415 kernel: AVX2 version of gcm_enc/dec engaged.
+Jun 14 11:12:35.999096 u415 kernel: AES CTR mode by8 optimization enabled
+Jun 14 11:12:35.999112 u415 kernel: FDC 0 is a S82078B
+Jun 14 11:12:35.999137 u415 kernel: input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input4
+Jun 14 11:12:35.999152 u415 kernel: input: VirtualPS/2 VMware VMMouse as /devices/platform/i8042/serio1/input/input3
+Jun 14 11:12:35.999166 u415 kernel: ACPI: PCI Interrupt Link [LNKC] enabled at IRQ 11
+Jun 14 11:12:35.999180 u415 kernel:  vda: vda1 vda2
+Jun 14 11:12:35.999193 u415 kernel: print_req_error: I/O error, dev fd0, sector 0
+Jun 14 11:12:35.999210 u415 kernel: floppy: error 10 while reading block 0
+Jun 14 11:12:35.999385 u415 kernel: e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 52:54:00:12:34:56
+Jun 14 11:12:35.999516 u415 kernel: e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+Jun 14 11:12:35.999529 u415 kernel: checking generic (fd000000 160000) vs hw (fd000000 1000000)
+Jun 14 11:12:35.999550 u415 kernel: fb: switching to bochsdrmfb from EFI VGA
+Jun 14 11:12:35.999559 u415 kernel: Console: switching to colour dummy device 80x25
+Jun 14 11:12:35.999569 u415 kernel: [drm] Found bochs VGA, ID 0xb0c0.
+Jun 14 11:12:35.999580 u415 kernel: [drm] Framebuffer size 16384 kB @ 0xfd000000, mmio @ 0xfebc4000.
+Jun 14 11:12:35.999590 u415 kernel: [TTM] Zone  kernel: Available graphics memory: 32983660 kiB
+Jun 14 11:12:35.999599 u415 kernel: [TTM] Zone   dma32: Available graphics memory: 2097152 kiB
+Jun 14 11:12:35.999610 u415 kernel: [TTM] Initializing pool allocator
+Jun 14 11:12:35.999620 u415 kernel: [TTM] Initializing DMA pool allocator
+Jun 14 11:12:35.999725 u415 kernel: e1000 0000:00:03.0 ens3: renamed from eth0
+Jun 14 11:12:35.999743 u415 kernel: fbcon: bochsdrmfb (fb0) is primary device
+Jun 14 11:12:35.999752 u415 kernel: Console: switching to colour frame buffer device 128x48
+Jun 14 11:12:35.999917 u415 kernel: bochs-drm 0000:00:02.0: fb0: bochsdrmfb frame buffer device
+Jun 14 11:12:35.999938 u415 kernel: [drm] Initialized bochs-drm 1.0.0 20130925 for 0000:00:02.0 on minor 0
+Jun 14 11:12:36.000147 u415 kernel: nvme nvme0: pci function 0000:00:04.0
+Jun 14 11:12:36.000171 u415 kernel: ACPI: PCI Interrupt Link [LNKD] enabled at IRQ 11
+Jun 14 11:12:36.000198 u415 kernel: raid6: sse2x1   gen()  8474 MB/s
+Jun 14 11:12:36.000214 u415 kernel: raid6: sse2x1   xor()  6110 MB/s
+Jun 14 11:12:36.000229 u415 kernel: raid6: sse2x2   gen() 10369 MB/s
+Jun 14 11:12:36.000244 u415 kernel: raid6: sse2x2   xor()  7001 MB/s
+Jun 14 11:12:36.000259 u415 kernel: raid6: sse2x4   gen() 13039 MB/s
+Jun 14 11:12:36.000274 u415 kernel: raid6: sse2x4   xor()  9255 MB/s
+Jun 14 11:12:36.000290 u415 kernel: raid6: avx2x1   gen() 18271 MB/s
+Jun 14 11:12:36.000305 u415 kernel: raid6: avx2x1   xor() 14669 MB/s
+Jun 14 11:12:36.000319 u415 kernel: raid6: avx2x2   gen() 24331 MB/s
+Jun 14 11:12:36.000335 u415 kernel: raid6: avx2x2   xor() 16076 MB/s
+Jun 14 11:12:36.000369 u415 kernel: raid6: avx2x4   gen() 27534 MB/s
+Jun 14 11:12:36.000384 u415 kernel: raid6: avx2x4   xor() 16213 MB/s
+Jun 14 11:12:36.000398 u415 kernel: raid6: avx512x1 gen() 25427 MB/s
+Jun 14 11:12:36.000414 u415 kernel: raid6: avx512x1 xor() 14402 MB/s
+Jun 14 11:12:36.000433 u415 kernel: raid6: avx512x2 gen() 29613 MB/s
+Jun 14 11:12:36.000447 u415 kernel: raid6: avx512x2 xor() 18005 MB/s
+Jun 14 11:12:36.000462 u415 kernel: raid6: avx512x4 gen() 30693 MB/s
+Jun 14 11:12:36.000477 u415 kernel: raid6: avx512x4 xor() 17872 MB/s
+Jun 14 11:12:36.000494 u415 kernel: raid6: using algorithm avx512x4 gen() 30693 MB/s
+Jun 14 11:12:36.000508 u415 kernel: raid6: .... xor() 17872 MB/s, rmw enabled
+Jun 14 11:12:36.000534 u415 kernel: raid6: using avx512x2 recovery algorithm
+Jun 14 11:12:36.000551 u415 kernel: xor: automatically using best checksumming function   avx       
+Jun 14 11:12:36.000565 u415 kernel: async_tx: api initialized (async)
+Jun 14 11:12:36.000579 u415 kernel: Btrfs loaded, crc32c=crc32c-intel
+Jun 14 11:12:36.000594 u415 kernel: print_req_error: I/O error, dev fd0, sector 0
+Jun 14 11:12:36.000610 u415 kernel: floppy: error 10 while reading block 0
+Jun 14 11:12:36.000626 u415 kernel: EXT4-fs (vda2): INFO: recovery required on readonly filesystem
+Jun 14 11:12:36.000640 u415 kernel: EXT4-fs (vda2): write access will be enabled during recovery
+Jun 14 11:12:36.000656 u415 kernel: random: fast init done
+Jun 14 11:12:36.000673 u415 kernel: random: systemd-udevd: uninitialized urandom read (16 bytes read)
+Jun 14 11:12:36.000696 u415 kernel: EXT4-fs (vda2): recovery complete
+Jun 14 11:12:36.000711 u415 kernel: random: systemd-udevd: uninitialized urandom read (16 bytes read)
+Jun 14 11:12:36.000726 u415 kernel: EXT4-fs (vda2): mounted filesystem with ordered data mode. Opts: (null)
+Jun 14 11:12:36.000757 u415 kernel: random: systemd-udevd: uninitialized urandom read (16 bytes read)
+Jun 14 11:12:36.000771 u415 kernel: ip_tables: (C) 2000-2006 Netfilter Core Team
+Jun 14 11:12:36.000790 u415 systemd[1]: systemd 237 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD -IDN2 +IDN -PCRE2 default-hierarchy=hybrid)
+Jun 14 11:12:36.000809 u415 systemd[1]: Detected virtualization kvm.
+Jun 14 11:12:36.000831 u415 systemd[1]: Detected architecture x86-64.
+Jun 14 11:12:36.000858 u415 systemd[1]: Set hostname to <u415>.
+Jun 14 11:12:36.000873 u415 kernel: print_req_error: I/O error, dev fd0, sector 0
+Jun 14 11:12:36.000887 u415 kernel: floppy: error 10 while reading block 0
+Jun 14 11:12:36.000910 u415 systemd[1]: Created slice System Slice.
+Jun 14 11:12:36.000926 u415 systemd[1]: Listening on udev Control Socket.
+Jun 14 11:12:36.000944 u415 systemd[1]: Listening on udev Kernel Socket.
+Jun 14 11:12:36.000958 u415 systemd[1]: Created slice User and Session Slice.
+Jun 14 11:12:36.000980 u415 systemd[1]: Listening on Journal Socket (/dev/log).
+Jun 14 11:12:36.000999 u415 systemd[1]: Reached target User and Group Name Lookups.
+Jun 14 11:12:36.001022 u415 kernel: EXT4-fs (vda2): re-mounted. Opts: (null)
+Jun 14 11:12:36.001036 u415 kernel: Loading iSCSI transport class v2.0-870.
+Jun 14 11:12:36.001055 u415 kernel: iscsi: registered transport (tcp)
+Jun 14 11:12:36.130776 u415 kernel: iscsi: registered transport (iser)
+Jun 14 11:12:36.198872 u415 kernel: audit: type=1400 audit(1623669156.192:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/bin/lxc-start" pid=719 comm="apparmor_parser"
+Jun 14 11:12:36.201910 u415 kernel: audit: type=1400 audit(1623669156.196:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/bin/man" pid=720 comm="apparmor_parser"
+Jun 14 11:12:36.201986 u415 kernel: audit: type=1400 audit(1623669156.196:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name="man_filter" pid=720 comm="apparmor_parser"
+Jun 14 11:12:36.202050 u415 kernel: audit: type=1400 audit(1623669156.196:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name="man_groff" pid=720 comm="apparmor_parser"
+Jun 14 11:12:36.202942 u415 kernel: parport_pc 00:03: reported by Plug and Play ACPI
+Jun 14 11:12:36.211338 u415 kernel: parport0: PC-style at 0x378, irq 7 [PCSPP,TRISTATE]
+Jun 14 11:12:36.211367 u415 kernel: audit: type=1400 audit(1623669156.196:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/snapd/snap-confine" pid=722 comm="apparmor_parser"
+Jun 14 11:12:36.211391 u415 kernel: audit: type=1400 audit(1623669156.200:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/snapd/snap-confine//mount-namespace-capture-helper" pid=722 comm="apparmor_parser"
+Jun 14 11:12:36.211419 u415 kernel: audit: type=1400 audit(1623669156.200:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/sbin/tcpdump" pid=724 comm="apparmor_parser"
+Jun 14 11:12:36.211440 u415 kernel: audit: type=1400 audit(1623669156.200:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="lxc-container-default" pid=717 comm="apparmor_parser"
+Jun 14 11:12:36.211461 u415 kernel: audit: type=1400 audit(1623669156.200:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="lxc-container-default-cgns" pid=717 comm="apparmor_parser"
+Jun 14 11:12:36.211490 u415 kernel: RAPL PMU: API unit is 2^-32 Joules, 3 fixed counters, 10737418240 ms ovfl timer
+Jun 14 11:12:36.211511 u415 kernel: RAPL PMU: hw unit of domain pp0-core 2^-0 Joules
+Jun 14 11:12:36.211528 u415 kernel: RAPL PMU: hw unit of domain package 2^-0 Joules
+Jun 14 11:12:36.211543 u415 kernel: RAPL PMU: hw unit of domain dram 2^-16 Joules
+Jun 14 11:12:36.211561 u415 kernel: print_req_error: I/O error, dev fd0, sector 0
+Jun 14 11:12:36.211592 u415 kernel: floppy: error 10 while reading block 0
+Jun 14 11:12:36.218948 u415 kernel: Adding 8388604k swap on /swap.img.  Priority:-2 extents:7 across:8962044k FS
+Jun 14 11:12:36.323006 u415 kernel: ppdev: user-space parallel port driver
+Jun 14 11:12:37.019804 u415 kernel: random: crng init done
+Jun 14 11:12:37.020445 u415 kernel: random: 7 urandom warning(s) missed due to ratelimiting
+Jun 14 11:12:37.362946 u415 kernel: IPv6: ADDRCONF(NETDEV_UP): ens3: link is not ready
+Jun 14 11:12:37.371854 u415 kernel: e1000: ens3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+Jun 14 11:12:37.371938 u415 kernel: IPv6: ADDRCONF(NETDEV_CHANGE): ens3: link becomes ready
+Jun 14 11:12:39.722977 u415 kernel: new mount options do not match the existing superblock, will be ignored
+Jun 14 11:13:25.636972 u415 kernel: bentofs: loading out-of-tree module taints kernel.
+Jun 14 11:13:25.637147 u415 kernel: bentofs: module verification failed: signature and/or required key missing - tainting kernel
+Jun 14 11:13:25.640940 u415 kernel: bento init (API version 1.0)
+Jun 14 11:13:31.128971 u415 kernel: xv6fs: module license 'unspecified' taints kernel.
+Jun 14 11:13:31.129122 u415 kernel: Disabling lock debugging due to kernel taint
+Jun 14 11:14:19.620961 u415 kernel: Hello from Rust
+Jun 14 11:14:19.621286 u415 kernel: initializing journal
+Jun 14 11:14:19.621365 u415 kernel: sb: size 3500000, nblocks 3223684, ninodes 900000, nlog 262144, logstart 2 inodestart 262146, bmap start 276209
+Jun 14 11:16:29.380967 u415 kernel: got a different opcode
+Jun 14 11:16:29.381354 u415 kernel: got a different opcode
+Jun 14 11:16:29.381420 u415 kernel: got a different opcode
+Jun 14 11:16:29.381455 u415 kernel: got a different opcode
+Jun 14 11:16:29.384933 u415 kernel: got a different opcode
+Jun 14 11:16:29.388946 u415 kernel: got a different opcode
+Jun 14 11:16:29.389205 u415 kernel: got a different opcode
+Jun 14 11:16:29.389250 u415 kernel: got a different opcode
+Jun 14 11:16:29.389280 u415 kernel: got a different opcode
+Jun 14 11:16:29.389318 u415 kernel: got a different opcode
+Jun 14 11:16:29.389350 u415 kernel: got a different opcode
+Jun 14 11:16:29.389380 u415 kernel: got a different opcode
+Jun 14 11:16:29.392956 u415 kernel: got a different opcode
+Jun 14 11:16:29.403700 u415 kernel: got a different opcode
+Jun 14 11:16:30.181075 u415 kernel: got a different opcode
+Jun 14 11:16:30.537108 u415 kernel: got a different opcode
+Jun 14 11:16:30.537305 u415 kernel: got a different opcode
+Jun 14 11:16:30.841115 u415 kernel: got a different opcode
+Jun 14 11:16:31.181256 u415 kernel: got a different opcode
+Jun 14 11:16:31.181520 u415 kernel: got a different opcode
+Jun 14 11:16:31.645130 u415 kernel: got a different opcode
+Jun 14 11:16:32.025198 u415 kernel: got a different opcode
+Jun 14 11:16:32.025420 u415 kernel: got a different opcode
+Jun 14 11:16:32.337153 u415 kernel: got a different opcode
+Jun 14 11:16:32.681039 u415 kernel: got a different opcode
+Jun 14 11:16:32.681153 u415 kernel: got a different opcode
+Jun 14 11:16:32.689056 u415 kernel: got a different opcode
+Jun 14 11:16:33.145066 u415 kernel: got a different opcode
+Jun 14 11:16:33.516904 u415 kernel: got a different opcode
+Jun 14 11:16:33.524867 u415 kernel: got a different opcode
+Jun 14 11:16:33.544935 u415 kernel: got a different opcode
+Jun 14 11:16:33.545084 u415 kernel: got a different opcode
+Jun 14 11:16:33.924965 u415 kernel: got a different opcode
+Jun 14 11:16:34.376894 u415 kernel: got a different opcode
+Jun 14 11:16:34.380958 u415 kernel: got a different opcode
+Jun 14 11:16:34.884972 u415 kernel: got a different opcode
+Jun 14 11:16:35.344913 u415 kernel: got a different opcode
+Jun 14 11:16:35.345135 u415 kernel: got a different opcode
+Jun 14 11:16:35.952960 u415 kernel: got a different opcode
+Jun 14 11:16:36.416978 u415 kernel: got a different opcode
+Jun 14 11:16:36.417184 u415 kernel: got a different opcode
+Jun 14 11:16:36.424913 u415 kernel: got a different opcode
+Jun 14 11:16:36.968968 u415 kernel: got a different opcode
+Jun 14 11:16:37.380942 u415 kernel: got a different opcode
+Jun 14 11:16:37.381107 u415 kernel: got a different opcode
+Jun 14 11:16:37.560946 u415 kernel: got a different opcode
+Jun 14 11:16:37.561086 u415 kernel: got a different opcode
+Jun 14 11:16:38.036984 u415 kernel: got a different opcode
+Jun 14 11:16:38.380966 u415 kernel: got a different opcode
+Jun 14 11:16:38.381172 u415 kernel: got a different opcode
+Jun 14 11:16:39.148954 u415 kernel: got a different opcode
+Jun 14 11:16:39.492977 u415 kernel: got a different opcode
+Jun 14 11:16:39.494033 u415 kernel: got a different opcode
+Jun 14 11:16:40.240957 u415 kernel: got a different opcode
+Jun 14 11:16:40.584963 u415 kernel: got a different opcode
+Jun 14 11:16:40.585161 u415 kernel: got a different opcode
+Jun 14 11:16:40.592905 u415 kernel: got a different opcode
+Jun 14 11:16:41.344959 u415 kernel: got a different opcode
+Jun 14 11:16:41.724950 u415 kernel: got a different opcode
+Jun 14 11:16:41.740885 u415 kernel: got a different opcode
+Jun 14 11:16:41.748868 u415 kernel: got a different opcode
+Jun 14 11:16:41.748963 u415 kernel: got a different opcode
+Jun 14 11:16:42.468952 u415 kernel: got a different opcode
+Jun 14 11:16:42.816934 u415 kernel: got a different opcode
+Jun 14 11:16:42.817070 u415 kernel: got a different opcode
+Jun 14 11:16:43.588990 u415 kernel: got a different opcode
+Jun 14 11:16:43.960909 u415 kernel: got a different opcode
+Jun 14 11:16:43.964906 u415 kernel: got a different opcode
+Jun 14 11:16:44.693028 u415 kernel: got a different opcode
+Jun 14 11:16:45.036986 u415 kernel: got a different opcode
+Jun 14 11:16:45.037170 u415 kernel: got a different opcode
+Jun 14 11:16:45.044409 u415 kernel: got a different opcode
+Jun 14 11:16:45.805005 u415 kernel: got a different opcode
+Jun 14 11:16:46.148939 u415 kernel: got a different opcode
+Jun 14 11:16:46.149068 u415 kernel: got a different opcode
+Jun 14 11:16:46.496986 u415 kernel: got a different opcode
+Jun 14 11:16:46.497234 u415 kernel: got a different opcode
+Jun 14 11:16:58.849084 u415 kernel: got a different opcode
+Jun 14 11:16:58.850345 u415 kernel: got a different opcode
+Jun 14 11:16:58.888977 u415 kernel: got a different opcode
+Jun 14 11:16:58.900966 u415 kernel: got a different opcode
+Jun 14 11:16:58.901091 u415 kernel: got a different opcode
+Jun 14 11:16:58.901147 u415 kernel: got a different opcode
+Jun 14 11:16:58.904134 u415 kernel: got a different opcode
+Jun 14 11:16:58.904269 u415 kernel: got a different opcode
+Jun 14 11:16:58.908920 u415 kernel: got a different opcode
+Jun 14 11:16:58.909050 u415 kernel: got a different opcode
+Jun 14 11:16:58.909104 u415 kernel: got a different opcode
+Jun 14 11:16:58.909148 u415 kernel: got a different opcode
+Jun 14 11:16:58.909221 u415 kernel: got a different opcode
+Jun 14 11:16:58.910671 u415 kernel: got a different opcode
+Jun 14 11:16:58.910733 u415 kernel: got a different opcode
+Jun 14 11:16:58.910797 u415 kernel: got a different opcode
+Jun 14 11:16:58.912905 u415 kernel: got a different opcode
+Jun 14 11:16:58.923938 u415 kernel: got a different opcode
+Jun 14 11:17:00.024863 u415 kernel: got a different opcode
+Jun 14 11:17:00.372874 u415 kernel: got a different opcode
+Jun 14 11:17:00.372979 u415 kernel: got a different opcode
+Jun 14 11:17:01.092861 u415 kernel: got a different opcode
+Jun 14 11:17:01.436874 u415 kernel: got a different opcode
+Jun 14 11:17:01.436995 u415 kernel: got a different opcode
+Jun 14 11:17:02.144971 u415 kernel: got a different opcode
+Jun 14 11:17:02.500976 u415 kernel: got a different opcode
+Jun 14 11:17:02.501167 u415 kernel: got a different opcode
+Jun 14 11:17:03.204969 u415 kernel: got a different opcode
+Jun 14 11:17:03.548977 u415 kernel: got a different opcode
+Jun 14 11:17:03.549194 u415 kernel: got a different opcode
+Jun 14 11:17:03.556958 u415 kernel: got a different opcode
+Jun 14 11:17:04.284966 u415 kernel: got a different opcode
+Jun 14 11:17:04.461067 u415 kernel: got a different opcode
+Jun 14 11:17:04.461274 u415 kernel: got a different opcode
+Jun 14 11:17:04.624975 u415 kernel: got a different opcode
+Jun 14 11:17:04.625187 u415 kernel: got a different opcode
+Jun 14 11:17:05.324992 u415 kernel: got a different opcode
+Jun 14 11:17:05.668903 u415 kernel: got a different opcode
+Jun 14 11:17:05.669034 u415 kernel: got a different opcode
+Jun 14 11:17:53.944896 u415 kernel: got a different opcode
+Jun 14 11:18:46.380014 u415 kernel: Hello from Rust
+Jun 14 11:18:46.380226 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:18:46.380462 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:18:46.380747 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:18:46.380984 u415 kernel: Oops: 0010 [#1] SMP NOPTI
+Jun 14 11:18:46.381042 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:18:46.381220 u415 kernel: CPU: 15 PID: 2591 Comm: mkdir Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:18:46.381278 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:18:46.381336 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:18:46.381410 u415 kernel: RSP: 0018:ffffa9e4c7487c48 EFLAGS: 00010246
+Jun 14 11:18:46.381450 u415 kernel: RAX: ffffffffc0654d40 RBX: ffffa9e4c7487e80 RCX: ffffa9e4c7487cd0
+Jun 14 11:18:46.381500 u415 kernel: RDX: ffffa9e4c7487d08 RSI: 0000000000000003 RDI: ffffffffc0661380
+Jun 14 11:18:46.381553 u415 kernel: RBP: ffffa9e4c7487da0 R08: ffffa9e4c7487e30 R09: ffff905c38f6d140
+Jun 14 11:18:46.381594 u415 kernel: R10: ffffa9e4c7487db8 R11: 006c6c7366367678 R12: ffff905c38f6d140
+Jun 14 11:18:46.381647 u415 kernel: R13: ffffa9e4c7487c68 R14: ffff906330b74800 R15: ffff906330b749c0
+Jun 14 11:18:46.381692 u415 kernel: FS:  00007ff50acf8040(0000) GS:ffff90633f3c0000(0000) knlGS:0000000000000000
+Jun 14 11:18:46.381746 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:18:46.381812 u415 kernel: CR2: ffffffffc0654d40 CR3: 0000000a1d8c6006 CR4: 0000000000760ee0
+Jun 14 11:18:46.381865 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:18:46.381914 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:18:46.381977 u415 kernel: PKRU: 55555554
+Jun 14 11:18:46.382017 u415 kernel: Call Trace:
+Jun 14 11:18:46.382075 u415 kernel:  ? bento_do_getattr+0x11b/0x340 [bentofs]
+Jun 14 11:18:46.382140 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:18:46.382210 u415 kernel:  bento_getattr+0x91/0xb0 [bentofs]
+Jun 14 11:18:46.382254 u415 kernel:  ? bento_getattr+0x91/0xb0 [bentofs]
+Jun 14 11:18:46.382303 u415 kernel:  vfs_getattr_nosec+0x73/0x90
+Jun 14 11:18:46.382339 u415 kernel:  vfs_getattr+0x36/0x40
+Jun 14 11:18:46.382400 u415 kernel:  vfs_statx+0x8d/0xe0
+Jun 14 11:18:46.382445 u415 kernel:  ? _cond_resched+0x19/0x40
+Jun 14 11:18:46.382500 u415 kernel:  SYSC_newstat+0x3d/0x70
+Jun 14 11:18:46.382551 u415 kernel:  SyS_newstat+0xe/0x10
+Jun 14 11:18:46.382595 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:18:46.382662 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:18:46.382699 u415 kernel: RIP: 0033:0x7ff50a5d1845
+Jun 14 11:18:46.382754 u415 kernel: RSP: 002b:00007fff4f19d5a8 EFLAGS: 00000246 ORIG_RAX: 0000000000000004
+Jun 14 11:18:46.382804 u415 kernel: RAX: ffffffffffffffda RBX: 00007fff4f19f8c3 RCX: 00007ff50a5d1845
+Jun 14 11:18:46.382850 u415 kernel: RDX: 00007fff4f19d5d0 RSI: 00007fff4f19d5d0 RDI: 00007fff4f19f8c8
+Jun 14 11:18:46.382896 u415 kernel: RBP: 0000000000000011 R08: 00000000000001ff R09: 000055f2acbc9f10
+Jun 14 11:18:46.382949 u415 kernel: R10: 000055f2ad353010 R11: 0000000000000246 R12: 00000000000001ff
+Jun 14 11:18:46.382988 u415 kernel: R13: 00007fff4f19d720 R14: 000055f2acbc9f30 R15: 00007fff4f19d770
+Jun 14 11:18:46.383026 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:18:46.383066 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c7487c48
+Jun 14 11:18:46.383181 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:18:46.383423 u415 kernel: ---[ end trace c9aa6031b174b174 ]---
+Jun 14 11:18:46.442604 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:18:46.442856 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:18:46.443096 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:18:46.443277 u415 kernel: Oops: 0010 [#2] SMP NOPTI
+Jun 14 11:18:46.444830 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:18:46.444940 u415 kernel: CPU: 5 PID: 2596 Comm: mount Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:18:46.445007 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:18:46.445050 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:18:46.445095 u415 kernel: RSP: 0018:ffffa9e4c7417c48 EFLAGS: 00010246
+Jun 14 11:18:46.445151 u415 kernel: RAX: ffffffffc0654d40 RBX: ffffa9e4c7417e80 RCX: ffffa9e4c7417cd0
+Jun 14 11:18:46.445196 u415 kernel: RDX: ffffa9e4c7417d08 RSI: 0000000000000003 RDI: ffffffffc0661380
+Jun 14 11:18:46.445243 u415 kernel: RBP: ffffa9e4c7417da0 R08: ffffa9e4c7417e30 R09: ffff905c38f6d140
+Jun 14 11:18:46.445281 u415 kernel: R10: ffffa9e4c7417db8 R11: 006c6c7366367678 R12: ffff905c38f6d140
+Jun 14 11:18:46.445332 u415 kernel: R13: ffffa9e4c7417c68 R14: ffff906330b74800 R15: ffff906330b749c0
+Jun 14 11:18:46.445417 u415 kernel: FS:  00007f7066294080(0000) GS:ffff90633f140000(0000) knlGS:0000000000000000
+Jun 14 11:18:46.445473 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:18:46.445512 u415 kernel: CR2: ffffffffc0654d40 CR3: 0000000bfb26a004 CR4: 0000000000760ee0
+Jun 14 11:18:46.445567 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:18:46.445605 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:18:46.445652 u415 kernel: PKRU: 55555554
+Jun 14 11:18:46.445691 u415 kernel: Call Trace:
+Jun 14 11:18:46.445729 u415 kernel:  ? bento_do_getattr+0x11b/0x340 [bentofs]
+Jun 14 11:18:46.445785 u415 kernel:  ? mem_cgroup_commit_charge+0x82/0x530
+Jun 14 11:18:46.445861 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:18:46.445899 u415 kernel:  bento_getattr+0x91/0xb0 [bentofs]
+Jun 14 11:18:46.445946 u415 kernel:  ? bento_getattr+0x91/0xb0 [bentofs]
+Jun 14 11:18:46.445985 u415 kernel:  vfs_getattr_nosec+0x73/0x90
+Jun 14 11:18:46.446031 u415 kernel:  vfs_getattr+0x36/0x40
+Jun 14 11:18:46.446067 u415 kernel:  vfs_statx+0x8d/0xe0
+Jun 14 11:18:46.446118 u415 kernel:  SYSC_newlstat+0x3d/0x70
+Jun 14 11:18:46.446169 u415 kernel:  SyS_newlstat+0xe/0x10
+Jun 14 11:18:46.446215 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:18:46.446253 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:18:46.446301 u415 kernel: RIP: 0033:0x7f7065b438e5
+Jun 14 11:18:46.446351 u415 kernel: RSP: 002b:00007ffe3d742f38 EFLAGS: 00000246 ORIG_RAX: 0000000000000006
+Jun 14 11:18:46.446394 u415 kernel: RAX: ffffffffffffffda RBX: 000056297b931a20 RCX: 00007f7065b438e5
+Jun 14 11:18:46.446444 u415 kernel: RDX: 00007ffe3d742f70 RSI: 00007ffe3d742f70 RDI: 000056297b930a20
+Jun 14 11:18:46.446492 u415 kernel: RBP: 00007ffe3d743040 R08: 0000000000000077 R09: 0000000000000000
+Jun 14 11:18:46.446550 u415 kernel: R10: 000056297b92d010 R11: 0000000000000246 R12: 000056297b930a20
+Jun 14 11:18:46.446593 u415 kernel: R13: 000056297b92ed85 R14: 000056297b92ed8c R15: 000056297b930a2c
+Jun 14 11:18:46.446651 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:18:46.446687 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c7417c48
+Jun 14 11:18:46.447790 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:18:46.447995 u415 kernel: ---[ end trace c9aa6031b174b175 ]---
+Jun 14 11:18:46.503202 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:18:46.503392 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:18:46.503633 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:18:46.503845 u415 kernel: Oops: 0010 [#3] SMP NOPTI
+Jun 14 11:18:46.503913 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:18:46.503978 u415 kernel: CPU: 15 PID: 2601 Comm: mkdir Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:18:46.504040 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:18:46.504076 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:18:46.504110 u415 kernel: RSP: 0018:ffffa9e4c796fc98 EFLAGS: 00010246
+Jun 14 11:18:46.504165 u415 kernel: RAX: ffffffffc0654d40 RBX: ffff906334bf9200 RCX: ffffa9e4c796fd40
+Jun 14 11:18:46.504226 u415 kernel: RDX: ffffa9e4c796fd78 RSI: 0000000000000001 RDI: ffffffffc0661380
+Jun 14 11:18:46.504278 u415 kernel: RBP: ffffa9e4c796fe10 R08: ffff90633f3e6080 R09: ffff9063340846c0
+Jun 14 11:18:46.504331 u415 kernel: R10: ffff906330b749c0 R11: 0000000000000007 R12: ffff905c38f4a3c0
+Jun 14 11:18:46.504374 u415 kernel: R13: ffff906330b74800 R14: ffffa9e4c796fcc0 R15: ffff90632c82b500
+Jun 14 11:18:46.504446 u415 kernel: FS:  00007f08cafd8040(0000) GS:ffff90633f3c0000(0000) knlGS:0000000000000000
+Jun 14 11:18:46.504489 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:18:46.504524 u415 kernel: CR2: ffffffffc0654d40 CR3: 0000000bfb296003 CR4: 0000000000760ee0
+Jun 14 11:18:46.504579 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:18:46.504612 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:18:46.504649 u415 kernel: PKRU: 55555554
+Jun 14 11:18:46.504691 u415 kernel: Call Trace:
+Jun 14 11:18:46.504731 u415 kernel:  ? bento_dentry_revalidate+0x1a6/0x2e0 [bentofs]
+Jun 14 11:18:46.504793 u415 kernel:  ? filename_parentat+0x10b/0x190
+Jun 14 11:18:46.504828 u415 kernel:  ? __d_lookup+0x109/0x140
+Jun 14 11:18:46.504939 u415 kernel:  lookup_dcache+0x44/0x70
+Jun 14 11:18:46.504980 u415 kernel:  ? lookup_dcache+0x44/0x70
+Jun 14 11:18:46.505021 u415 kernel:  __lookup_hash+0x22/0xa0
+Jun 14 11:18:46.505054 u415 kernel:  filename_create+0x91/0x160
+Jun 14 11:18:46.505103 u415 kernel:  SyS_mkdir+0x56/0x110
+Jun 14 11:18:46.505137 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:18:46.505174 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:18:46.505221 u415 kernel: RIP: 0033:0x7f08ca8b1c87
+Jun 14 11:18:46.505268 u415 kernel: RSP: 002b:00007ffc5964a998 EFLAGS: 00000246 ORIG_RAX: 0000000000000053
+Jun 14 11:18:46.505312 u415 kernel: RAX: ffffffffffffffda RBX: 00007ffc5964c8b3 RCX: 00007f08ca8b1c87
+Jun 14 11:18:46.505383 u415 kernel: RDX: 0000000000000001 RSI: 00000000000001ff RDI: 00007ffc5964c8c0
+Jun 14 11:18:46.505454 u415 kernel: RBP: 00007ffc5964c8b3 R08: 00000000000001ff R09: 0000558df8236f10
+Jun 14 11:18:46.505499 u415 kernel: R10: 0000558df88eb010 R11: 0000000000000246 R12: 00000000000001ff
+Jun 14 11:18:46.505533 u415 kernel: R13: 00007ffc5964ab10 R14: 0000558df8236f30 R15: 00007ffc5964ab60
+Jun 14 11:18:46.505570 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:18:46.505609 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c796fc98
+Jun 14 11:18:46.505721 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:18:46.505867 u415 kernel: ---[ end trace c9aa6031b174b176 ]---
+Jun 14 11:18:51.587481 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:18:51.587684 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:18:51.587927 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:18:51.588107 u415 kernel: Oops: 0010 [#4] SMP NOPTI
+Jun 14 11:18:51.588153 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:18:51.588203 u415 kernel: CPU: 17 PID: 2611 Comm: sh Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:18:51.588260 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:18:51.588297 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:18:51.588339 u415 kernel: RSP: 0018:ffffa9e4c792f9e8 EFLAGS: 00010246
+Jun 14 11:18:51.588375 u415 kernel: RAX: ffffffffc0654d40 RBX: ffff906334bf9200 RCX: ffffa9e4c792fa90
+Jun 14 11:18:51.588415 u415 kernel: RDX: ffffa9e4c792fac8 RSI: 0000000000000001 RDI: ffffffffc0661380
+Jun 14 11:18:51.588453 u415 kernel: RBP: ffffa9e4c792fb60 R08: ffff90633f466080 R09: ffff9063340846c0
+Jun 14 11:18:51.588514 u415 kernel: R10: ffff906330b749c0 R11: 2f73746c75736572 R12: ffff905c38f4a3c0
+Jun 14 11:18:51.588559 u415 kernel: R13: ffff906330b74800 R14: ffffa9e4c792fa10 R15: ffff905c51467ac0
+Jun 14 11:18:51.588588 u415 kernel: FS:  00007fe5f970f540(0000) GS:ffff90633f440000(0000) knlGS:0000000000000000
+Jun 14 11:18:51.588635 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:18:51.588671 u415 kernel: CR2: ffffffffc0654d40 CR3: 0000000aebe56002 CR4: 0000000000760ee0
+Jun 14 11:18:51.588709 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:18:51.588753 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:18:51.588788 u415 kernel: PKRU: 55555554
+Jun 14 11:18:51.588822 u415 kernel: Call Trace:
+Jun 14 11:18:51.588904 u415 kernel:  ? bento_dentry_revalidate+0x1a6/0x2e0 [bentofs]
+Jun 14 11:18:51.588944 u415 kernel:  ? _cond_resched+0x19/0x40
+Jun 14 11:18:51.588980 u415 kernel:  d_revalidate.part.18+0x10/0x20
+Jun 14 11:18:51.589031 u415 kernel:  ? d_revalidate.part.18+0x10/0x20
+Jun 14 11:18:51.589063 u415 kernel:  lookup_fast+0x307/0x320
+Jun 14 11:18:51.589097 u415 kernel:  walk_component+0x49/0x460
+Jun 14 11:18:51.589129 u415 kernel:  link_path_walk+0x1bc/0x5a0
+Jun 14 11:18:51.589177 u415 kernel:  ? path_init+0x180/0x310
+Jun 14 11:18:51.589221 u415 kernel:  path_openat+0xe8/0x18b0
+Jun 14 11:18:51.589257 u415 kernel:  ? mem_cgroup_commit_charge+0x82/0x530
+Jun 14 11:18:51.589311 u415 kernel:  do_filp_open+0x9b/0x110
+Jun 14 11:18:51.589363 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:18:51.589395 u415 kernel:  ? __alloc_fd+0xb2/0x170
+Jun 14 11:18:51.589471 u415 kernel:  do_sys_open+0x1ba/0x2c0
+Jun 14 11:18:51.589513 u415 kernel:  ? do_sys_open+0x1ba/0x2c0
+Jun 14 11:18:51.589551 u415 kernel:  ? SyS_rt_sigaction+0xce/0xf0
+Jun 14 11:18:51.589595 u415 kernel:  SyS_openat+0x14/0x20
+Jun 14 11:18:51.589628 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:18:51.589661 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:18:51.589703 u415 kernel: RIP: 0033:0x7fe5f920ed5e
+Jun 14 11:18:51.589742 u415 kernel: RSP: 002b:00007ffcbe7c7b10 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
+Jun 14 11:18:51.589779 u415 kernel: RAX: ffffffffffffffda RBX: 000055777f38f830 RCX: 00007fe5f920ed5e
+Jun 14 11:18:51.589829 u415 kernel: RDX: 0000000000000241 RSI: 000055777f38f760 RDI: 00000000ffffff9c
+Jun 14 11:18:51.589876 u415 kernel: RBP: 000055777e2b7b0c R08: 000055777e4c0c5d R09: 0000000000000000
+Jun 14 11:18:51.589916 u415 kernel: R10: 00000000000001b6 R11: 0000000000000246 R12: 000055777f38f760
+Jun 14 11:18:51.589946 u415 kernel: R13: 00000000fffffffd R14: 000055777e4c0c18 R15: 0000000000000000
+Jun 14 11:18:51.590079 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:18:51.590101 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c792f9e8
+Jun 14 11:18:51.590175 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:18:51.590343 u415 kernel: ---[ end trace c9aa6031b174b177 ]---
+Jun 14 11:18:51.880383 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:18:51.880584 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:18:51.880821 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:18:51.881071 u415 kernel: Oops: 0010 [#5] SMP NOPTI
+Jun 14 11:18:51.881130 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:18:51.881180 u415 kernel: CPU: 18 PID: 2618 Comm: (kill) Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:18:51.881211 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:18:51.881247 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:18:51.881291 u415 kernel: RSP: 0018:ffffa9e4c789fcc8 EFLAGS: 00010246
+Jun 14 11:18:51.881365 u415 kernel: RAX: ffffffffc0654d40 RBX: ffffa9e4c789fe90 RCX: ffffa9e4c789fce0
+Jun 14 11:18:51.881455 u415 kernel: RDX: ffffa9e4c789fd68 RSI: 0000000000000011 RDI: ffffffffc0661380
+Jun 14 11:18:51.881512 u415 kernel: RBP: ffffa9e4c789fdf0 R08: 00000000000261a0 R09: ffffffff9b892f7c
+Jun 14 11:18:51.881550 u415 kernel: R10: ffffa9e4c789fe08 R11: 006c6c7366367678 R12: ffff906330b74800
+Jun 14 11:18:51.881597 u415 kernel: R13: ffff906330b749c0 R14: 0000000000000002 R15: 0000000000000000
+Jun 14 11:18:51.881646 u415 kernel: FS:  00007f3719e63dc0(0000) GS:ffff90633f480000(0000) knlGS:0000000000000000
+Jun 14 11:18:51.881686 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:18:51.881718 u415 kernel: CR2: ffffffffc0654d40 CR3: 0000000ff533e006 CR4: 0000000000760ee0
+Jun 14 11:18:51.881764 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:18:51.881802 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:18:51.881834 u415 kernel: PKRU: 55555554
+Jun 14 11:18:51.881871 u415 kernel: Call Trace:
+Jun 14 11:18:51.881912 u415 kernel:  ? bento_statfs+0x102/0x190 [bentofs]
+Jun 14 11:18:51.881971 u415 kernel:  ? putname+0x4c/0x60
+Jun 14 11:18:51.882015 u415 kernel:  ? filename_lookup+0xf2/0x190
+Jun 14 11:18:51.882059 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:18:51.882098 u415 kernel:  ? strncpy_from_user+0x4c/0x180
+Jun 14 11:18:51.882149 u415 kernel:  statfs_by_dentry+0x6d/0x90
+Jun 14 11:18:51.882190 u415 kernel:  ? statfs_by_dentry+0x6d/0x90
+Jun 14 11:18:51.882230 u415 kernel:  vfs_statfs+0x1b/0xc0
+Jun 14 11:18:51.882286 u415 kernel:  user_statfs+0x5a/0xa0
+Jun 14 11:18:51.882333 u415 kernel:  SYSC_statfs+0x27/0x60
+Jun 14 11:18:51.882380 u415 kernel:  SyS_statfs+0xe/0x10
+Jun 14 11:18:51.882419 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:18:51.882456 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:18:51.882499 u415 kernel: RIP: 0033:0x7f3719971a47
+Jun 14 11:18:51.882541 u415 kernel: RSP: 002b:00007fffc15d5998 EFLAGS: 00000246 ORIG_RAX: 0000000000000089
+Jun 14 11:18:51.882587 u415 kernel: RAX: ffffffffffffffda RBX: 000055d9d8e7a8f0 RCX: 00007f3719971a47
+Jun 14 11:18:51.882622 u415 kernel: RDX: 000055d9d8d3d010 RSI: 00007fffc15d59a0 RDI: 000055d9d8e7a8f0
+Jun 14 11:18:51.882664 u415 kernel: RBP: 00007fffc15d59a0 R08: 0000000000001000 R09: 0000000000000000
+Jun 14 11:18:51.882705 u415 kernel: R10: 00007fffc15d58b4 R11: 0000000000000246 R12: 00007fffc15d5a40
+Jun 14 11:18:51.883735 u415 kernel: R13: 00007fffc15d5b30 R14: 000055d9d8e01990 R15: 000055d9d8e01960
+Jun 14 11:18:51.883832 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:18:51.883886 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c789fcc8
+Jun 14 11:18:51.884047 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:18:51.893792 u415 kernel: ---[ end trace c9aa6031b174b178 ]---
+Jun 14 11:18:52.455997 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:18:52.456205 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:18:52.456465 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:18:52.456661 u415 kernel: Oops: 0010 [#6] SMP NOPTI
+Jun 14 11:18:52.456712 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:18:52.456768 u415 kernel: CPU: 18 PID: 2631 Comm: (s-server) Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:18:52.456824 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:18:52.456902 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:18:52.456946 u415 kernel: RSP: 0018:ffffa9e4c71cfcc8 EFLAGS: 00010246
+Jun 14 11:18:52.456997 u415 kernel: RAX: ffffffffc0654d40 RBX: ffffa9e4c71cfe90 RCX: ffffa9e4c71cfce0
+Jun 14 11:18:52.457051 u415 kernel: RDX: ffffa9e4c71cfd68 RSI: 0000000000000011 RDI: ffffffffc0661380
+Jun 14 11:18:52.457092 u415 kernel: RBP: ffffa9e4c71cfdf0 R08: 00000000000261a0 R09: ffffffff9b892f7c
+Jun 14 11:18:52.457135 u415 kernel: R10: ffffa9e4c71cfe08 R11: 006c6c7366367678 R12: ffff906330b74800
+Jun 14 11:18:52.457190 u415 kernel: R13: ffff906330b749c0 R14: 0000000000000002 R15: 0000000000000000
+Jun 14 11:18:52.457232 u415 kernel: FS:  00007f3719e63dc0(0000) GS:ffff90633f480000(0000) knlGS:0000000000000000
+Jun 14 11:18:52.457269 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:18:52.457315 u415 kernel: CR2: ffffffffc0654d40 CR3: 0000000911b04003 CR4: 0000000000760ee0
+Jun 14 11:18:52.457357 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:18:52.457406 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:18:52.457467 u415 kernel: PKRU: 55555554
+Jun 14 11:18:52.457514 u415 kernel: Call Trace:
+Jun 14 11:18:52.457554 u415 kernel:  ? bento_statfs+0x102/0x190 [bentofs]
+Jun 14 11:18:52.457597 u415 kernel:  ? putname+0x4c/0x60
+Jun 14 11:18:52.457639 u415 kernel:  ? filename_lookup+0xf2/0x190
+Jun 14 11:18:52.457677 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:18:52.457723 u415 kernel:  ? strncpy_from_user+0x4c/0x180
+Jun 14 11:18:52.457762 u415 kernel:  statfs_by_dentry+0x6d/0x90
+Jun 14 11:18:52.457802 u415 kernel:  ? statfs_by_dentry+0x6d/0x90
+Jun 14 11:18:52.457838 u415 kernel:  vfs_statfs+0x1b/0xc0
+Jun 14 11:18:52.457879 u415 kernel:  user_statfs+0x5a/0xa0
+Jun 14 11:18:52.457916 u415 kernel:  SYSC_statfs+0x27/0x60
+Jun 14 11:18:52.457952 u415 kernel:  SyS_statfs+0xe/0x10
+Jun 14 11:18:52.457991 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:18:52.458043 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:18:52.458081 u415 kernel: RIP: 0033:0x7f3719971a47
+Jun 14 11:18:52.458132 u415 kernel: RSP: 002b:00007fffc15d5998 EFLAGS: 00000246 ORIG_RAX: 0000000000000089
+Jun 14 11:18:52.458178 u415 kernel: RAX: ffffffffffffffda RBX: 000055d9d8e69b30 RCX: 00007f3719971a47
+Jun 14 11:18:52.458230 u415 kernel: RDX: 000055d9d8d3d010 RSI: 00007fffc15d59a0 RDI: 000055d9d8e69b30
+Jun 14 11:18:52.458364 u415 kernel: RBP: 00007fffc15d59a0 R08: 0000000000001000 R09: 0000000000000000
+Jun 14 11:18:52.458415 u415 kernel: R10: 00007fffc15d58b4 R11: 0000000000000246 R12: 00007fffc15d5a40
+Jun 14 11:18:52.458458 u415 kernel: R13: 00007fffc15d5b30 R14: 000055d9d8e01960 R15: 000055d9d8e01930
+Jun 14 11:18:52.458505 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:18:52.458545 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c71cfcc8
+Jun 14 11:18:52.458645 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:18:52.458833 u415 kernel: ---[ end trace c9aa6031b174b179 ]---
+Jun 14 11:18:52.920413 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:18:52.920608 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:18:52.920903 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:18:52.921097 u415 kernel: Oops: 0010 [#7] SMP NOPTI
+Jun 14 11:18:52.921162 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:18:52.921215 u415 kernel: CPU: 18 PID: 2646 Comm: (s-server) Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:18:52.921256 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:18:52.921296 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:18:52.921326 u415 kernel: RSP: 0018:ffffa9e4c72dfcc8 EFLAGS: 00010246
+Jun 14 11:18:52.921382 u415 kernel: RAX: ffffffffc0654d40 RBX: ffffa9e4c72dfe90 RCX: ffffa9e4c72dfce0
+Jun 14 11:18:52.921427 u415 kernel: RDX: ffffa9e4c72dfd68 RSI: 0000000000000011 RDI: ffffffffc0661380
+Jun 14 11:18:52.921496 u415 kernel: RBP: ffffa9e4c72dfdf0 R08: 00000000000261a0 R09: ffffffff9b892f7c
+Jun 14 11:18:52.921551 u415 kernel: R10: ffffa9e4c72dfe08 R11: 006c6c7366367678 R12: ffff906330b74800
+Jun 14 11:18:52.921596 u415 kernel: R13: ffff906330b749c0 R14: 0000000000000002 R15: 0000000000000000
+Jun 14 11:18:52.921633 u415 kernel: FS:  00007f3719e63dc0(0000) GS:ffff90633f480000(0000) knlGS:0000000000000000
+Jun 14 11:18:52.921664 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:18:52.921703 u415 kernel: CR2: ffffffffc0654d40 CR3: 0000000bfb386004 CR4: 0000000000760ee0
+Jun 14 11:18:52.921743 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:18:52.921781 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:18:52.921820 u415 kernel: PKRU: 55555554
+Jun 14 11:18:52.921866 u415 kernel: Call Trace:
+Jun 14 11:18:52.921903 u415 kernel:  ? bento_statfs+0x102/0x190 [bentofs]
+Jun 14 11:18:52.921952 u415 kernel:  ? putname+0x4c/0x60
+Jun 14 11:18:52.921994 u415 kernel:  ? filename_lookup+0xf2/0x190
+Jun 14 11:18:52.922027 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:18:52.922073 u415 kernel:  ? strncpy_from_user+0x4c/0x180
+Jun 14 11:18:52.922110 u415 kernel:  statfs_by_dentry+0x6d/0x90
+Jun 14 11:18:52.922148 u415 kernel:  ? statfs_by_dentry+0x6d/0x90
+Jun 14 11:18:52.922193 u415 kernel:  vfs_statfs+0x1b/0xc0
+Jun 14 11:18:52.922230 u415 kernel:  user_statfs+0x5a/0xa0
+Jun 14 11:18:52.922267 u415 kernel:  SYSC_statfs+0x27/0x60
+Jun 14 11:18:52.922309 u415 kernel:  SyS_statfs+0xe/0x10
+Jun 14 11:18:52.922346 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:18:52.922387 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:18:52.922425 u415 kernel: RIP: 0033:0x7f3719971a47
+Jun 14 11:18:52.922459 u415 kernel: RSP: 002b:00007fffc15d5998 EFLAGS: 00000246 ORIG_RAX: 0000000000000089
+Jun 14 11:18:52.922495 u415 kernel: RAX: ffffffffffffffda RBX: 000055d9d8e6ac90 RCX: 00007f3719971a47
+Jun 14 11:18:52.922544 u415 kernel: RDX: 000055d9d8d3d010 RSI: 00007fffc15d59a0 RDI: 000055d9d8e6ac90
+Jun 14 11:18:52.922586 u415 kernel: RBP: 00007fffc15d59a0 R08: 0000000000001000 R09: 0000000000000000
+Jun 14 11:18:52.922635 u415 kernel: R10: 00007fffc15d58b4 R11: 0000000000000246 R12: 00007fffc15d5a40
+Jun 14 11:18:52.922672 u415 kernel: R13: 00007fffc15d5b30 R14: 000055d9d8e01960 R15: 000055d9d8e01930
+Jun 14 11:18:52.922711 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:18:52.922748 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c72dfcc8
+Jun 14 11:18:52.922841 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:18:52.923087 u415 kernel: ---[ end trace c9aa6031b174b17a ]---
+Jun 14 11:18:53.433706 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:18:53.433881 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:18:53.434117 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:18:53.434303 u415 kernel: Oops: 0010 [#8] SMP NOPTI
+Jun 14 11:18:53.434371 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:18:53.434418 u415 kernel: CPU: 18 PID: 2660 Comm: (s-server) Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:18:53.434458 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:18:53.434494 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:18:53.434525 u415 kernel: RSP: 0018:ffffa9e4c73c7cc8 EFLAGS: 00010246
+Jun 14 11:18:53.434569 u415 kernel: RAX: ffffffffc0654d40 RBX: ffffa9e4c73c7e90 RCX: ffffa9e4c73c7ce0
+Jun 14 11:18:53.434618 u415 kernel: RDX: ffffa9e4c73c7d68 RSI: 0000000000000011 RDI: ffffffffc0661380
+Jun 14 11:18:53.434663 u415 kernel: RBP: ffffa9e4c73c7df0 R08: 00000000000261a0 R09: ffffffff9b892f7c
+Jun 14 11:18:53.434712 u415 kernel: R10: ffffa9e4c73c7e08 R11: 006c6c7366367678 R12: ffff906330b74800
+Jun 14 11:18:53.434759 u415 kernel: R13: ffff906330b749c0 R14: 0000000000000002 R15: 0000000000000000
+Jun 14 11:18:53.434802 u415 kernel: FS:  00007f3719e63dc0(0000) GS:ffff90633f480000(0000) knlGS:0000000000000000
+Jun 14 11:18:53.434836 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:18:53.434871 u415 kernel: CR2: ffffffffc0654d40 CR3: 0000000ff5970005 CR4: 0000000000760ee0
+Jun 14 11:18:53.434905 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:18:53.434938 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:18:53.434972 u415 kernel: PKRU: 55555554
+Jun 14 11:18:53.435012 u415 kernel: Call Trace:
+Jun 14 11:18:53.435050 u415 kernel:  ? bento_statfs+0x102/0x190 [bentofs]
+Jun 14 11:18:53.435086 u415 kernel:  ? putname+0x4c/0x60
+Jun 14 11:18:53.435119 u415 kernel:  ? filename_lookup+0xf2/0x190
+Jun 14 11:18:53.435153 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:18:53.435187 u415 kernel:  ? strncpy_from_user+0x4c/0x180
+Jun 14 11:18:53.435221 u415 kernel:  statfs_by_dentry+0x6d/0x90
+Jun 14 11:18:53.435255 u415 kernel:  ? statfs_by_dentry+0x6d/0x90
+Jun 14 11:18:53.435299 u415 kernel:  vfs_statfs+0x1b/0xc0
+Jun 14 11:18:53.435332 u415 kernel:  user_statfs+0x5a/0xa0
+Jun 14 11:18:53.435367 u415 kernel:  SYSC_statfs+0x27/0x60
+Jun 14 11:18:53.435399 u415 kernel:  SyS_statfs+0xe/0x10
+Jun 14 11:18:53.435429 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:18:53.435467 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:18:53.435508 u415 kernel: RIP: 0033:0x7f3719971a47
+Jun 14 11:18:53.435543 u415 kernel: RSP: 002b:00007fffc15d5998 EFLAGS: 00000246 ORIG_RAX: 0000000000000089
+Jun 14 11:18:53.435577 u415 kernel: RAX: ffffffffffffffda RBX: 000055d9d8e6b940 RCX: 00007f3719971a47
+Jun 14 11:18:53.435622 u415 kernel: RDX: 000055d9d8d3d010 RSI: 00007fffc15d59a0 RDI: 000055d9d8e6b940
+Jun 14 11:18:53.435656 u415 kernel: RBP: 00007fffc15d59a0 R08: 0000000000001000 R09: 0000000000000000
+Jun 14 11:18:53.435684 u415 kernel: R10: 00007fffc15d58b4 R11: 0000000000000246 R12: 00007fffc15d5a40
+Jun 14 11:18:53.435723 u415 kernel: R13: 00007fffc15d5b30 R14: 000055d9d8e01960 R15: 000055d9d8e01930
+Jun 14 11:18:53.435754 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:18:53.435785 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c73c7cc8
+Jun 14 11:18:53.435876 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:18:53.436157 u415 kernel: ---[ end trace c9aa6031b174b17b ]---
+Jun 14 11:18:53.930801 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:18:53.930974 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:18:53.931239 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:18:53.931416 u415 kernel: Oops: 0010 [#9] SMP NOPTI
+Jun 14 11:18:53.931482 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:18:53.931558 u415 kernel: CPU: 19 PID: 2674 Comm: (s-server) Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:18:53.931602 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:18:53.931653 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:18:53.931691 u415 kernel: RSP: 0018:ffffa9e4c7477cc8 EFLAGS: 00010246
+Jun 14 11:18:53.931728 u415 kernel: RAX: ffffffffc0654d40 RBX: ffffa9e4c7477e90 RCX: ffffa9e4c7477ce0
+Jun 14 11:18:53.931763 u415 kernel: RDX: ffffa9e4c7477d68 RSI: 0000000000000011 RDI: ffffffffc0661380
+Jun 14 11:18:53.931803 u415 kernel: RBP: ffffa9e4c7477df0 R08: 00000000000261a0 R09: ffffffff9b892f7c
+Jun 14 11:18:53.931839 u415 kernel: R10: ffffa9e4c7477e08 R11: 006c6c7366367678 R12: ffff906330b74800
+Jun 14 11:18:53.931884 u415 kernel: R13: ffff906330b749c0 R14: 0000000000000002 R15: 0000000000000000
+Jun 14 11:18:53.931931 u415 kernel: FS:  00007f3719e63dc0(0000) GS:ffff90633f4c0000(0000) knlGS:0000000000000000
+Jun 14 11:18:53.931969 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:18:53.932007 u415 kernel: CR2: ffffffffc0654d40 CR3: 0000000911758001 CR4: 0000000000760ee0
+Jun 14 11:18:53.932046 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:18:53.932076 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:18:53.932111 u415 kernel: PKRU: 55555554
+Jun 14 11:18:53.932161 u415 kernel: Call Trace:
+Jun 14 11:18:53.932198 u415 kernel:  ? bento_statfs+0x102/0x190 [bentofs]
+Jun 14 11:18:53.932236 u415 kernel:  ? putname+0x4c/0x60
+Jun 14 11:18:53.932272 u415 kernel:  ? filename_lookup+0xf2/0x190
+Jun 14 11:18:53.932309 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:18:53.932341 u415 kernel:  ? strncpy_from_user+0x4c/0x180
+Jun 14 11:18:53.932385 u415 kernel:  statfs_by_dentry+0x6d/0x90
+Jun 14 11:18:53.932420 u415 kernel:  ? statfs_by_dentry+0x6d/0x90
+Jun 14 11:18:53.932462 u415 kernel:  vfs_statfs+0x1b/0xc0
+Jun 14 11:18:53.932503 u415 kernel:  user_statfs+0x5a/0xa0
+Jun 14 11:18:53.932549 u415 kernel:  SYSC_statfs+0x27/0x60
+Jun 14 11:18:53.932586 u415 kernel:  SyS_statfs+0xe/0x10
+Jun 14 11:18:53.932617 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:18:53.932654 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:18:53.932689 u415 kernel: RIP: 0033:0x7f3719971a47
+Jun 14 11:18:53.932721 u415 kernel: RSP: 002b:00007fffc15d5998 EFLAGS: 00000246 ORIG_RAX: 0000000000000089
+Jun 14 11:18:53.932757 u415 kernel: RAX: ffffffffffffffda RBX: 000055d9d8e6a010 RCX: 00007f3719971a47
+Jun 14 11:18:53.932807 u415 kernel: RDX: 000055d9d8d3d010 RSI: 00007fffc15d59a0 RDI: 000055d9d8e6a010
+Jun 14 11:18:53.932891 u415 kernel: RBP: 00007fffc15d59a0 R08: 0000000000001000 R09: 0000000000000000
+Jun 14 11:18:53.932930 u415 kernel: R10: 00007fffc15d58b4 R11: 0000000000000246 R12: 00007fffc15d5a40
+Jun 14 11:18:53.932973 u415 kernel: R13: 00007fffc15d5b30 R14: 000055d9d8e01960 R15: 000055d9d8e01930
+Jun 14 11:18:53.933013 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:18:53.933044 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c7477cc8
+Jun 14 11:18:53.933136 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:18:53.933370 u415 kernel: ---[ end trace c9aa6031b174b17c ]---
+Jun 14 11:18:54.427820 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:18:54.428014 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:18:54.428269 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:18:54.428515 u415 kernel: Oops: 0010 [#10] SMP NOPTI
+Jun 14 11:18:54.428579 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:18:54.428632 u415 kernel: CPU: 18 PID: 2688 Comm: (s-server) Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:18:54.428671 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:18:54.428706 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:18:54.428743 u415 kernel: RSP: 0018:ffffa9e4c7747cc8 EFLAGS: 00010246
+Jun 14 11:18:54.428786 u415 kernel: RAX: ffffffffc0654d40 RBX: ffffa9e4c7747e90 RCX: ffffa9e4c7747ce0
+Jun 14 11:18:54.428830 u415 kernel: RDX: ffffa9e4c7747d68 RSI: 0000000000000011 RDI: ffffffffc0661380
+Jun 14 11:18:54.428902 u415 kernel: RBP: ffffa9e4c7747df0 R08: 00000000000261a0 R09: ffffffff9b892f7c
+Jun 14 11:18:54.428934 u415 kernel: R10: ffffa9e4c7747e08 R11: 006c6c7366367678 R12: ffff906330b74800
+Jun 14 11:18:54.428990 u415 kernel: R13: ffff906330b749c0 R14: 0000000000000002 R15: 0000000000000000
+Jun 14 11:18:54.429029 u415 kernel: FS:  00007f3719e63dc0(0000) GS:ffff90633f480000(0000) knlGS:0000000000000000
+Jun 14 11:18:54.429061 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:18:54.429093 u415 kernel: CR2: ffffffffc0654d40 CR3: 0000000910e76001 CR4: 0000000000760ee0
+Jun 14 11:18:54.429153 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:18:54.429196 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:18:54.429230 u415 kernel: PKRU: 55555554
+Jun 14 11:18:54.429272 u415 kernel: Call Trace:
+Jun 14 11:18:54.429307 u415 kernel:  ? bento_statfs+0x102/0x190 [bentofs]
+Jun 14 11:18:54.429344 u415 kernel:  ? putname+0x4c/0x60
+Jun 14 11:18:54.429391 u415 kernel:  ? filename_lookup+0xf2/0x190
+Jun 14 11:18:54.429429 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:18:54.429494 u415 kernel:  ? strncpy_from_user+0x4c/0x180
+Jun 14 11:18:54.429530 u415 kernel:  statfs_by_dentry+0x6d/0x90
+Jun 14 11:18:54.429562 u415 kernel:  ? statfs_by_dentry+0x6d/0x90
+Jun 14 11:18:54.429594 u415 kernel:  vfs_statfs+0x1b/0xc0
+Jun 14 11:18:54.429635 u415 kernel:  user_statfs+0x5a/0xa0
+Jun 14 11:18:54.429673 u415 kernel:  SYSC_statfs+0x27/0x60
+Jun 14 11:18:54.429716 u415 kernel:  SyS_statfs+0xe/0x10
+Jun 14 11:18:54.429767 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:18:54.429817 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:18:54.429855 u415 kernel: RIP: 0033:0x7f3719971a47
+Jun 14 11:18:54.429891 u415 kernel: RSP: 002b:00007fffc15d5998 EFLAGS: 00000246 ORIG_RAX: 0000000000000089
+Jun 14 11:18:54.429929 u415 kernel: RAX: ffffffffffffffda RBX: 000055d9d8e6a010 RCX: 00007f3719971a47
+Jun 14 11:18:54.429974 u415 kernel: RDX: 000055d9d8d3d010 RSI: 00007fffc15d59a0 RDI: 000055d9d8e6a010
+Jun 14 11:18:54.430021 u415 kernel: RBP: 00007fffc15d59a0 R08: 0000000000001000 R09: 0000000000000000
+Jun 14 11:18:54.430059 u415 kernel: R10: 00007fffc15d58b4 R11: 0000000000000246 R12: 00007fffc15d5a40
+Jun 14 11:18:54.430092 u415 kernel: R13: 00007fffc15d5b30 R14: 000055d9d8e01960 R15: 000055d9d8e01930
+Jun 14 11:18:54.430135 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:18:54.430174 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c7747cc8
+Jun 14 11:18:54.430270 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:18:54.430444 u415 kernel: ---[ end trace c9aa6031b174b17d ]---
+Jun 14 11:19:01.686090 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:19:01.686287 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:19:01.686535 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:19:01.686726 u415 kernel: Oops: 0010 [#11] SMP NOPTI
+Jun 14 11:19:01.686799 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:19:01.686849 u415 kernel: CPU: 19 PID: 2706 Comm: sh Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:19:01.686881 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:19:01.686916 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:19:01.686961 u415 kernel: RSP: 0018:ffffa9e4c71f79e8 EFLAGS: 00010246
+Jun 14 11:19:01.687014 u415 kernel: RAX: ffffffffc0654d40 RBX: ffff906334bf9200 RCX: ffffa9e4c71f7a90
+Jun 14 11:19:01.687054 u415 kernel: RDX: ffffa9e4c71f7ac8 RSI: 0000000000000001 RDI: ffffffffc0661380
+Jun 14 11:19:01.687098 u415 kernel: RBP: ffffa9e4c71f7b60 R08: ffff90633f4e6080 R09: ffff9063340846c0
+Jun 14 11:19:01.687140 u415 kernel: R10: ffff906330b749c0 R11: 2f73746c75736572 R12: ffff905c38f4a3c0
+Jun 14 11:19:01.687188 u415 kernel: R13: ffff906330b74800 R14: ffffa9e4c71f7a10 R15: ffff906330386e40
+Jun 14 11:19:01.687232 u415 kernel: FS:  00007fac3831b540(0000) GS:ffff90633f4c0000(0000) knlGS:0000000000000000
+Jun 14 11:19:01.687287 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:19:01.687325 u415 kernel: CR2: ffffffffc0654d40 CR3: 0000000aa5886004 CR4: 0000000000760ee0
+Jun 14 11:19:01.687365 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:19:01.687408 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:19:01.687443 u415 kernel: PKRU: 55555554
+Jun 14 11:19:01.687478 u415 kernel: Call Trace:
+Jun 14 11:19:01.687516 u415 kernel:  ? bento_dentry_revalidate+0x1a6/0x2e0 [bentofs]
+Jun 14 11:19:01.687561 u415 kernel:  ? unlock_page_memcg+0x12/0x20
+Jun 14 11:19:01.687608 u415 kernel:  ? page_add_file_rmap+0x5d/0x220
+Jun 14 11:19:01.687640 u415 kernel:  ? _cond_resched+0x19/0x40
+Jun 14 11:19:01.687688 u415 kernel:  d_revalidate.part.18+0x10/0x20
+Jun 14 11:19:01.687730 u415 kernel:  ? d_revalidate.part.18+0x10/0x20
+Jun 14 11:19:01.687761 u415 kernel:  lookup_fast+0x307/0x320
+Jun 14 11:19:01.687803 u415 kernel:  walk_component+0x49/0x460
+Jun 14 11:19:01.687840 u415 kernel:  link_path_walk+0x1bc/0x5a0
+Jun 14 11:19:01.687874 u415 kernel:  ? path_init+0x180/0x310
+Jun 14 11:19:01.687917 u415 kernel:  path_openat+0xe8/0x18b0
+Jun 14 11:19:01.687956 u415 kernel:  ? mem_cgroup_commit_charge+0x82/0x530
+Jun 14 11:19:01.688002 u415 kernel:  do_filp_open+0x9b/0x110
+Jun 14 11:19:01.688045 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:19:01.688078 u415 kernel:  ? __alloc_fd+0xb2/0x170
+Jun 14 11:19:01.688113 u415 kernel:  do_sys_open+0x1ba/0x2c0
+Jun 14 11:19:01.688148 u415 kernel:  ? do_sys_open+0x1ba/0x2c0
+Jun 14 11:19:01.688185 u415 kernel:  ? SyS_rt_sigaction+0xce/0xf0
+Jun 14 11:19:01.688230 u415 kernel:  SyS_openat+0x14/0x20
+Jun 14 11:19:01.688263 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:19:01.688298 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:19:01.688342 u415 kernel: RIP: 0033:0x7fac37e1ad5e
+Jun 14 11:19:01.688401 u415 kernel: RSP: 002b:00007ffc6bccd120 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
+Jun 14 11:19:01.688435 u415 kernel: RAX: ffffffffffffffda RBX: 000055734538c830 RCX: 00007fac37e1ad5e
+Jun 14 11:19:01.688477 u415 kernel: RDX: 0000000000000241 RSI: 000055734538c760 RDI: 00000000ffffff9c
+Jun 14 11:19:01.688519 u415 kernel: RBP: 0000557344586b0c R08: 000055734478fc5d R09: 0000000000000000
+Jun 14 11:19:01.688560 u415 kernel: R10: 00000000000001b6 R11: 0000000000000246 R12: 000055734538c760
+Jun 14 11:19:01.688601 u415 kernel: R13: 00000000fffffffd R14: 000055734478fc18 R15: 0000000000000000
+Jun 14 11:19:01.688641 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:19:01.688686 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c71f79e8
+Jun 14 11:19:01.688799 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:19:01.689018 u415 kernel: ---[ end trace c9aa6031b174b17e ]---
+Jun 14 11:19:11.777823 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:19:11.778044 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:19:11.778285 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:19:11.778471 u415 kernel: Oops: 0010 [#12] SMP NOPTI
+Jun 14 11:19:11.778543 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:19:11.778598 u415 kernel: CPU: 17 PID: 2717 Comm: sh Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:19:11.778636 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:19:11.778687 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:19:11.778724 u415 kernel: RSP: 0018:ffffa9e4c78239e8 EFLAGS: 00010246
+Jun 14 11:19:11.778771 u415 kernel: RAX: ffffffffc0654d40 RBX: ffff906334bf9200 RCX: ffffa9e4c7823a90
+Jun 14 11:19:11.778812 u415 kernel: RDX: ffffa9e4c7823ac8 RSI: 0000000000000001 RDI: ffffffffc0661380
+Jun 14 11:19:11.778851 u415 kernel: RBP: ffffa9e4c7823b60 R08: ffff90633f466080 R09: ffff9063340846c0
+Jun 14 11:19:11.778892 u415 kernel: R10: ffff906330b749c0 R11: 2f73746c75736572 R12: ffff905c38f4a3c0
+Jun 14 11:19:11.778932 u415 kernel: R13: ffff906330b74800 R14: ffffa9e4c7823a10 R15: ffff905c51467000
+Jun 14 11:19:11.778973 u415 kernel: FS:  00007fdcce547540(0000) GS:ffff90633f440000(0000) knlGS:0000000000000000
+Jun 14 11:19:11.779018 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:19:11.779061 u415 kernel: CR2: ffffffffc0654d40 CR3: 0000000911ec0002 CR4: 0000000000760ee0
+Jun 14 11:19:11.779101 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:19:11.779135 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:19:11.779171 u415 kernel: PKRU: 55555554
+Jun 14 11:19:11.779210 u415 kernel: Call Trace:
+Jun 14 11:19:11.779245 u415 kernel:  ? bento_dentry_revalidate+0x1a6/0x2e0 [bentofs]
+Jun 14 11:19:11.779286 u415 kernel:  ? _cond_resched+0x19/0x40
+Jun 14 11:19:11.779327 u415 kernel:  d_revalidate.part.18+0x10/0x20
+Jun 14 11:19:11.779366 u415 kernel:  ? d_revalidate.part.18+0x10/0x20
+Jun 14 11:19:11.779402 u415 kernel:  lookup_fast+0x307/0x320
+Jun 14 11:19:11.779442 u415 kernel:  walk_component+0x49/0x460
+Jun 14 11:19:11.779477 u415 kernel:  link_path_walk+0x1bc/0x5a0
+Jun 14 11:19:11.779518 u415 kernel:  ? path_init+0x180/0x310
+Jun 14 11:19:11.779554 u415 kernel:  path_openat+0xe8/0x18b0
+Jun 14 11:19:11.779591 u415 kernel:  ? alloc_set_pte+0x2b4/0x5a0
+Jun 14 11:19:11.779635 u415 kernel:  ? filemap_map_pages+0x36d/0x390
+Jun 14 11:19:11.779672 u415 kernel:  do_filp_open+0x9b/0x110
+Jun 14 11:19:11.779709 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:19:11.779749 u415 kernel:  ? __alloc_fd+0xb2/0x170
+Jun 14 11:19:11.779782 u415 kernel:  do_sys_open+0x1ba/0x2c0
+Jun 14 11:19:11.779815 u415 kernel:  ? do_sys_open+0x1ba/0x2c0
+Jun 14 11:19:11.779849 u415 kernel:  SyS_openat+0x14/0x20
+Jun 14 11:19:11.779880 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:19:11.779919 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:19:11.779960 u415 kernel: RIP: 0033:0x7fdcce046d5e
+Jun 14 11:19:11.780013 u415 kernel: RSP: 002b:00007ffd03ff32f0 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
+Jun 14 11:19:11.780050 u415 kernel: RAX: ffffffffffffffda RBX: 00005628d2922830 RCX: 00007fdcce046d5e
+Jun 14 11:19:11.780084 u415 kernel: RDX: 0000000000000241 RSI: 00005628d2922760 RDI: 00000000ffffff9c
+Jun 14 11:19:11.780124 u415 kernel: RBP: 00005628d2370b0c R08: 00005628d2579c5d R09: 0000000000000000
+Jun 14 11:19:11.780161 u415 kernel: R10: 00000000000001b6 R11: 0000000000000246 R12: 00005628d2922760
+Jun 14 11:19:11.780203 u415 kernel: R13: 00000000fffffffd R14: 00005628d2579c18 R15: 0000000000000000
+Jun 14 11:19:11.780250 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:19:11.780294 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c78239e8
+Jun 14 11:19:11.780383 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:19:11.780621 u415 kernel: ---[ end trace c9aa6031b174b17f ]---
+Jun 14 11:19:21.871223 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:19:21.871524 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:19:21.871834 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:19:21.872063 u415 kernel: Oops: 0010 [#13] SMP NOPTI
+Jun 14 11:19:21.872156 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:19:21.872236 u415 kernel: CPU: 17 PID: 2728 Comm: sh Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:19:21.872280 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:19:21.872322 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:19:21.872355 u415 kernel: RSP: 0018:ffffa9e4c787f9e8 EFLAGS: 00010246
+Jun 14 11:19:21.872404 u415 kernel: RAX: ffffffffc0654d40 RBX: ffff906334bf9200 RCX: ffffa9e4c787fa90
+Jun 14 11:19:21.872444 u415 kernel: RDX: ffffa9e4c787fac8 RSI: 0000000000000001 RDI: ffffffffc0661380
+Jun 14 11:19:21.872477 u415 kernel: RBP: ffffa9e4c787fb60 R08: ffff90633f466080 R09: ffff9063340846c0
+Jun 14 11:19:21.872517 u415 kernel: R10: ffff906330b749c0 R11: 2f73746c75736572 R12: ffff905c38f4a3c0
+Jun 14 11:19:21.872556 u415 kernel: R13: ffff906330b74800 R14: ffffa9e4c787fa10 R15: ffff905c51467800
+Jun 14 11:19:21.872593 u415 kernel: FS:  00007fe3cf61f540(0000) GS:ffff90633f440000(0000) knlGS:0000000000000000
+Jun 14 11:19:21.872639 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:19:21.872680 u415 kernel: CR2: ffffffffc0654d40 CR3: 000000095f7f2003 CR4: 0000000000760ee0
+Jun 14 11:19:21.872758 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:19:21.872798 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:19:21.872829 u415 kernel: PKRU: 55555554
+Jun 14 11:19:21.872909 u415 kernel: Call Trace:
+Jun 14 11:19:21.872945 u415 kernel:  ? bento_dentry_revalidate+0x1a6/0x2e0 [bentofs]
+Jun 14 11:19:21.872989 u415 kernel:  ? _cond_resched+0x19/0x40
+Jun 14 11:19:21.873032 u415 kernel:  d_revalidate.part.18+0x10/0x20
+Jun 14 11:19:21.873066 u415 kernel:  ? d_revalidate.part.18+0x10/0x20
+Jun 14 11:19:21.873100 u415 kernel:  lookup_fast+0x307/0x320
+Jun 14 11:19:21.873132 u415 kernel:  walk_component+0x49/0x460
+Jun 14 11:19:21.873163 u415 kernel:  link_path_walk+0x1bc/0x5a0
+Jun 14 11:19:21.873195 u415 kernel:  ? path_init+0x180/0x310
+Jun 14 11:19:21.873232 u415 kernel:  path_openat+0xe8/0x18b0
+Jun 14 11:19:21.873267 u415 kernel:  ? mem_cgroup_commit_charge+0x82/0x530
+Jun 14 11:19:21.873310 u415 kernel:  do_filp_open+0x9b/0x110
+Jun 14 11:19:21.873346 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:19:21.873379 u415 kernel:  ? __alloc_fd+0xb2/0x170
+Jun 14 11:19:21.873412 u415 kernel:  do_sys_open+0x1ba/0x2c0
+Jun 14 11:19:21.873444 u415 kernel:  ? do_sys_open+0x1ba/0x2c0
+Jun 14 11:19:21.873476 u415 kernel:  ? SyS_rt_sigaction+0xce/0xf0
+Jun 14 11:19:21.873512 u415 kernel:  SyS_openat+0x14/0x20
+Jun 14 11:19:21.873544 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:19:21.873584 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:19:21.873615 u415 kernel: RIP: 0033:0x7fe3cf11ed5e
+Jun 14 11:19:21.873674 u415 kernel: RSP: 002b:00007ffec58af950 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
+Jun 14 11:19:21.873711 u415 kernel: RAX: ffffffffffffffda RBX: 000055c5f7fd5830 RCX: 00007fe3cf11ed5e
+Jun 14 11:19:21.873767 u415 kernel: RDX: 0000000000000241 RSI: 000055c5f7fd5760 RDI: 00000000ffffff9c
+Jun 14 11:19:21.873807 u415 kernel: RBP: 000055c5f715ab0c R08: 000055c5f7363c5d R09: 0000000000000000
+Jun 14 11:19:21.873842 u415 kernel: R10: 00000000000001b6 R11: 0000000000000246 R12: 000055c5f7fd5760
+Jun 14 11:19:21.873887 u415 kernel: R13: 00000000fffffffd R14: 000055c5f7363c18 R15: 0000000000000000
+Jun 14 11:19:21.873925 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:19:21.873965 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c787f9e8
+Jun 14 11:19:21.874057 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:19:21.874201 u415 kernel: ---[ end trace c9aa6031b174b180 ]---
+Jun 14 11:19:31.968068 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:19:31.968412 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:19:31.968797 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:19:31.974466 u415 kernel: Oops: 0010 [#14] SMP NOPTI
+Jun 14 11:19:31.974566 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:19:31.974641 u415 kernel: CPU: 17 PID: 2739 Comm: sh Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:19:31.974691 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:19:31.974760 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:19:31.974805 u415 kernel: RSP: 0018:ffffa9e4c78db9e8 EFLAGS: 00010246
+Jun 14 11:19:31.974852 u415 kernel: RAX: ffffffffc0654d40 RBX: ffff906334bf9200 RCX: ffffa9e4c78dba90
+Jun 14 11:19:31.974901 u415 kernel: RDX: ffffa9e4c78dbac8 RSI: 0000000000000001 RDI: ffffffffc0661380
+Jun 14 11:19:31.974947 u415 kernel: RBP: ffffa9e4c78dbb60 R08: ffff90633f466080 R09: ffff9063340846c0
+Jun 14 11:19:31.975004 u415 kernel: R10: ffff906330b749c0 R11: 2f73746c75736572 R12: ffff905c38f4a3c0
+Jun 14 11:19:31.975065 u415 kernel: R13: ffff906330b74800 R14: ffffa9e4c78dba10 R15: ffff905c51467740
+Jun 14 11:19:31.975118 u415 kernel: FS:  00007f0a48043540(0000) GS:ffff90633f440000(0000) knlGS:0000000000000000
+Jun 14 11:19:31.975164 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:19:31.975238 u415 kernel: CR2: ffffffffc0654d40 CR3: 000000091176a004 CR4: 0000000000760ee0
+Jun 14 11:19:31.975287 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:19:31.975331 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:19:31.975375 u415 kernel: PKRU: 55555554
+Jun 14 11:19:31.975424 u415 kernel: Call Trace:
+Jun 14 11:19:31.975467 u415 kernel:  ? bento_dentry_revalidate+0x1a6/0x2e0 [bentofs]
+Jun 14 11:19:31.975517 u415 kernel:  ? _cond_resched+0x19/0x40
+Jun 14 11:19:31.975568 u415 kernel:  d_revalidate.part.18+0x10/0x20
+Jun 14 11:19:31.975615 u415 kernel:  ? d_revalidate.part.18+0x10/0x20
+Jun 14 11:19:31.975658 u415 kernel:  lookup_fast+0x307/0x320
+Jun 14 11:19:31.975707 u415 kernel:  walk_component+0x49/0x460
+Jun 14 11:19:31.975749 u415 kernel:  link_path_walk+0x1bc/0x5a0
+Jun 14 11:19:31.975793 u415 kernel:  ? path_init+0x180/0x310
+Jun 14 11:19:31.975836 u415 kernel:  path_openat+0xe8/0x18b0
+Jun 14 11:19:31.975883 u415 kernel:  ? alloc_set_pte+0x2b4/0x5a0
+Jun 14 11:19:31.975929 u415 kernel:  ? filemap_map_pages+0x36d/0x390
+Jun 14 11:19:31.975972 u415 kernel:  do_filp_open+0x9b/0x110
+Jun 14 11:19:31.976033 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:19:31.976083 u415 kernel:  ? __alloc_fd+0xb2/0x170
+Jun 14 11:19:31.976126 u415 kernel:  do_sys_open+0x1ba/0x2c0
+Jun 14 11:19:31.976166 u415 kernel:  ? do_sys_open+0x1ba/0x2c0
+Jun 14 11:19:31.976210 u415 kernel:  SyS_openat+0x14/0x20
+Jun 14 11:19:31.976257 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:19:31.976309 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:19:31.976350 u415 kernel: RIP: 0033:0x7f0a47b42d5e
+Jun 14 11:19:31.976395 u415 kernel: RSP: 002b:00007ffce56935e0 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
+Jun 14 11:19:31.976446 u415 kernel: RAX: ffffffffffffffda RBX: 000055924ee8d830 RCX: 00007f0a47b42d5e
+Jun 14 11:19:31.976530 u415 kernel: RDX: 0000000000000241 RSI: 000055924ee8d760 RDI: 00000000ffffff9c
+Jun 14 11:19:31.976590 u415 kernel: RBP: 000055924d4f0b0c R08: 000055924d6f9c5d R09: 0000000000000000
+Jun 14 11:19:31.976640 u415 kernel: R10: 00000000000001b6 R11: 0000000000000246 R12: 000055924ee8d760
+Jun 14 11:19:31.976687 u415 kernel: R13: 00000000fffffffd R14: 000055924d6f9c18 R15: 0000000000000000
+Jun 14 11:19:31.976732 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:19:31.976791 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c78db9e8
+Jun 14 11:19:31.976986 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:19:31.980308 u415 kernel: ---[ end trace c9aa6031b174b181 ]---
+Jun 14 11:19:42.064958 u415 kernel: BUG: unable to handle kernel paging request at ffffffffc0654d40
+Jun 14 11:19:42.065290 u415 kernel: IP: 0xffffffffc0654d40
+Jun 14 11:19:42.065760 u415 kernel: PGD aab60e067 P4D aab60e067 PUD aab610067 PMD feab92067 PTE 0
+Jun 14 11:19:42.066014 u415 kernel: Oops: 0010 [#15] SMP NOPTI
+Jun 14 11:19:42.066076 u415 kernel: Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass intel_rapl_perf joydev input_leds parport_pc parport serio_raw mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel nvme bochs_drm pcbc ttm psmouse virtio_blk drm_kms_helper aesni_intel syscopyarea sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm cryptd nvme_core e1000 i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+Jun 14 11:19:42.066145 u415 kernel: CPU: 7 PID: 2750 Comm: sh Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+Jun 14 11:19:42.066190 u415 kernel: Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+Jun 14 11:19:42.066253 u415 kernel: RIP: 0010:0xffffffffc0654d40
+Jun 14 11:19:42.066292 u415 kernel: RSP: 0018:ffffa9e4c79bf9e8 EFLAGS: 00010246
+Jun 14 11:19:42.066350 u415 kernel: RAX: ffffffffc0654d40 RBX: ffff906334bf9200 RCX: ffffa9e4c79bfa90
+Jun 14 11:19:42.066394 u415 kernel: RDX: ffffa9e4c79bfac8 RSI: 0000000000000001 RDI: ffffffffc0661380
+Jun 14 11:19:42.066436 u415 kernel: RBP: ffffa9e4c79bfb60 R08: ffff90633f1e6080 R09: ffff9063340846c0
+Jun 14 11:19:42.066478 u415 kernel: R10: ffff906330b749c0 R11: 2f73746c75736572 R12: ffff905c38f4a3c0
+Jun 14 11:19:42.066534 u415 kernel: R13: ffff906330b74800 R14: ffffa9e4c79bfa10 R15: ffff90632df747a0
+Jun 14 11:19:42.066577 u415 kernel: FS:  00007fa440112540(0000) GS:ffff90633f1c0000(0000) knlGS:0000000000000000
+Jun 14 11:19:42.066625 u415 kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Jun 14 11:19:42.066675 u415 kernel: CR2: ffffffffc0654d40 CR3: 0000000911b04002 CR4: 0000000000760ee0
+Jun 14 11:19:42.066726 u415 kernel: DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+Jun 14 11:19:42.066764 u415 kernel: DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+Jun 14 11:19:42.066802 u415 kernel: PKRU: 55555554
+Jun 14 11:19:42.066846 u415 kernel: Call Trace:
+Jun 14 11:19:42.066884 u415 kernel:  ? bento_dentry_revalidate+0x1a6/0x2e0 [bentofs]
+Jun 14 11:19:42.066927 u415 kernel:  ? _cond_resched+0x19/0x40
+Jun 14 11:19:42.066974 u415 kernel:  d_revalidate.part.18+0x10/0x20
+Jun 14 11:19:42.067028 u415 kernel:  ? d_revalidate.part.18+0x10/0x20
+Jun 14 11:19:42.067066 u415 kernel:  lookup_fast+0x307/0x320
+Jun 14 11:19:42.067105 u415 kernel:  walk_component+0x49/0x460
+Jun 14 11:19:42.067142 u415 kernel:  link_path_walk+0x1bc/0x5a0
+Jun 14 11:19:42.067181 u415 kernel:  ? path_init+0x180/0x310
+Jun 14 11:19:42.067220 u415 kernel:  path_openat+0xe8/0x18b0
+Jun 14 11:19:42.067268 u415 kernel:  ? alloc_set_pte+0x2b4/0x5a0
+Jun 14 11:19:42.067311 u415 kernel:  ? filemap_map_pages+0x36d/0x390
+Jun 14 11:19:42.067350 u415 kernel:  do_filp_open+0x9b/0x110
+Jun 14 11:19:42.067390 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 14 11:19:42.067436 u415 kernel:  ? __alloc_fd+0xb2/0x170
+Jun 14 11:19:42.067471 u415 kernel:  do_sys_open+0x1ba/0x2c0
+Jun 14 11:19:42.067509 u415 kernel:  ? do_sys_open+0x1ba/0x2c0
+Jun 14 11:19:42.067552 u415 kernel:  SyS_openat+0x14/0x20
+Jun 14 11:19:42.067589 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 14 11:19:42.067636 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 14 11:19:42.067675 u415 kernel: RIP: 0033:0x7fa43fc11d5e
+Jun 14 11:19:42.067715 u415 kernel: RSP: 002b:00007fff2b557b60 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
+Jun 14 11:19:42.067760 u415 kernel: RAX: ffffffffffffffda RBX: 00005574ee436830 RCX: 00007fa43fc11d5e
+Jun 14 11:19:42.067810 u415 kernel: RDX: 0000000000000241 RSI: 00005574ee436760 RDI: 00000000ffffff9c
+Jun 14 11:19:42.067853 u415 kernel: RBP: 00005574ec953b0c R08: 00005574ecb5cc5d R09: 0000000000000000
+Jun 14 11:19:42.067894 u415 kernel: R10: 00000000000001b6 R11: 0000000000000246 R12: 00005574ee436760
+Jun 14 11:19:42.067937 u415 kernel: R13: 00000000fffffffd R14: 00005574ecb5cc18 R15: 0000000000000000
+Jun 14 11:19:42.069416 u415 kernel: Code:  Bad RIP value.
+Jun 14 11:19:42.069469 u415 kernel: RIP: 0xffffffffc0654d40 RSP: ffffa9e4c79bf9e8
+Jun 14 11:19:42.069589 u415 kernel: CR2: ffffffffc0654d40
+Jun 14 11:19:42.069781 u415 kernel: ---[ end trace c9aa6031b174b182 ]---
