@@ -1,9 +1,9 @@
 #!/bin/bash
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-RESULTS=$SCRIPT_DIR/results
-mkdir -p $RESULTS
-rm -rf $RESULTS/*
+cd filebenches
+
+RESULTS=$MNT/results/filebench
+sudo mkdir -p $MNT/results/filebench
 
 TSET=( 18 1 )
 REPS=10
@@ -13,17 +13,18 @@ sudo sh -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
 for f in *.f; do
 	sed -i -e "s#set \$dir=.*#set \$dir=$MNT#g" $f
 	echo "Running $f"
+	sudo mkdir -p $RESULTS/$f
 
 	if echo $f | grep "1t"; then
 		for T in "${TSET[@]}"; do
 			sed -i -e "s#set \$nthreads=.*#set \$nthreads=$T#g" $f
 			for i in $(seq 1 $REPS); do
-				sudo filebench -f $f > $RESULTS/$f\_$T\_$i.out
+				sudo sh -c "filebench -f $f > $RESULTS/$f/$T\_$i"
 			done
 		done
 	else
 		for i in $(seq 1 $REPS); do
-			sudo filebench -f $f > $RESULTS/$f\_$T\_$i.out
+			sudo sh -c "filebench -f $f > $RESULTS/$f/$i"
 		done
 	fi
 
