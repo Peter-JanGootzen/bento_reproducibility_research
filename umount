@@ -2,6 +2,6 @@
 
 sudo umount /mnt/xv6fsll
 sudo umount /mnt/xv6fsll-prov
-sudo umount /mnt/xv6fsll-user
+sudo fusermount -u /mnt/xv6fsll-user
 sudo umount /mnt/ext4-o
 sudo umount /mnt/ext4-j
