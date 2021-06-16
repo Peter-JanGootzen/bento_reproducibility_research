@@ -1,19 +1,19 @@
 #!/bin/bash
-mkdir -p $MNT/results/tar
 RESULTS_TAR=$MNT/results/tar
-mkdir -p $MNT/results/untar
+sudo mkdir -p $RESULTS_TAR
 RESULTS_UNTAR=$MNT/results/untar
-mkdir -p $MNT/results/grep
+sudo mkdir -p $RESULTS_UNTAR
 RESULTS_GREP=$MNT/results/grep
-mkdir -p $MNT/results/gitclone
+sudo mkdir -p $RESULTS_GREP
 RESULTS_GITCLONE=$MNT/results/gitclone
-cd $MNT
-sudo sh -c "git clone https://github.com/torvalds/linux.git"
+sudo mkdir -p $RESULTS_GITCLONE
+
+sudo sh -c "git clone https://github.com/torvalds/linux.git $MNT/linux"
 REPS=10
 for i in $(seq 1 $REPS); do
-	sudo sh -c "time -o $RESULTS_GITCLONE/gitclone_$i git clone https://github.com/foreverbell/xv6fs.git"
-	sudo sh -c "time -o $RESULTS_GREP/grep_$i grep -r 'jbd2_journal_start' linux > grep"
-	sudo sh -c "time -o $RESULTS_TAR/tar_$i tar -czf linux.tar.gz linux"
-	sudo sh -c "time -o $RESULTS_UNTAR/untar_$i tar -xzf linux.tar.gz"
-	sudo rm -rf linux.tar.gz xv6fs
+	sudo sh -c "time -o $RESULTS_GITCLONE/gitclone_$i git clone https://github.com/foreverbell/xv6fs.git $MNT/xv6fs"
+	sudo sh -c "time -o $RESULTS_GREP/grep_$i grep -r 'jbd2_journal_start' $MNT/linux > $MNT/grep"
+	sudo sh -c "time -o $RESULTS_TAR/tar_$i tar -czf $MNT/linux.tar.gz $MNT/linux"
+	sudo sh -c "time -o $RESULTS_UNTAR/untar_$i tar -xzf $MNT/linux.tar.gz"
+	sudo rm -rf $MNT/linux.tar.gz $MNT/xv6fs
 done
