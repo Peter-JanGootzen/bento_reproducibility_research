@@ -1,19 +1,44 @@
 #!/bin/bash
-RESULTS_TAR=$MNT/results/tar
-sudo mkdir -p $RESULTS_TAR
-RESULTS_UNTAR=$MNT/results/untar
-sudo mkdir -p $RESULTS_UNTAR
-RESULTS_GREP=$MNT/results/grep
-sudo mkdir -p $RESULTS_GREP
+
+echo "RUNNING: gitclone"
 RESULTS_GITCLONE=$MNT/results/gitclone
 sudo mkdir -p $RESULTS_GITCLONE
 
-sudo sh -c "git clone https://github.com/torvalds/linux.git $MNT/linux"
 REPS=10
 for i in $(seq 1 $REPS); do
 	sudo sh -c "time -o $RESULTS_GITCLONE/gitclone_$i git clone https://github.com/foreverbell/xv6fs.git $MNT/xv6fs$i"
-	sudo sh -c "time -o $RESULTS_GREP/grep_$i grep -r 'jbd2_journal_start' $MNT/linux > /dev/null"
-	sudo sh -c "time -o $RESULTS_TAR/tar_$i tar -cf $MNT/linux$i.tar $MNT/linux"
-	sudo sh -c "time -o $RESULTS_UNTAR/untar_$i tar -xf $MNT/linux$i.tar --one-top-level"
-	sudo rm -rf $MNT/linux$i.tar $MNT/xv6fs$i $MNT/linux$i
+	sudo rm -rf $MNT/xv6fs$i
+done
+
+sudo sh -c "git clone https://github.com/torvalds/linux.git $MNT/linux"
+
+echo "RUNNING: grep"
+RESULTS_GREP=$MNT/results/grep
+sudo mkdir -p $RESULTS_GREP
+
+REPS=10
+for i in $(seq 1 $REPS); do
+	sudo sh -c "time -o $RESULTS_GREP/grep_$i grep -r 'jbd2_journal_start' $MNT/linux > $MNT/grep$i"
+	sudo rm -rf $MNT/grep$i $MNT/xv6fs$i $MNT/linux$i
+done
+
+echo "RUNNING: tar"
+RESULTS_TAR=$MNT/results/tar
+sudo mkdir -p $RESULTS_TAR
+
+REPS=10
+for i in $(seq 1 $REPS); do
+	sudo sh -c "time -o $RESULTS_TAR/tar_$i tar -cf $MNT/linux.tar $MNT/linux"
+	sudo rm -rf $MNT/linux.tar
+done
+
+echo "RUNNING: untar"
+RESULTS_UNTAR=$MNT/results/untar
+sudo mkdir -p $RESULTS_UNTAR
+
+tar -cf $MNT/linuxTARR.tar $MNT/linux
+REPS=10
+for i in $(seq 1 $REPS); do
+	sudo sh -c "time -o $RESULTS_UNTAR/untar_$i tar -xf $MNT/linuxTARR.tar --one-top-level"
+	sudo rm -rf $MNT/linuxTARR
 done
