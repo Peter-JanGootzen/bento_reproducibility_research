@@ -21,8 +21,8 @@ export MNT=/mnt/xv6fsll
 #./filebench
 ./otherapps
 cp -r $MNT/results ./results/Bento-fs
-sudo find results -type d -exec chmod 755 {} \
-sudo find results -type f -exec chmod 644 {} \
+sudo find results -type d -exec chmod 755 {} \;
+sudo find results -type f -exec chmod 644 {} \;
 ./umount
 
 
@@ -34,8 +34,8 @@ export MNT=/mnt/xv6fsll-user
 #./filebench
 ./otherapps
 cp -r $MNT/results ./results/Bento-user
-sudo find results -type d -exec chmod 755 {} \
-sudo find results -type f -exec chmod 644 {} \
+sudo find results -type d -exec chmod 755 {} \;
+sudo find results -type f -exec chmod 644 {} \;
 ./umount
 
 export MNT=/mnt/xv6fsll-prov
@@ -47,8 +47,8 @@ export MNT=/mnt/xv6fsll-prov
 #./filebench
 ./otherapps
 cp -r $MNT/results ./results/Bento-prov
-sudo find results -type d -exec chmod 755 {} \
-sudo find results -type f -exec chmod 644 {} \
+sudo find results -type d -exec chmod 755 {} \;
+sudo find results -type f -exec chmod 644 {} \;
 ./umount
 
 
@@ -60,8 +60,8 @@ export MNT=/mnt/ext4-o
 #./filebench
 ./otherapps
 cp -r $MNT/results ./results/ext4-ordered
-sudo find results -type d -exec chmod 755 {} \
-sudo find results -type f -exec chmod 644 {} \
+sudo find results -type d -exec chmod 755 {} \;
+sudo find results -type f -exec chmod 644 {} \;
 ./umount
 
 export MNT=/mnt/ext4-j
@@ -72,7 +72,7 @@ export MNT=/mnt/ext4-j
 #./filebench
 ./otherapps
 cp -r $MNT/results ./results/ext4-journal
-sudo find results -type d -exec chmod 755 {} \
-sudo find results -type f -exec chmod 644 {} \
+sudo find results -type d -exec chmod 755 {} \;
+sudo find results -type f -exec chmod 644 {} \;
 ./umount
 

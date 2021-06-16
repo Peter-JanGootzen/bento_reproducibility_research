@@ -13,7 +13,7 @@ REPS=10
 for i in $(seq 1 $REPS); do
 	sudo sh -c "time -o $RESULTS_GITCLONE/gitclone_$i git clone https://github.com/foreverbell/xv6fs.git $MNT/xv6fs"
 	sudo sh -c "time -o $RESULTS_GREP/grep_$i grep -r 'jbd2_journal_start' $MNT/linux > $MNT/grep"
-	sudo sh -c "time -o $RESULTS_TAR/tar_$i tar -czf $MNT/linux.tar.gz $MNT/linux"
-	sudo sh -c "time -o $RESULTS_UNTAR/untar_$i tar -xzf $MNT/linux.tar.gz"
+	sudo sh -c "time -o $RESULTS_TAR/tar_$i tar -cf $MNT/linux.tar.gz $MNT/linux"
+	sudo sh -c "time -o $RESULTS_UNTAR/untar_$i tar -xf $MNT/linux.tar.gz"
 	sudo rm -rf $MNT/linux.tar.gz $MNT/xv6fs
 done

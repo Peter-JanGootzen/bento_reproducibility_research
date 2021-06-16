@@ -3,11 +3,13 @@
 RESULTS=$MNT/results/redis
 sudo mkdir -p $RESULTS
 
+PORT=3248
+
 REPS=10
 for i in $(seq 1 $REPS); do
-	sudo redis-server --port 3248 --appendonly yes --appendfsync everysec --dir $MNT &
+	sudo redis-server --port $PORT --appendonly yes --appendfsync everysec --dir $MNT &
 	sleep 5
-	sudo sh -c "redis-benchmark -t set,get -d 100 -n 1000000 -p 3248 > $RESULTS/redis_$i"
+	sudo sh -c "redis-benchmark -t set,get -d 100 -n 1000000 -p $PORT > $RESULTS/redis_$i"
 	sudo pkill redis-server
 	sleep 5
 done
