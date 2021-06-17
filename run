@@ -18,7 +18,7 @@ export MNT=/mnt/xv6fsll
 ./bento_mount_disk
 ./redis
 ./rocksdb
-#./filebench
+./filebench
 ./otherapps
 cp -r $MNT/results ./results/Bento-fs
 sudo find results -type d -exec chmod 755 {} \;
@@ -31,11 +31,13 @@ export MNT=/mnt/xv6fsll-user
 ./bento_mount_user
 ./redis
 ./rocksdb
-#./filebench
+./filebench
 ./otherapps
 cp -r $MNT/results ./results/Bento-user
 sudo find results -type d -exec chmod 755 {} \;
 sudo find results -type f -exec chmod 644 {} \;
+sudo find results -type f -exec chown -R $USERNAME:$USERNAME {} \;
+sudo find results -type d -exec chown -R $USERNAME:$USERNAME {} \;
 ./umount
 
 export MNT=/mnt/xv6fsll-prov
@@ -44,7 +46,7 @@ export MNT=/mnt/xv6fsll-prov
 ./bento_mount_disk
 ./redis
 ./rocksdb
-#./filebench
+./filebench
 ./otherapps
 cp -r $MNT/results ./results/Bento-prov
 sudo find results -type d -exec chmod 755 {} \;
@@ -57,7 +59,7 @@ export MNT=/mnt/ext4-o
 ./ext4-o_mount_disk
 ./redis
 ./rocksdb
-#./filebench
+./filebench
 ./otherapps
 cp -r $MNT/results ./results/ext4-ordered
 sudo find results -type d -exec chmod 755 {} \;
@@ -69,7 +71,7 @@ export MNT=/mnt/ext4-j
 ./ext4-j_mount_disk
 ./redis
 ./rocksdb
-#./filebench
+./filebench
 ./otherapps
 cp -r $MNT/results ./results/ext4-journal
 sudo find results -type d -exec chmod 755 {} \;
