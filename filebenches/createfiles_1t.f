@@ -39,15 +39,16 @@ set $iosize=16k
 set $meandirwidth=1000000
 set $nfiles=800000
 set $nthreads=20
+set $fn=bigf
 
-define fileset name=bigfileset,path=$dir,size=$filesize,entries=$nfiles,dirwidth=$meandirwidth,prealloc=50
+define fileset name=$fn,path=$dir,size=$filesize,entries=$nfiles,dirwidth=$meandirwidth,prealloc=50
 
 define process name=filecreate,instances=1
 {
   thread name=filecreatethread,memsize=10m,instances=$nthreads
   {
-    flowop createfile name=createfile1,filesetname=bigfileset,fd=1
-    flowop writewholefile name=writefile1,filesetname=bigfileset,fd=1,iosize=$iosize
+    flowop createfile name=createfile1,filesetname=$fn,fd=1
+    flowop writewholefile name=writefile1,filesetname=$fn,fd=1,iosize=$iosize
     flowop closefile name=closefile1,fd=1
     flowop finishoncount name=finish,value=$count
   }

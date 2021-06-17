@@ -35,16 +35,17 @@ set $filesize=16k
 set $nfiles=600000
 set $meandirwidth=100
 set $nthreads=20
+set $fn=bigf
 
 set mode quit firstdone
 
-define fileset name=bigfileset,path=$dir,size=$filesize,entries=$nfiles,dirwidth=$meandirwidth,prealloc=100,paralloc
+define fileset name=$fn,path=$dir,size=$filesize,entries=$nfiles,dirwidth=$meandirwidth,prealloc=100,paralloc
 
 define process name=filedelete,instances=1
 {
   thread name=filedeletethread,memsize=10m,instances=$nthreads
   {
-    flowop deletefile name=deletefile1,filesetname=bigfileset
+    flowop deletefile name=deletefile1,filesetname=$fn
     flowop opslimit name=limit
     flowop finishoncount name=finish,value=$count
   }

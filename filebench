@@ -18,7 +18,15 @@ for f in *.f; do
 	if echo $f | grep "1t"; then
 		for T in "${TSET[@]}"; do
 			sed -i -e "s#set \$nthreads=.*#set \$nthreads=$T#g" $f
-			for i in $(seq 1 $REPS); do
+
+			WRAPS=$REPS
+			if [ $f == "createfiles_1t.f" ] || [ $f == "deletefiles_1t.f" ]; then
+				WRAPS=1
+			fi
+			for i in $(seq 1 $WREPS); do
+				if [ $f == "createfiles_1t.f" ] || [ $f == "deletefiles_1t.f" ]; then
+					sed -i -e "s#set \$fn=.*#set \$fn=fs$f$T$i#g" $f
+				fi
 				sudo sh -c "filebench -f $f > $RESULTS/$f/$T\_$i"
 			done
 		done
