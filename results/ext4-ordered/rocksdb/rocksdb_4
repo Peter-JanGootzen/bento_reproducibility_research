@@ -17,7 +17,7 @@ Perf Level: 1
 Initializing RocksDB Options from the specified file
 Initializing RocksDB Options from command-line flags
 DB path: [/mnt/ext4-o]
-fillrandom   :      22.047 micros/op 362041 ops/sec;   40.1 MB/s
+fillrandom   :      21.278 micros/op 375293 ops/sec;   41.5 MB/s
 DB path: [/mnt/ext4-o]
-readrandom   :      11.908 micros/op 663473 ops/sec;   73.4 MB/s (1000000 of 1000000 found)
+readrandom   :      12.307 micros/op 601067 ops/sec;   66.5 MB/s (1000000 of 1000000 found)
 

@@ -1,2 +1,3 @@
-31.05user 8.36system 0:34.59elapsed 113%CPU (0avgtext+0avgdata 3272maxresident)k
-0inputs+9455144outputs (0major+308minor)pagefaults 0swaps
+Command exited with non-zero status 2
+0.00user 0.00system 0:00.00elapsed 66%CPU (0avgtext+0avgdata 2876maxresident)k
+0inputs+0outputs (0major+125minor)pagefaults 0swaps
