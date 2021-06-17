@@ -17,7 +17,7 @@ Perf Level: 1
 Initializing RocksDB Options from the specified file
 Initializing RocksDB Options from command-line flags
 DB path: [/mnt/xv6fsll]
-fillrandom   :      18.640 micros/op 427026 ops/sec;   47.2 MB/s
+fillrandom   :      18.723 micros/op 425719 ops/sec;   47.1 MB/s
 DB path: [/mnt/xv6fsll]
-readrandom   :      12.159 micros/op 611716 ops/sec;   67.7 MB/s (1000000 of 1000000 found)
+readrandom   :      12.104 micros/op 652320 ops/sec;   72.2 MB/s (1000000 of 1000000 found)
 
