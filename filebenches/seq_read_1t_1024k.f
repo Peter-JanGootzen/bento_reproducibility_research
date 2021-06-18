@@ -31,7 +31,7 @@ set $filesize=4g
 set $iosize=1024k
 set $nthreads=1
 
-define file name=largefile,path=$dir,size=$filesize,prealloc
+define file name=largefile,path=$dir,size=$filesize,prealloc,reuse
 
 define process name=filereader,instances=1
 {

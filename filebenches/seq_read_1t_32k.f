@@ -31,7 +31,7 @@ set $filesize=4g
 set $iosize=32k
 set $nthreads=1
 
-define file name=winnerwinnerchickendinner,path=$dir,size=$filesize,prealloc
+define file name=winnerwinnerchickendinner,path=$dir,size=$filesize,prealloc,reuse
 
 define process name=filereader,instances=1
 {
