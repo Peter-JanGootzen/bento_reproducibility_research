@@ -7,7 +7,7 @@ def parse_elapsed_secs(s):
 	secs += float("0." + s.split(":")[1].split(".")[1])
 	return secs
 
-def bar_plot(ax, data, l, colors=None, total_width=0.8, single_width=1):
+def bar_plot(ax, data, l, yerr=None, colors=None, total_width=0.8, single_width=1):
     # Check if colors where provided, otherwhise use the default color cycle
     if colors is None:
         colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
@@ -28,7 +28,10 @@ def bar_plot(ax, data, l, colors=None, total_width=0.8, single_width=1):
 
         # Draw a bar for every value of that type
         for x, y in enumerate(values):
-            bar = ax.bar(x + x_offset, y, width=bar_width * single_width, color=colors[i % len(colors)])
+            yerrr = None
+            if yerr is not None:
+                yerrr = yerr[name][x]
+            bar = ax.bar(x + x_offset, y, yerr=yerrr, width=bar_width * single_width, color=colors[i % len(colors)])
 
         # Add a handle to the last drawn bar, which we'll need for the legend
         bars.append(bar[0])
