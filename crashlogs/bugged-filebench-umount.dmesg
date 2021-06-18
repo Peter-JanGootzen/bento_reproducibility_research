@@ -1,0 +1,46 @@
+[  195.569831] BUG: unable to handle kernel paging request at ffffffffc08b0d60
+[  195.570046] IP: 0xffffffffc08b0d60
+[  195.570143] PGD 102ec0e067 P4D 102ec0e067 PUD 102ec10067 PMD fe8671067 PTE 0
+[  195.570275] Oops: 0010 [#1] SMP NOPTI
+[  195.570385] Modules linked in: bentofs(OE) ppdev kvm_intel kvm irqbypass joydev intel_rapl_perf input_leds serio_raw parport_pc parport mac_hid qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel bochs_drm pcbc ttm drm_kms_helper syscopyarea aesni_intel sysfillrect sysimgblt aes_x86_64 crypto_simd fb_sys_fops glue_helper cryptd e1000 nvme drm virtio_blk psmouse nvme_core i2c_piix4 pata_acpi floppy [last unloaded: xv6fs]
+[  195.571598] CPU: 9 PID: 199 Comm: kworker/u36:3 Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+[  195.571746] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+[  195.571985] Workqueue: writeback wb_workfn (flush-259:0)
+[  195.572097] RIP: 0010:0xffffffffc08b0d60
+[  195.572191] RSP: 0018:ffffb6a1c6f97a18 EFLAGS: 00010246
+[  195.572298] RAX: ffffffffc08b0d60 RBX: ffff9363f2248c00 RCX: ffffb6a1c6f97ae0
+[  195.572424] RDX: ffffb6a1c6f97b18 RSI: 0000000000000004 RDI: ffffffffc08bd380
+[  195.572548] RBP: ffffb6a1c6f97ba0 R08: ffffb6a1c6f97a78 R09: ffffb6a1c6f97a20
+[  195.572674] R10: ffffb6a1c6f97bc0 R11: 0000000000000010 R12: ffff9363f2248dc0
+[  195.572799] R13: ffff935cd438bc00 R14: 000000000002fc00 R15: 0000000000000000
+[  195.572970] FS:  0000000000000000(0000) GS:ffff9363ff240000(0000) knlGS:0000000000000000
+[  195.573109] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[  195.573220] CR2: ffffffffc08b0d60 CR3: 000000102ec0a001 CR4: 0000000000760ee0
+[  195.573304] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+[  195.573360] DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+[  195.573415] PKRU: 55555554
+[  195.573451] Call Trace:
+[  195.573506]  ? bento_flush_times+0x14e/0x180 [bentofs]
+[  195.573570]  ? bento_writepages+0xba/0xf0 [bentofs]
+[  195.573619]  ? do_writepages+0x4b/0xe0
+[  195.573668]  ? try_to_del_timer_sync+0x53/0x80
+[  195.573716]  bento_write_inode+0x34/0x50 [bentofs]
+[  195.573765]  ? bento_write_inode+0x34/0x50 [bentofs]
+[  195.573814]  __writeback_single_inode+0x275/0x330
+[  195.573861]  writeback_sb_inodes+0x1d7/0x530
+[  195.573907]  __writeback_inodes_wb+0x67/0xb0
+[  195.573952]  wb_writeback+0x26c/0x300
+[  195.573998]  ? cpumask_next+0x1b/0x20
+[  195.574041]  wb_workfn+0x18d/0x400
+[  195.574082]  ? wb_workfn+0x18d/0x400
+[  195.574125]  process_one_work+0x1de/0x420
+[  195.574168]  worker_thread+0x32/0x410
+[  195.574211]  kthread+0x121/0x140
+[  195.574251]  ? process_one_work+0x420/0x420
+[  195.575383]  ? kthread_create_worker_on_cpu+0x70/0x70
+[  195.576394]  ret_from_fork+0x1f/0x40
+[  195.577405] Code:  Bad RIP value.
+[  195.578394] RIP: 0xffffffffc08b0d60 RSP: ffffb6a1c6f97a18
+[  195.579384] CR2: ffffffffc08b0d60
+[  195.580347] ---[ end trace fd04a66595472870 ]---
+

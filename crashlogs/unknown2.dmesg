@@ -1,0 +1,53 @@
+ [  492.076743] watchdog: BUG: soft lockup - CPU#10 stuck for 23s! [umount:3017]
+ [  492.076811] Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass parport_pc parport joydev input_leds intel_rapl_perf mac_hid qemu_fw_cfg serio_raw binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel pcbc bochs_drm ttm drm_kms_helper syscopyarea aesni_intel sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd nvme virtio_blk glue_helper drm cryptd psmouse e1000 nvme_core floppy pata_acpi i2c_piix4 [last unloaded: xv6fs]
+ [  492.076983] CPU: 10 PID: 3017 Comm: umount Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+ [  492.076984] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+ [  492.077005] RIP: 0010:rust_begin_unwind+0x10/0x20 [xv6fs]
+ [  492.077006] RSP: 0018:ffffb2db071e38e0 EFLAGS: 00000286 ORIG_RAX: ffffffffffffff11
+ [  492.077008] RAX: ffffb2db071e3950 RBX: ffffffffc0af6380 RCX: ffffb2db071e3b80
+ [  492.077008] RDX: ffffffffc0af29d8 RSI: ffffffffc0af29d8 RDI: ffffb2db071e38f0
+ [  492.077009] RBP: ffffb2db071e38e0 R08: ffffb2db071e3e30 R09: ffffa0ec567e64c0
+ [  492.077010] R10: ffffb2db071e3db8 R11: 73662d6f746e6542 R12: ffffb2db071e3d08
+ [  492.077011] R13: 0000000000000001 R14: ffffffffc0af6380 R15: ffffb2db071e3b80
+ [  492.077012] FS:  00007ffff7fe9080(0000) GS:ffffa0f33f280000(0000) knlGS:0000000000000000
+ [  492.077013] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+ [  492.077013] CR2: 00007ffff7bc095a CR3: 00000007ed3e8002 CR4: 0000000000760ee0
+ [  492.077016] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+ [  492.077017] DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+ [  492.077017] PKRU: 55555554
+ [  492.077018] Call Trace:
+ [  492.077034]  _ZN4core9panicking9panic_fmt17hc7fccc7dc7a37a5cE+0x29/0x30 [xv6fs]
+ [  492.077037]  _ZN4core9panicking5panic17h5cd4a6c288da3f25E+0x44/0x50 [xv6fs]
+ [  492.077040]  _ZN5xv6fs8xv6fs_fs48_$LT$impl$u20$xv6fs..xv6fs_ll..Xv6FileSystem$GT$4iget17ha674ffff7ad40cceE.llvm.10984320574125946351+0x2f5/0x360 [xv6fs]
+ [  492.077047]  ? radix_tree_lookup_slot+0x22/0x50
+ [  492.077052]  ? find_get_entry+0x1e/0x110
+ [  492.077055]  _ZN147_$LT$xv6fs..xv6fs_ll..Xv6FileSystem$u20$as$u20$bento..bento_utils..BentoFilesystem$LT$xv6fs..xv6fs_ll..Xv6State$C$xv6fs..+0x2c/0x230 [xv6fs]
+ [  492.077059]  ? memcg_kmem_get_cache+0x5d/0x160
+ [  492.077061]  ? ___slab_alloc+0x10b/0x4f0
+ [  492.077062]  ? ___slab_alloc+0x10b/0x4f0
+ [  492.077065]  ? __d_alloc+0x29/0x250
+ [  492.077068]  _ZN5bento4fuse7request8dispatch17h72e8c5d46c7e18e6E+0x30d/0x17e0 [xv6fs]
+ [  492.077070]  ? lookup_fast+0xcc/0x320
+ [  492.077071]  ? __follow_mount_rcu.isra.27+0x6e/0xf0
+ [  492.077072]  ? lookup_fast+0xcc/0x320
+ [  492.077074]  ? __inode_permission+0x5b/0x160
+ [  492.077081]  bento_do_getattr+0x11b/0x340 [bentofs]
+ [  492.077084]  ? __check_object_size+0xc8/0x1b0
+ [  492.077086]  bento_getattr+0x91/0xb0 [bentofs]
+ [  492.077088]  ? bento_getattr+0x91/0xb0 [bentofs]
+ [  492.077090]  vfs_getattr_nosec+0x73/0x90
+ [  492.077092]  vfs_getattr+0x36/0x40
+ [  492.077093]  vfs_statx+0x8d/0xe0
+ [  492.077095]  SYSC_newfstatat+0x35/0x70
+ [  492.077097]  SyS_newfstatat+0xe/0x10
+ [  492.077101]  do_syscall_64+0x73/0x130
+ [  492.077105]  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+ [  492.077107] RIP: 0033:0x7ffff789d9f9
+ [  492.077107] RSP: 002b:00007fffffffe2d8 EFLAGS: 00000246 ORIG_RAX: 0000000000000106
+ [  492.077109] RAX: ffffffffffffffda RBX: 000055555575ca40 RCX: 00007ffff789d9f9
+ [  492.077109] RDX: 00007fffffffe390 RSI: 000055555575cc20 RDI: 00000000ffffffff
+ [  492.077110] RBP: 0000000000000000 R08: 0000000000000800 R09: 0000000000000000
+ [  492.077111] R10: 0000000000000800 R11: 0000000000000246 R12: 000055555575cc20
+ [  492.077111] R13: 0000000000000001 R14: 00000000ffffffff R15: 0000000000000000
+ [  492.077112] Code: 00 00 00 00 00 00 00 00 00 00 00 55 48 89 e5 48 89 f2 48 89 f8 5d c3 00 00 00 00 55 48 89 e5 66 2e 0f 1f 84 00 00 00 00 00 66 90 <eb> fe 00 00 00 00 00 00 00 00 00 00 00 00 00 00 55 48 89 e5 48 
+

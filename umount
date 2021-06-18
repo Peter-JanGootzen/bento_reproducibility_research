@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo umount /mnt/xv6fsll
-sudo umount /mnt/xv6fsll-prov
-sudo fusermount -u /mnt/xv6fsll-user
-sudo umount /mnt/ext4-o
-sudo umount /mnt/ext4-j
+sudo umount /mnt/Bento-fs
+sudo umount /mnt/Bento-prov
+sudo fusermount -u /mnt/Bento-user
+sudo umount /mnt/ext4-ordered
+sudo umount /mnt/ext4-journal

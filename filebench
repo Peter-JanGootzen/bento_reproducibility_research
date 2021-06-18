@@ -2,7 +2,8 @@
 
 cd filebenches
 
-RESULTS=$MNT/results/filebench
+RESULTS=../results/$FS/filebench
+mkdir -p $RESULTS
 
 TSET=( 18 1 )
 REPS=10
@@ -15,12 +16,11 @@ for f in *.f; do
 	./umount
 	./prepare_disk
 	./mount
-	sudo mkdir -p $MNT/results/filebench
 	cd filebenches
 
 	sed -i -e "s#set \$dir=.*#set \$dir=$MNT#g" $f
 	echo "Running $f"
-	sudo mkdir -p $RESULTS/$f
+	mkdir -p $RESULTS/$f
 
 	if echo $f | grep "1t"; then
 		for T in "${TSET[@]}"; do
@@ -31,11 +31,11 @@ for f in *.f; do
 				WREPS=1
 			fi
 			for i in $(seq 1 $WREPS); do
-				echo "Iter: $i"
+				echo "i=$i, T=$T"
 				if [ $f == "createfiles_1t.f" ] || [ $f == "deletefiles_1t.f" ]; then
 					sed -i -e "s#set \$fn=.*#set \$fn=fs$f$T$i#g" $f
 				fi
-				sudo sh -c "filebench -f $f > $RESULTS/$f/$T\_$i"
+				sudo filebench -f $f > $RESULTS/$f/$T\_$i
 			done
 
 			# In some(!) cases this is redundant yes... But these two workloads really require
@@ -46,14 +46,13 @@ for f in *.f; do
 				./umount
 				./prepare_disk
 				./mount
-				sudo mkdir -p $MNT/results/filebench
 				cd filebenches
 			fi
 		done
 	else
 		for i in $(seq 1 $REPS); do
-			echo "Iter: $i"
-			sudo sh -c "filebench -f $f > $RESULTS/$f/$i"
+			echo "i=$i"
+			sudo filebench -f $f > $RESULTS/$f/$i
 		done
 	fi
 done
