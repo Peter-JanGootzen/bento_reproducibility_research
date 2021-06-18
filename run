@@ -13,68 +13,20 @@ if [ "$(ls -A results)" ]; then
 	exit
 fi
 
-export MNT=/mnt/xv6fsll
-./bento_prepare_disk
-./bento_mount_disk
-./redis
-./rocksdb
-./filebench
-./otherapps
-cp -r $MNT/results ./results/Bento-fs
-sudo find results -type d -exec chmod 755 {} \;
-sudo find results -type f -exec chmod 644 {} \;
-./umount
+FSL=( "Bento-fs" "Bento-user" "Bento-prov" "ext4-ordered" "ext4-journal")
+for FS in "${FS[@]}"; do
+	export MNT=/mnt/$FS
+	./prepare_disk
+	./mount
+	./redis
+	./rocksdb
+	./otherapps
+	./filebench
 
-
-export MNT=/mnt/xv6fsll-user
-./bento_prepare_disk
-./bento_mount_user
-./redis
-./rocksdb
-./filebench
-./otherapps
-cp -r $MNT/results ./results/Bento-user
-sudo find results -type d -exec chmod 755 {} \;
-sudo find results -type f -exec chmod 644 {} \;
-sudo find results -type f -exec chown -R $USERNAME:$USERNAME {} \;
-sudo find results -type d -exec chown -R $USERNAME:$USERNAME {} \;
-./umount
-
-export MNT=/mnt/xv6fsll-prov
-./bento-prov_init
-./bento_prepare_disk
-./bento_mount_disk
-./redis
-./rocksdb
-./filebench
-./otherapps
-cp -r $MNT/results ./results/Bento-prov
-sudo find results -type d -exec chmod 755 {} \;
-sudo find results -type f -exec chmod 644 {} \;
-./umount
-
-
-export MNT=/mnt/ext4-o
-./ext4_prepare_disk
-./ext4-o_mount_disk
-./redis
-./rocksdb
-./filebench
-./otherapps
-cp -r $MNT/results ./results/ext4-ordered
-sudo find results -type d -exec chmod 755 {} \;
-sudo find results -type f -exec chmod 644 {} \;
-./umount
-
-export MNT=/mnt/ext4-j
-./ext4_prepare_disk
-./ext4-j_mount_disk
-./redis
-./rocksdb
-./filebench
-./otherapps
-cp -r $MNT/results ./results/ext4-journal
-sudo find results -type d -exec chmod 755 {} \;
-sudo find results -type f -exec chmod 644 {} \;
-./umount
-
+	cp -r $MNT/results ./results/$FS
+	sudo find results -type d -exec chmod 755 {} \;
+	sudo find results -type f -exec chmod 644 {} \;
+	sudo find results -type f -exec chown -R $USERNAME:$USERNAME {} \;
+	sudo find results -type d -exec chown -R $USERNAME:$USERNAME {} \;
+	./umount
+done

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $FS == "Bento-fs"] || [ $FS == "Bento-prov" ]; then
+	./bento_mount_disk
+else if [ $FS == "Bento-user"]; then
+	./bento_mount_user
+else if [ $FS == "ext4-ordered" ]; then
+	./ext4-o_mount_disk
+else if [ $FS == "ext4-journal" ]; then
+	./ext4-j_mount_disk
+fi
