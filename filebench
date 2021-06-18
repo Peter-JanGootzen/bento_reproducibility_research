@@ -10,7 +10,7 @@ REPS=10
 sudo sh -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
 
 for f in *.f; do
-	# These workloads are wobly, so
+	# These workloads are wobly with Bento, so
 	cd ..
 	./umount
 	./prepare_disk
@@ -37,6 +37,18 @@ for f in *.f; do
 				fi
 				sudo sh -c "filebench -f $f > $RESULTS/$f/$T\_$i"
 			done
+
+			# In some(!) cases this is redundant yes... But these two workloads really require
+			# the disk to be formatted between every single run with Bento....
+			if [ $f == "createfiles_1t.f" ] || [ $f == "deletefiles_1t.f" ]; then
+				# These workloads are wobly, so
+				cd ..
+				./umount
+				./prepare_disk
+				./mount
+				sudo mkdir -p $MNT/results/filebench
+				cd filebenches
+			fi
 		done
 	else
 		for i in $(seq 1 $REPS); do
