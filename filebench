@@ -3,7 +3,6 @@
 cd filebenches
 
 RESULTS=$MNT/results/filebench
-sudo mkdir -p $MNT/results/filebench
 
 TSET=( 18 1 )
 REPS=10
@@ -12,9 +11,12 @@ sudo sh -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
 
 for f in *.f; do
 	# These workloads are wobly, so
-	../umount
-	../prepare_disk
-	../mount
+	cd ..
+	./umount
+	./prepare_disk
+	./mount
+	sudo mkdir -p $MNT/results/filebench
+	cd filebenches
 
 	sed -i -e "s#set \$dir=.*#set \$dir=$MNT#g" $f
 	echo "Running $f"

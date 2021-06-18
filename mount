@@ -1,11 +1,14 @@
 #!/bin/bash
 
-if [ $FS == "Bento-fs"] || [ $FS == "Bento-prov" ]; then
-	./bento_mount_disk
-else if [ $FS == "Bento-user"]; then
-	./bento_mount_user
-else if [ $FS == "ext4-ordered" ]; then
-	./ext4-o_mount_disk
-else if [ $FS == "ext4-journal" ]; then
-	./ext4-j_mount_disk
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+if [[ $FS == "Bento-fs" ]] || [[ $FS == "Bento-prov" ]]; then
+	$SCRIPT_DIR/bento_mount_disk
+elif [[ $FS == "Bento-user" ]]; then
+	$SCRIPT_DIR/bento_mount_user
+elif [[ $FS == "ext4-ordered" ]]; then
+	$SCRIPT_DIR/ext4-o_mount_disk
+elif [[ $FS == "ext4-journal" ]]; then
+	$SCRIPT_DIR/ext4-j_mount_disk
 fi

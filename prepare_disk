@@ -1,7 +1,9 @@
 #!/bin/bash
 
-if [ $FS == "Bento-fs"] || [ $FS == "Bento-user" ] || [ $FS == "Bento-prov" ]; then
-	./bento_prepare_disk
-else if [ $FS == "ext4-ordered" ] || [ $FS == "ext4-journal" ]; then
-	./ext4_prepare_disk
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+if [[ $FS == "Bento-fs" ]] || [[ $FS == "Bento-user" ]] || [[ $FS == "Bento-prov" ]]; then
+	$SCRIPT_DIR/bento_prepare_disk
+elif [[ $FS == "ext4-ordered" ]] || [[ $FS == "ext4-journal" ]]; then
+	$SCRIPT_DIR/ext4_prepare_disk
 fi

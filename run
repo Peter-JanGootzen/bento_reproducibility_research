@@ -5,8 +5,6 @@ if [ -z $DISK ]; then
 	exit
 fi
 
-./bento_init
-
 mkdir results
 if [ "$(ls -A results)" ]; then
 	echo "uuh results is not empty"
@@ -14,8 +12,16 @@ if [ "$(ls -A results)" ]; then
 fi
 
 FSL=( "Bento-fs" "Bento-user" "Bento-prov" "ext4-ordered" "ext4-journal")
-for FS in "${FS[@]}"; do
+for FS in "${FSL[@]}"; do
+	export FS=$FS
 	export MNT=/mnt/$FS
+
+	if [ $FS == "Bento-fs" ] || [ $FS == "Bento-user" ]; then
+		./bento_init
+	elif [ $FS == "Bento-prov" ]; then
+		./bento-prov_init
+	fi
+
 	./prepare_disk
 	./mount
 	./redis
