@@ -32,7 +32,7 @@ for FS in "${FSL[@]}"; do
 	sudo cp -r $MNT/results ./results/$FS
 	sudo find results -type d -exec chmod 755 {} \;
 	sudo find results -type f -exec chmod 644 {} \;
-	sudo find results -type f -exec chown -R $USERNAME:$USERNAME {} \;
-	sudo find results -type d -exec chown -R $USERNAME:$USERNAME {} \;
+	sudo find results -type f -exec chown -R $USER:$USER {} \;
+	sudo find results -type d -exec chown -R $USER:$USER {} \;
 	./umount
 done
