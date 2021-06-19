@@ -10,13 +10,22 @@ REPS=10
 
 sudo sh -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
 
-for f in *.f; do
-	# These workloads are wobly with Bento, so
+reinit() {
 	cd ..
+	if [ $FS == "Bento-fs" ] || [ $FS == "Bento-user" ]; then
+		./bento_init
+	elif [ $FS == "Bento-prov" ]; then
+		./bento-prov_init
+	fi
 	./umount
 	./prepare_disk
 	./mount
 	cd filebenches
+}
+
+for f in *.f; do
+	# These workloads are wobly with Bento, so
+	reinit
 
 	sed -i -e "s#set \$dir=.*#set \$dir=$MNT#g" $f
 	echo "Running $f"
@@ -42,11 +51,7 @@ for f in *.f; do
 			# the disk to be formatted between every single run with Bento....
 			if [ $f == "createfiles_1t.f" ] || [ $f == "deletefiles_1t.f" ]; then
 				# These workloads are wobly, so
-				cd ..
-				./umount
-				./prepare_disk
-				./mount
-				cd filebenches
+				reinit
 			fi
 		done
 	else
