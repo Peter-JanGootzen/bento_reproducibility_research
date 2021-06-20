@@ -1,0 +1,16 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.001: Populating and pre-allocating filesets
+0.002: Removing bigfile1 tree (if exists)
+0.005: Pre-allocating directories in bigfile1 tree
+0.005: Pre-allocating files in bigfile1 tree
+10.767: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+10.767: Population and pre-allocation of filesets completed
+10.767: Starting 1 filereader instances
+11.773: Running...
+13.773: Run took 2 seconds...
+13.773: Per-Operation Breakdown
+finish               1048574ops   524224ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.02ms]
+write-file           1048604ops   524239ops/s 2047.8mb/s      0.0ms/op [0.00ms -  6.23ms]
+13.773: IO Summary: 1048604 ops 524239.091 ops/s 524239/0 rd/wr 2047.8mb/s   0.0ms/op
+13.773: Shutting down processes

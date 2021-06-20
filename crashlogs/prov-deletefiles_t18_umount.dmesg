@@ -1,0 +1,45 @@
+[31709.892719] BUG: unable to handle kernel paging request at ffffffffc0987290
+[31709.894280] IP: 0xffffffffc0987290
+[31709.895725] PGD ebce0e067 P4D ebce0e067 PUD ebce10067 PMD feb533067 PTE 0
+[31709.897139] Oops: 0010 [#3] SMP NOPTI
+[31709.898434] Modules linked in: xv6fs_prov(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass parport_pc parport joydev input_leds mac_hid serio_raw intel_rapl_perf qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul bochs_drm ghash_clmulni_intel ttm pcbc drm_kms_helper syscopyarea aesni_intel sysfillrect sysimgblt fb_sys_fops aes_x86_64 crypto_simd glue_helper cryptd nvme drm e1000 psmouse i2c_piix4 virtio_blk nvme_core floppy pata_acpi [last unloaded: xv6fs_prov]
+[31709.904519] CPU: 12 PID: 3465 Comm: updatedb.mlocat Tainted: P      D    OE    4.15.0-144-generic #148-Ubuntu
+[31709.905513] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+[31709.907554] RIP: 0010:0xffffffffc0987290
+[31709.908572] RSP: 0018:ffffaa8e076f3c48 EFLAGS: 00010246
+[31709.909616] RAX: ffffffffc0987290 RBX: ffffaa8e076f3e80 RCX: ffffaa8e076f3cd0
+[31709.910648] RDX: ffffaa8e076f3d08 RSI: 0000000000000003 RDI: ffffffffc0995390
+[31709.911702] RBP: ffffaa8e076f3da0 R08: ffffaa8e076f3e30 R09: ffff978f941d3740
+[31709.912752] R10: ffffaa8e076f3db8 R11: 000000322e00766f R12: ffff978f941d3740
+[31709.913785] R13: ffffaa8e076f3c68 R14: ffff978ff5bd6c00 R15: ffff978ff5bd6dc0
+[31709.914795] FS:  00007ffff7fec540(0000) GS:ffff978fff300000(0000) knlGS:0000000000000000
+[31709.915815] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[31709.916831] CR2: ffffffffc0987290 CR3: 0000000cf2a6a002 CR4: 0000000000760ee0
+[31709.917882] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+[31709.918913] DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+[31709.919942] PKRU: 55555554
+[31709.920961] Call Trace:
+[31709.922027]  ? bento_do_getattr+0x11b/0x340 [bentofs]
+[31709.923071]  ? __check_object_size+0xc8/0x1b0
+[31709.924097]  ? __check_object_size+0xc8/0x1b0
+[31709.925112]  bento_getattr+0x91/0xb0 [bentofs]
+[31709.926141]  ? bento_getattr+0x91/0xb0 [bentofs]
+[31709.927167]  vfs_getattr_nosec+0x73/0x90
+[31709.928195]  vfs_getattr+0x36/0x40
+[31709.929215]  vfs_statx+0x8d/0xe0
+[31709.930262]  SYSC_newlstat+0x3d/0x70
+[31709.931277]  SyS_newlstat+0xe/0x10
+[31709.932283]  do_syscall_64+0x73/0x130
+[31709.933287]  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+[31709.934289] RIP: 0033:0x7ffff7af18e5
+[31709.935275] RSP: 002b:00007fffffffe5d8 EFLAGS: 00000246 ORIG_RAX: 0000000000000006
+[31709.936285] RAX: ffffffffffffffda RBX: 000055555576efd9 RCX: 00007ffff7af18e5
+[31709.937305] RDX: 00007fffffffe650 RSI: 00007fffffffe650 RDI: 000055555576efd9
+[31709.938336] RBP: 0000555555766600 R08: 000000000000006d R09: 000000000000006d
+[31709.939356] R10: 0000000000000000 R11: 0000000000000246 R12: 00007fffffffe830
+[31709.940368] R13: 0000000000000000 R14: 00007fffffffe820 R15: 0000000000000000
+[31709.941382] Code:  Bad RIP value.
+[31709.942413] RIP: 0xffffffffc0987290 RSP: ffffaa8e076f3c48
+[31709.943419] CR2: ffffffffc0987290
+[31709.944414] ---[ end trace bfc1a785c95e5868 ]---
+

@@ -1,0 +1,33 @@
+[13764.450180] watchdog: BUG: soft lockup - CPU#6 stuck for 23s! [jbd2/nvme0n1:3651]
+[13764.451139] Modules linked in: xv6fs(POE) bentofs(OE) ppdev kvm_intel kvm irqbypass parport_pc joydev input_leds parport serio_raw mac_hid intel_rapl_perf qemu_fw_cfg binfmt_misc sch_fq_codel ib_iser rdma_cm iw_cm ib_cm ib_core iscsi_tcp libiscsi_tcp libiscsi scsi_transport_iscsi ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear crct10dif_pclmul crc32_pclmul ghash_clmulni_intel pcbc bochs_drm ttm drm_kms_helper syscopyarea aesni_intel sysfillrect sysimgblt aes_x86_64 fb_sys_fops crypto_simd glue_helper drm nvme virtio_blk cryptd psmouse e1000 nvme_core pata_acpi floppy i2c_piix4 [last unloaded: bentofs]
+[13764.456846] CPU: 6 PID: 3651 Comm: jbd2/nvme0n1 Tainted: P      D    OEL   4.15.0-144-generic #148-Ubuntu
+[13764.457788] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+[13764.459867] RIP: 0010:jbd2_journal_write_metadata_buffer+0x35b/0x390
+[13764.460819] RSP: 0018:ffffa854872b3c80 EFLAGS: 00000206 ORIG_RAX: ffffffffffffff11
+[13764.461733] RAX: 0000000000e6002d RBX: ffff959fda215800 RCX: 0000000000000000
+[13764.462694] RDX: 0000000000000e52 RSI: 0000000000000000 RDI: ffff95a77ed67180
+[13764.463681] RBP: ffffa854872b3cf0 R08: ffff95a77f1a6fc0 R09: ffff95a5f1b46820
+[13764.464573] R10: 0000000000000001 R11: ffffd66360cb9800 R12: ffff959b8924add0
+[13764.465416] R13: ffff959b8935b000 R14: ffff959b8935b000 R15: ffff95a128d7c138
+[13764.466281] FS:  0000000000000000(0000) GS:ffff95a77f180000(0000) knlGS:0000000000000000
+[13764.467191] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[13764.468080] CR2: 00007ffff4c12230 CR3: 0000000616e0a002 CR4: 0000000000760ee0
+[13764.468893] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+[13764.469696] DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+[13764.470538] PKRU: 55555554
+[13764.471419] Call Trace:
+[13764.472283]  jbd2_journal_commit_transaction+0x83d/0x1720
+[13764.473080]  ? __switch_to_asm+0x41/0x70
+[13764.473855]  ? __switch_to_asm+0x41/0x70
+[13764.474695]  ? __switch_to_asm+0x41/0x70
+[13764.475526]  ? __switch_to_asm+0x35/0x70
+[13764.476313]  ? finish_task_switch+0x71/0x230
+[13764.477056]  kjournald2+0xc8/0x270
+[13764.477787]  ? kjournald2+0xc8/0x270
+[13764.478588]  ? wait_woken+0x80/0x80
+[13764.479399]  kthread+0x121/0x140
+[13764.480179]  ? commit_timeout+0x20/0x20
+[13764.480907]  ? kthread_create_worker_on_cpu+0x70/0x70
+[13764.481649]  ret_from_fork+0x1f/0x40
+[13764.482434] Code: 48 c1 f8 06 48 c1 e0 0c 4c 01 e8 48 03 05 76 9a 0c 01 c7 00 00 00 00 00 83 aa 78 12 00 00 01 e9 8e fe ff ff 0f 0b f3 90 49 8b 07 <a9> 00 00 80 00 75 f4 e9 eb fc ff ff 41 83 cc 01 eb a9 48 8b 05 
+

@@ -1,0 +1,14 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.001: Populating and pre-allocating filesets
+0.001: Reusing existing largefile tree
+0.001: Pre-allocating files in largefile tree
+0.001: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+0.001: Population and pre-allocation of filesets completed
+0.002: Starting 1 filereader instances
+1.007: Running...
+61.011: Run took 60 seconds...
+61.012: Per-Operation Breakdown
+seqread-file         79379998ops  1322876ops/s 5167.5mb/s      0.0ms/op [0.00ms -  2.71ms]
+61.012: IO Summary: 79379998 ops 1322876.410 ops/s 1322876/0 rd/wr 5167.5mb/s   0.0ms/op
+61.012: Shutting down processes
