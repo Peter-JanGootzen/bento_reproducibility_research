@@ -37,13 +37,8 @@ for f in *.f; do
 
 			WREPS=$REPS
 			# These are bugged :(
-			if [ $f == "createfiles_1t.f" ] || [ $f == "deletefiles_1t.f" ]; then
+			if [ $f == "createfiles_1t.f" ] || [ $f == "deletefiles_1t.f" ] || [[ $f == seq_write_1t_* ]]; then
 				WREPS=1
-			elif [[ $f == seq_write_1t_* ]]; then
-				WREPS=2
-			elif [[ $f == "webserver.f" ]]; then
-				WREPS=4
-
 			fi
 			for i in $(seq 1 $WREPS); do
 				echo "i=$i, T=$T"
@@ -61,7 +56,11 @@ for f in *.f; do
 			fi
 		done
 	else
-		for i in $(seq 1 $REPS); do
+		WREPS=$REPS
+		if [[ $f == "webserver.f" ]]; then
+			WREPS=4
+		fi
+		for i in $(seq 1 $WREPS); do
 			echo "i=$i"
 			sudo filebench -f $f > $RESULTS/$f/$i
 		done
