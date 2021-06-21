@@ -16,11 +16,7 @@ for FS in "${FSL[@]}"; do
 	export FS=$FS
 	export MNT=/mnt/$FS
 
-	if [ $FS == "Bento-fs" ] || [ $FS == "Bento-user" ]; then
-		./bento_init
-	elif [ $FS == "Bento-prov" ]; then
-		./bento-prov_init
-	fi
+	./bento_init
 
 	./prepare_disk
 	./mount
