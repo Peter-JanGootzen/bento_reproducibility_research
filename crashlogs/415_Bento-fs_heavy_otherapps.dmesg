@@ -1,0 +1,75 @@
+Jun 16 14:03:25.709110 u415 kernel: INFO: task kworker/u36:5:360 blocked for more than 120 seconds.
+Jun 16 14:03:25.711140 u415 kernel:       Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+Jun 16 14:03:25.711229 u415 kernel: "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+Jun 16 14:03:25.711289 u415 kernel: kworker/u36:5   D    0   360      2 0x80000000
+Jun 16 14:03:25.711339 u415 kernel: Workqueue: writeback wb_workfn (flush-259:0)
+Jun 16 14:03:25.711390 u415 kernel: Call Trace:
+Jun 16 14:03:25.711450 u415 kernel:  __schedule+0x24e/0x890
+Jun 16 14:03:25.711498 u415 kernel:  ? __wake_up_common_lock+0x8e/0xc0
+Jun 16 14:03:25.711536 u415 kernel:  ? atomic_t_wait+0x60/0x60
+Jun 16 14:03:25.711583 u415 kernel:  schedule+0x2c/0x80
+Jun 16 14:03:25.711629 u415 kernel:  bit_wait+0x11/0x60
+Jun 16 14:03:25.711665 u415 kernel:  __wait_on_bit+0x4c/0x90
+Jun 16 14:03:25.711705 u415 kernel:  ? atomic_t_wait+0x60/0x60
+Jun 16 14:03:25.711755 u415 kernel:  __inode_wait_for_writeback+0xb9/0xf0
+Jun 16 14:03:25.711794 u415 kernel:  ? bit_waitqueue+0x40/0x40
+Jun 16 14:03:25.711834 u415 kernel:  inode_wait_for_writeback+0x26/0x40
+Jun 16 14:03:25.711874 u415 kernel:  evict+0xb5/0x1a0
+Jun 16 14:03:25.711910 u415 kernel:  iput+0x19c/0x230
+Jun 16 14:03:25.711963 u415 kernel:  bento_file_put.part.22+0x56/0x110 [bentofs]
+Jun 16 14:03:25.712008 u415 kernel:  ? sb_clear_inode_writeback+0x7b/0xd0
+Jun 16 14:03:25.712046 u415 kernel:  ? test_clear_page_writeback+0x1f1/0x3a0
+Jun 16 14:03:25.712083 u415 kernel:  bento_file_put.constprop.41+0x1a/0x20 [bentofs]
+Jun 16 14:03:25.712122 u415 kernel:  ? bento_file_put.constprop.41+0x1a/0x20 [bentofs]
+Jun 16 14:03:25.712178 u415 kernel:  bento_writepages+0xb1/0xf0 [bentofs]
+Jun 16 14:03:25.712224 u415 kernel:  do_writepages+0x4b/0xe0
+Jun 16 14:03:25.712261 u415 kernel:  __writeback_single_inode+0x40/0x330
+Jun 16 14:03:25.712307 u415 kernel:  ? __writeback_single_inode+0x40/0x330
+Jun 16 14:03:25.712379 u415 kernel:  writeback_sb_inodes+0x1d7/0x530
+Jun 16 14:03:25.712414 u415 kernel:  __writeback_inodes_wb+0x67/0xb0
+Jun 16 14:03:25.712457 u415 kernel:  wb_writeback+0x26c/0x300
+Jun 16 14:03:25.712503 u415 kernel:  wb_workfn+0x1c8/0x400
+Jun 16 14:03:25.712545 u415 kernel:  ? wb_workfn+0x1c8/0x400
+Jun 16 14:03:25.712579 u415 kernel:  process_one_work+0x1de/0x420
+Jun 16 14:03:25.712619 u415 kernel:  worker_thread+0x32/0x410
+Jun 16 14:03:25.712652 u415 kernel:  kthread+0x121/0x140
+Jun 16 14:03:25.712689 u415 kernel:  ? process_one_work+0x420/0x420
+Jun 16 14:03:25.712726 u415 kernel:  ? kthread_create_worker_on_cpu+0x70/0x70
+Jun 16 14:03:25.712764 u415 kernel:  ret_from_fork+0x1f/0x40
+Jun 16 14:03:25.712813 u415 kernel: INFO: task git:2014 blocked for more than 120 seconds.
+Jun 16 14:03:25.712860 u415 kernel:       Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+Jun 16 14:03:25.712896 u415 kernel: "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+Jun 16 14:03:25.712933 u415 kernel: git             D    0  2014   2013 0x00000004
+Jun 16 14:03:25.713048 u415 kernel: Call Trace:
+Jun 16 14:03:25.713087 u415 kernel:  __schedule+0x24e/0x890
+Jun 16 14:03:25.713127 u415 kernel:  schedule+0x2c/0x80
+Jun 16 14:03:25.713171 u415 kernel:  __wait_on_freeing_inode+0xbb/0xf0
+Jun 16 14:03:25.713220 u415 kernel:  ? bit_waitqueue+0x40/0x40
+Jun 16 14:03:25.713262 u415 kernel:  ? bento_xattr_set+0x30/0x30 [bentofs]
+Jun 16 14:03:25.713309 u415 kernel:  find_inode+0x6d/0xb0
+Jun 16 14:03:25.713364 u415 kernel:  iget5_locked+0x82/0x1f0
+Jun 16 14:03:25.713399 u415 kernel:  ? bento_inode_eq+0x20/0x20 [bentofs]
+Jun 16 14:03:25.713444 u415 kernel:  ? bento_xattr_set+0x30/0x30 [bentofs]
+Jun 16 14:03:25.713500 u415 kernel:  ? bento_inode_eq+0x20/0x20 [bentofs]
+Jun 16 14:03:25.713540 u415 kernel:  bento_iget+0x7d/0x1e0 [bentofs]
+Jun 16 14:03:25.713588 u415 kernel:  bento_create_open+0x2a2/0x3e0 [bentofs]
+Jun 16 14:03:25.713631 u415 kernel:  bento_atomic_open+0xb3/0x100 [bentofs]
+Jun 16 14:03:25.713668 u415 kernel:  ? bento_atomic_open+0xb3/0x100 [bentofs]
+Jun 16 14:03:25.713705 u415 kernel:  path_openat+0xde1/0x18b0
+Jun 16 14:03:25.713747 u415 kernel:  ? path_lookupat+0xaa/0x1f0
+Jun 16 14:03:25.713787 u415 kernel:  do_filp_open+0x9b/0x110
+Jun 16 14:03:25.713832 u415 kernel:  ? __check_object_size+0xc8/0x1b0
+Jun 16 14:03:25.713879 u415 kernel:  ? __alloc_fd+0xb2/0x170
+Jun 16 14:03:25.713944 u415 kernel:  do_sys_open+0x1ba/0x2c0
+Jun 16 14:03:25.713990 u415 kernel:  ? do_sys_open+0x1ba/0x2c0
+Jun 16 14:03:25.714025 u415 kernel:  ? path_put+0x1e/0x30
+Jun 16 14:03:25.714067 u415 kernel:  SyS_openat+0x14/0x20
+Jun 16 14:03:25.714109 u415 kernel:  do_syscall_64+0x73/0x130
+Jun 16 14:03:25.714144 u415 kernel:  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+Jun 16 14:03:25.714190 u415 kernel: RIP: 0033:0x7f6d17e81e1b
+Jun 16 14:03:25.714227 u415 kernel: RSP: 002b:00007ffce02bcf50 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
+Jun 16 14:03:25.714276 u415 kernel: RAX: ffffffffffffffda RBX: 00005617a8061820 RCX: 00007f6d17e81e1b
+Jun 16 14:03:25.714316 u415 kernel: RDX: 00000000000800c2 RSI: 00005617a8064a60 RDI: 00000000ffffff9c
+Jun 16 14:03:25.714361 u415 kernel: RBP: 00005617a7dbab84 R08: 00007f6d17c62c40 R09: 0000000000000000
+Jun 16 14:03:25.714399 u415 kernel: R10: 00000000000001b6 R11: 0000000000000246 R12: 0000000000000005
+Jun 16 14:03:25.714437 u415 kernel: R13: 00007ffce02bd0f8 R14: 00005617a7d735b0 R15: 0000000000000000

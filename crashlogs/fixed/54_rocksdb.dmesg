@@ -1,0 +1,128 @@
+[  308.569760] JBD2: touch wants too many credits credits:32 rsv_credits:0 max:12
+[  308.569914] ------------[ cut here ]------------
+[  308.569931] WARNING: CPU: 14 PID: 2389 at fs/jbd2/transaction.c:322 start_this_handle.cold+0x22/0x2f
+[  308.569933] Modules linked in: xv6fs(POE) bentofs(OE) binfmt_misc dm_multipath scsi_dh_rdac scsi_dh_emc scsi_dh_alua intel_rapl_msr intel_rapl_common isst_if_common nfit kvm_intel kvm ppdev joydev input_leds parport_pc parport mac_hid serio_raw qemu_fw_cfg sch_fq_codel ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear bochs_drm drm_vram_helper ttm drm_kms_helper crct10dif_pclmul crc32_pclmul syscopyarea ghash_clmulni_intel sysfillrect sysimgblt aesni_intel fb_sys_fops nvme crypto_simd drm cryptd glue_helper nvme_core psmouse e1000 virtio_blk floppy pata_acpi i2c_piix4
+[  308.570049] CPU: 14 PID: 2389 Comm: touch Tainted: P           OE     5.4.0-74-generic #83-Ubuntu
+[  308.570051] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+[  308.570061] RIP: 0010:start_this_handle.cold+0x22/0x2f
+[  308.570065] Code: 61 c8 ab e8 91 2a 04 00 8b 55 94 44 89 f1 48 c7 c7 d8 8a f9 ab 65 48 8b 34 25 c0 6b 01 00 48 81 c6 78 0a 00 00 e8 ba 61 ff ff <0f> 0b 41 b8 e4 ff ff ff e9 fa f4 94 ff 49 8b 77 18 48 c7 c7 50 8b
+[  308.570068] RSP: 0018:ffff9f4e008176c0 EFLAGS: 00010246
+[  308.570071] RAX: 0000000000000042 RBX: ffff8af2e7a9e000 RCX: 0000000000000000
+[  308.570073] RDX: 0000000000000000 RSI: ffff8af2ff9978c8 RDI: ffff8af2ff9978c8
+[  308.570079] RBP: ffff9f4e00817738 R08: ffff8af2ff9978c8 R09: ffff9f4e00c94020
+[  308.570081] R10: ffff8af2e7d94b70 R11: 0000000000000001 R12: ffff8af2ebc25540
+[  308.570083] R13: 0000000000000020 R14: 0000000000000000 R15: ffff8af2e7a9e000
+[  308.570086] FS:  00007f22c9a485c0(0000) GS:ffff8af2ff980000(0000) knlGS:0000000000000000
+[  308.570088] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[  308.570091] CR2: 00007f22c995a750 CR3: 00000008e7910001 CR4: 0000000000760ee0
+[  308.570097] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+[  308.570098] DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+[  308.570100] PKRU: 55555554
+[  308.570101] Call Trace:
+[  308.570116]  ? _cond_resched+0x19/0x30
+[  308.570125]  ? kmem_cache_alloc+0x178/0x230
+[  308.570131]  jbd2__journal_start+0xee/0x200
+[  308.570134]  jbd2_journal_start+0x1b/0x20
+[  308.570152]  rs_jbd2_journal_start+0xe/0x10 [xv6fs]
+[  308.570162]  _ZN5bento6kernel7journal7Journal8begin_op17h819eab282cfaf9ddE+0x17/0x60 [xv6fs]
+[  308.570170]  _ZN147_$LT$xv6fs..xv6fs_ll..Xv6FileSystem$u20$as$u20$bento..bento_utils..BentoFilesystem$LT$xv6fs..xv6fs_ll..Xv6State$C$xv6fs..+0x41/0x550 [xv6fs]
+[  308.570175]  ? allocate_slab+0x25b/0x4b0
+[  308.570180]  ? new_slab+0x4a/0x70
+[  308.570185]  ? ___slab_alloc+0x32c/0x590
+[  308.570194]  _ZN5bento4fuse7request8dispatch17h7b6749334aee539bE+0xffc/0x17d0 [xv6fs]
+[  308.570199]  ? _cond_resched+0x19/0x30
+[  308.570204]  ? inode_sb_list_add+0x5f/0x70
+[  308.570210]  ? make_kgid+0x17/0x20
+[  308.570218]  ? bento_request_init+0x9b/0xd0 [bentofs]
+[  308.570223]  ? __bento_request_alloc+0x7f/0xc0 [bentofs]
+[  308.570229]  bento_create_open+0x199/0x380 [bentofs]
+[  308.570238]  bento_atomic_open+0xea/0x110 [bentofs]
+[  308.570243]  lookup_open+0x364/0x6e0
+[  308.570247]  do_last+0x2cb/0x900
+[  308.570252]  path_openat+0x8d/0x290
+[  308.570256]  ? do_fault+0x22c/0x640
+[  308.570261]  do_filp_open+0x91/0x100
+[  308.570267]  ? __alloc_fd+0xb8/0x150
+[  308.570272]  do_sys_open+0x17e/0x290
+[  308.570277]  __x64_sys_openat+0x20/0x30
+[  308.570283]  do_syscall_64+0x57/0x190
+[  308.570286]  entry_SYSCALL_64_after_hwframe+0x44/0xa9
+[  308.570289] RIP: 0033:0x7f22c9965eab
+[  308.570293] Code: 25 00 00 41 00 3d 00 00 41 00 74 4b 64 8b 04 25 18 00 00 00 85 c0 75 67 44 89 e2 48 89 ee bf 9c ff ff ff b8 01 01 00 00 0f 05 <48> 3d 00 f0 ff ff 0f 87 91 00 00 00 48 8b 4c 24 28 64 48 33 0c 25
+[  308.570295] RSP: 002b:00007ffdeb9c4bc0 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
+[  308.570298] RAX: ffffffffffffffda RBX: 0000000000000001 RCX: 00007f22c9965eab
+[  308.570299] RDX: 0000000000000941 RSI: 00007ffdeb9c58bc RDI: 00000000ffffff9c
+[  308.570301] RBP: 00007ffdeb9c58bc R08: 0000000000000000 R09: 0000000000000000
+[  308.570303] R10: 00000000000001b6 R11: 0000000000000246 R12: 0000000000000941
+[  308.570304] R13: 00007ffdeb9c58bc R14: 0000000000000000 R15: 0000000000000000
+[  308.570308] ---[ end trace 3529d1f7151a37de ]---
+[  308.570419] BUG: kernel NULL pointer dereference, address: 0000000000000000
+[  308.570479] #PF: supervisor read access in kernel mode
+[  308.570559] #PF: error_code(0x0000) - not-present page
+[  308.570649] PGD 0 P4D 0 
+[  308.570676] Oops: 0000 [#1] SMP NOPTI
+[  308.570720] CPU: 14 PID: 2389 Comm: touch Tainted: P        W  OE     5.4.0-74-generic #83-Ubuntu
+[  308.570832] Hardware name: QEMU Standard PC (i440FX + PIIX, 1996), BIOS rel-1.14.0-0-g155821a1990b-prebuilt.qemu.org 04/01/2014
+[  308.570931] RIP: 0010:jbd2_journal_get_write_access+0x15/0x90
+[  308.571026] Code: 48 85 d2 75 08 49 8d 5d 02 eb 8d 0f 0b 0f 0b 66 0f 1f 44 00 00 0f 1f 44 00 00 55 48 89 e5 41 56 41 55 41 bd e2 ff ff ff 41 54 <f6> 47 1c 08 75 25 48 8b 07 49 89 fc 48 85 c0 74 1a 48 8b 00 4c 8b
+[  308.571158] RSP: 0018:ffff9f4e00817648 EFLAGS: 00010246
+[  308.571200] RAX: 0000000500000000 RBX: ffff9f4e00817728 RCX: 0000000000000000
+[  308.571264] RDX: ffff8af2f21e70d0 RSI: ffff8af2f21e70d0 RDI: ffffffffffffffe4
+[  308.571379] RBP: ffff9f4e00817660 R08: 0000000000000000 R09: 0000000000000000
+[  308.571493] R10: ffffffffffffffff R11: 0000000000000000 R12: ffff9f4e008177f0
+[  308.571606] R13: 00000000ffffffe2 R14: 0000000000000000 R15: ffffffffc083c3c0
+[  308.571719] FS:  00007f22c9a485c0(0000) GS:ffff8af2ff980000(0000) knlGS:0000000000000000
+[  308.571839] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[  308.571942] CR2: 0000000000000000 CR3: 00000008e7910001 CR4: 0000000000760ee0
+[  308.572080] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+[  308.572197] DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+[  308.572319] PKRU: 55555554
+[  308.572351] Call Trace:
+[  308.572388]  rs_jbd2_journal_get_write_access+0xe/0x10 [xv6fs]
+[  308.572439]  _ZN5xv6fs8xv6fs_ll13Xv6FileSystem15create_internal17h5fa11b354663483dE+0x30e/0x9c0 [xv6fs]
+[  308.572515]  _ZN147_$LT$xv6fs..xv6fs_ll..Xv6FileSystem$u20$as$u20$bento..bento_utils..BentoFilesystem$LT$xv6fs..xv6fs_ll..Xv6State$C$xv6fs..+0x62/0x550 [xv6fs]
+[  308.572620]  ? new_slab+0x4a/0x70
+[  308.572651]  ? ___slab_alloc+0x32c/0x590
+[  308.572690]  _ZN5bento4fuse7request8dispatch17h7b6749334aee539bE+0xffc/0x17d0 [xv6fs]
+[  308.572751]  ? _cond_resched+0x19/0x30
+[  308.572785]  ? inode_sb_list_add+0x5f/0x70
+[  308.572819]  ? make_kgid+0x17/0x20
+[  308.572852]  ? bento_request_init+0x9b/0xd0 [bentofs]
+[  308.572894]  ? __bento_request_alloc+0x7f/0xc0 [bentofs]
+[  308.572939]  bento_create_open+0x199/0x380 [bentofs]
+[  308.572985]  bento_atomic_open+0xea/0x110 [bentofs]
+[  308.573026]  lookup_open+0x364/0x6e0
+[  308.573058]  do_last+0x2cb/0x900
+[  308.573088]  path_openat+0x8d/0x290
+[  308.573137]  ? do_fault+0x22c/0x640
+[  308.573168]  do_filp_open+0x91/0x100
+[  308.573201]  ? __alloc_fd+0xb8/0x150
+[  308.574905]  do_sys_open+0x17e/0x290
+[  308.576512]  __x64_sys_openat+0x20/0x30
+[  308.578165]  do_syscall_64+0x57/0x190
+[  308.579748]  entry_SYSCALL_64_after_hwframe+0x44/0xa9
+[  308.581332] RIP: 0033:0x7f22c9965eab
+[  308.582167] Code: 25 00 00 41 00 3d 00 00 41 00 74 4b 64 8b 04 25 18 00 00 00 85 c0 75 67 44 89 e2 48 89 ee bf 9c ff ff ff b8 01 01 00 00 0f 05 <48> 3d 00 f0 ff ff 0f 87 91 00 00 00 48 8b 4c 24 28 64 48 33 0c 25
+[  308.583531] RSP: 002b:00007ffdeb9c4bc0 EFLAGS: 00000246 ORIG_RAX: 0000000000000101
+[  308.584227] RAX: ffffffffffffffda RBX: 0000000000000001 RCX: 00007f22c9965eab
+[  308.584920] RDX: 0000000000000941 RSI: 00007ffdeb9c58bc RDI: 00000000ffffff9c
+[  308.585614] RBP: 00007ffdeb9c58bc R08: 0000000000000000 R09: 0000000000000000
+[  308.586278] R10: 00000000000001b6 R11: 0000000000000246 R12: 0000000000000941
+[  308.586932] R13: 00007ffdeb9c58bc R14: 0000000000000000 R15: 0000000000000000
+[  308.587572] Modules linked in: xv6fs(POE) bentofs(OE) binfmt_misc dm_multipath scsi_dh_rdac scsi_dh_emc scsi_dh_alua intel_rapl_msr intel_rapl_common isst_if_common nfit kvm_intel kvm ppdev joydev input_leds parport_pc parport mac_hid serio_raw qemu_fw_cfg sch_fq_codel ip_tables x_tables autofs4 btrfs zstd_compress raid10 raid456 async_raid6_recov async_memcpy async_pq async_xor async_tx xor raid6_pq libcrc32c raid1 raid0 multipath linear bochs_drm drm_vram_helper ttm drm_kms_helper crct10dif_pclmul crc32_pclmul syscopyarea ghash_clmulni_intel sysfillrect sysimgblt aesni_intel fb_sys_fops nvme crypto_simd drm cryptd glue_helper nvme_core psmouse e1000 virtio_blk floppy pata_acpi i2c_piix4
+[  308.591673] CR2: 0000000000000000
+[  308.592380] ---[ end trace 3529d1f7151a37df ]---
+[  308.593087] RIP: 0010:jbd2_journal_get_write_access+0x15/0x90
+[  308.593798] Code: 48 85 d2 75 08 49 8d 5d 02 eb 8d 0f 0b 0f 0b 66 0f 1f 44 00 00 0f 1f 44 00 00 55 48 89 e5 41 56 41 55 41 bd e2 ff ff ff 41 54 <f6> 47 1c 08 75 25 48 8b 07 49 89 fc 48 85 c0 74 1a 48 8b 00 4c 8b
+[  308.595281] RSP: 0018:ffff9f4e00817648 EFLAGS: 00010246
+[  308.596025] RAX: 0000000500000000 RBX: ffff9f4e00817728 RCX: 0000000000000000
+[  308.596779] RDX: ffff8af2f21e70d0 RSI: ffff8af2f21e70d0 RDI: ffffffffffffffe4
+[  308.597556] RBP: ffff9f4e00817660 R08: 0000000000000000 R09: 0000000000000000
+[  308.598318] R10: ffffffffffffffff R11: 0000000000000000 R12: ffff9f4e008177f0
+[  308.599069] R13: 00000000ffffffe2 R14: 0000000000000000 R15: ffffffffc083c3c0
+[  308.599799] FS:  00007f22c9a485c0(0000) GS:ffff8af2ff980000(0000) knlGS:0000000000000000
+[  308.600523] CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+[  308.601259] CR2: 0000000000000000 CR3: 00000008e7910001 CR4: 0000000000760ee0
+[  308.602000] DR0: 0000000000000000 DR1: 0000000000000000 DR2: 0000000000000000
+[  308.602728] DR3: 0000000000000000 DR6: 00000000fffe0ff0 DR7: 0000000000000400
+[  308.603444] PKRU: 55555554

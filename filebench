@@ -37,7 +37,7 @@ for f in *.f; do
 
 			WREPS=$REPS
 			# These are bugged :(
-			if [ $f == "createfiles_1t.f" ] || [ $f == "deletefiles_1t.f" ] || [[ $f == seq_write_1t_* ]]; then
+			if [[ ( $FS == "Bento-fs" || $FS == "Bento-prov" ) && ( $f == "createfiles_1t.f" || $f == "deletefiles_1t.f" || $f == seq_write_1t_* ) ]]; then
 				WREPS=1
 			fi
 			for i in $(seq 1 $WREPS); do
@@ -57,7 +57,7 @@ for f in *.f; do
 		done
 	else
 		WREPS=$REPS
-		if [[ $f == "webserver.f" ]]; then
+		if [[ ( $FS == "Bento-fs" || $FS == "Bento-prov" ) && $f == "webserver.f" ]]; then
 			WREPS=4
 		fi
 		for i in $(seq 1 $WREPS); do

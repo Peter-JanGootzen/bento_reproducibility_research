@@ -7,6 +7,9 @@ def parse_elapsed_secs(s):
 	secs += float("0." + s.split(":")[1].split(".")[1])
 	return secs
 
+def get_avg_from_table_str(s):
+    return float(s.split(" (")[0])
+
 def bar_plot(ax, data, l, yerr=None, colors=None, total_width=0.8, single_width=1):
     # Check if colors where provided, otherwhise use the default color cycle
     if colors is None:
