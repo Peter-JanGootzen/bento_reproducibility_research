@@ -9,7 +9,7 @@ Filebench Version 1.5-alpha3
 1.007: Running...
 2.007: Run took 1 seconds...
 2.007: Per-Operation Breakdown
-finish               131071ops   131040ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.01ms]
-write-file           131101ops   131070ops/s 4095.4mb/s      0.0ms/op [0.00ms -  2.65ms]
-2.007: IO Summary: 131101 ops 131069.543 ops/s 131070/0 rd/wr 4095.4mb/s   0.0ms/op
+finish               131076ops   131044ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.02ms]
+write-file           131108ops   131075ops/s 4095.5mb/s      0.0ms/op [0.00ms -  3.61ms]
+2.007: IO Summary: 131108 ops 131075.493 ops/s 131075/0 rd/wr 4095.5mb/s   0.0ms/op
 2.007: Shutting down processes

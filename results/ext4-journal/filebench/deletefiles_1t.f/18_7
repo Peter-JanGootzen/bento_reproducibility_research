@@ -1,0 +1,18 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.001: Populating and pre-allocating filesets
+0.284: fsdeletefiles_1t.f187 populated: 600000 files, avg. dir. width = 100, avg. dir. depth = 2.9, 0 leafdirs, 9375.000MB total size
+0.284: Removing fsdeletefiles_1t.f187 tree (if exists)
+0.288: Pre-allocating directories in fsdeletefiles_1t.f187 tree
+0.401: Pre-allocating files in fsdeletefiles_1t.f187 tree
+46.722: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+46.723: Population and pre-allocation of filesets completed
+46.724: Starting 1 filedelete instances
+47.728: Running...
+48.728: Run took 1 seconds...
+48.728: Per-Operation Breakdown
+finish               27500ops    27491ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.02ms]
+limit                0ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+deletefile1          27517ops    27508ops/s   0.0mb/s      0.2ms/op [0.02ms - 16.42ms]
+48.728: IO Summary: 27517 ops 27508.142 ops/s 0/0 rd/wr   0.0mb/s   0.0ms/op
+48.728: Shutting down processes

@@ -8,8 +8,8 @@ Filebench Version 1.5-alpha3
 0.002: Starting 1 filewriter instances
 1.007: Running...
 8.008: Run took 7 seconds...
-8.009: Per-Operation Breakdown
-finish               4097ops      585ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
-write-file           4132ops      590ops/s 587.6mb/s     26.1ms/op [0.02ms - 6001.37ms]
-8.009: IO Summary:  4132 ops 590.179 ops/s 0/590 rd/wr 587.6mb/s  26.1ms/op
+8.008: Per-Operation Breakdown
+finish               4097ops      585ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.03ms]
+write-file           4132ops      590ops/s 587.6mb/s     26.2ms/op [0.01ms - 6021.55ms]
+8.009: IO Summary:  4132 ops 590.186 ops/s 0/590 rd/wr 587.6mb/s  26.2ms/op
 8.009: Shutting down processes

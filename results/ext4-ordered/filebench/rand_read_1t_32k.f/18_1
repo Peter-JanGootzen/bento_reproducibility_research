@@ -3,14 +3,14 @@ Filebench Version 1.5-alpha3
 0.001: Populating and pre-allocating filesets
 0.002: Removing bigfile1 tree (if exists)
 0.005: Pre-allocating directories in bigfile1 tree
-0.005: Pre-allocating files in bigfile1 tree
-3.013: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
-3.013: Population and pre-allocation of filesets completed
-3.013: Starting 1 filereader instances
-4.018: Running...
-5.018: Run took 1 seconds...
-5.019: Per-Operation Breakdown
-finish               131082ops   131047ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.02ms]
-write-file           131105ops   131070ops/s 4095.4mb/s      0.0ms/op [0.00ms -  0.44ms]
-5.019: IO Summary: 131105 ops 131070.397 ops/s 131070/0 rd/wr 4095.4mb/s   0.0ms/op
-5.019: Shutting down processes
+0.006: Pre-allocating files in bigfile1 tree
+3.001: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+3.001: Population and pre-allocation of filesets completed
+3.001: Starting 1 filereader instances
+4.006: Running...
+5.006: Run took 1 seconds...
+5.007: Per-Operation Breakdown
+finish               131073ops   131034ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.04ms]
+write-file           131107ops   131068ops/s 4095.3mb/s      0.0ms/op [0.00ms -  0.61ms]
+5.007: IO Summary: 131107 ops 131067.942 ops/s 131068/0 rd/wr 4095.3mb/s   0.0ms/op
+5.007: Shutting down processes

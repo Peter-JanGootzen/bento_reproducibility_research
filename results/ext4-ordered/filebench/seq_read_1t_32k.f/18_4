@@ -5,10 +5,10 @@ Filebench Version 1.5-alpha3
 0.001: Pre-allocating files in winnerwinnerchickendinner tree
 0.001: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
 0.001: Population and pre-allocation of filesets completed
-0.001: Starting 1 filereader instances
-1.007: Running...
-61.015: Run took 60 seconds...
-61.015: Per-Operation Breakdown
-seqread-file         18219347ops   303613ops/s 9487.8mb/s      0.1ms/op [0.00ms - 10.83ms]
-61.015: IO Summary: 18219347 ops 303612.549 ops/s 303613/0 rd/wr 9487.8mb/s   0.1ms/op
-61.015: Shutting down processes
+0.002: Starting 1 filereader instances
+1.006: Running...
+61.011: Run took 60 seconds...
+61.012: Per-Operation Breakdown
+seqread-file         24244878ops   404049ops/s 12626.4mb/s      0.0ms/op [0.00ms -  7.08ms]
+61.012: IO Summary: 24244878 ops 404048.996 ops/s 404049/0 rd/wr 12626.4mb/s   0.0ms/op
+61.012: Shutting down processes

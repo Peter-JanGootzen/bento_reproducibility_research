@@ -3,14 +3,14 @@ Filebench Version 1.5-alpha3
 0.001: Populating and pre-allocating filesets
 0.002: Removing seq_write_1t_1024k tree (if exists)
 0.005: Pre-allocating directories in seq_write_1t_1024k tree
-0.006: Pre-allocating files in seq_write_1t_1024k tree
-0.006: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
-0.006: Population and pre-allocation of filesets completed
+0.005: Pre-allocating files in seq_write_1t_1024k tree
+0.005: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+0.005: Population and pre-allocation of filesets completed
 0.006: Starting 1 filewriter instances
-1.010: Running...
-5.011: Run took 4 seconds...
-5.011: Per-Operation Breakdown
+1.011: Running...
+7.012: Run took 6 seconds...
+7.012: Per-Operation Breakdown
 finish               1ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
-write-file           6102ops     1525ops/s 1520.8mb/s      2.6ms/op [0.01ms - 3814.59ms]
-5.011: IO Summary:  6102 ops 1525.262 ops/s 0/1525 rd/wr 1520.8mb/s   2.6ms/op
-5.011: Shutting down processes
+write-file           7873ops     1312ops/s 1308.9mb/s      2.5ms/op [0.02ms - 5714.85ms]
+7.012: IO Summary:  7873 ops 1311.897 ops/s 0/1312 rd/wr 1308.9mb/s   2.5ms/op
+7.012: Shutting down processes

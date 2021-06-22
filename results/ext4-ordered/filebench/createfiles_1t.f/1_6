@@ -1,0 +1,19 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.002: Populating and pre-allocating filesets
+0.393: fscreatefiles_1t.f16 populated: 800000 files, avg. dir. width = 1000000, avg. dir. depth = 1.0, 0 leafdirs, 781.250MB total size
+0.393: Removing fscreatefiles_1t.f16 tree (if exists)
+0.396: Pre-allocating directories in fscreatefiles_1t.f16 tree
+0.396: Pre-allocating files in fscreatefiles_1t.f16 tree
+11.118: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+11.118: Population and pre-allocation of filesets completed
+11.118: Starting 1 filecreate instances
+12.122: Running...
+17.123: Run took 5 seconds...
+17.123: Per-Operation Breakdown
+finish               250001ops    49991ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.09ms]
+closefile1           250001ops    49991ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.13ms]
+writefile1           250001ops    49991ops/s  48.8mb/s      0.0ms/op [0.00ms -  0.84ms]
+createfile1          250001ops    49991ops/s   0.0mb/s      0.0ms/op [0.01ms - 13.07ms]
+17.123: IO Summary: 750003 ops 149973.545 ops/s 0/49991 rd/wr  48.8mb/s   0.0ms/op
+17.123: Shutting down processes

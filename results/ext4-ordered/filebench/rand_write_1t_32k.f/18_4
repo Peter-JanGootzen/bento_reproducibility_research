@@ -9,7 +9,7 @@ Filebench Version 1.5-alpha3
 1.007: Running...
 20.010: Run took 19 seconds...
 20.010: Per-Operation Breakdown
-finish               983041ops    51731ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.06ms]
-write-file           983076ops    51733ops/s 1616.6mb/s      0.3ms/op [0.01ms - 584.53ms]
-20.010: IO Summary: 983076 ops 51732.878 ops/s 0/51733 rd/wr 1616.6mb/s   0.3ms/op
-20.010: Shutting down processes
+finish               983041ops    51731ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.02ms]
+write-file           983076ops    51733ops/s 1616.6mb/s      0.3ms/op [0.01ms - 607.69ms]
+20.011: IO Summary: 983076 ops 51732.913 ops/s 0/51733 rd/wr 1616.6mb/s   0.3ms/op
+20.011: Shutting down processes

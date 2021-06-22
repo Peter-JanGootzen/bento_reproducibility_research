@@ -10,6 +10,6 @@ Filebench Version 1.5-alpha3
 2.006: Run took 1 seconds...
 2.006: Per-Operation Breakdown
 finish               4097ops     4096ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
-write-file           4098ops     4097ops/s 4095.9mb/s      0.2ms/op [0.05ms -  1.11ms]
-2.006: IO Summary:  4098 ops 4096.898 ops/s 4097/0 rd/wr 4095.9mb/s   0.2ms/op
+write-file           4098ops     4097ops/s 4096.0mb/s      0.2ms/op [0.04ms -  0.36ms]
+2.006: IO Summary:  4098 ops 4096.959 ops/s 4097/0 rd/wr 4096.0mb/s   0.2ms/op
 2.006: Shutting down processes

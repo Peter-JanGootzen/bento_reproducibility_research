@@ -7,9 +7,9 @@ Filebench Version 1.5-alpha3
 0.002: Population and pre-allocation of filesets completed
 0.002: Starting 1 filewriter instances
 1.006: Running...
-17.008: Run took 16 seconds...
-17.008: Per-Operation Breakdown
-finish               245761ops    15358ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.98ms]
-write-file           245762ops    15358ops/s 1919.7mb/s      0.1ms/op [0.02ms -  3.94ms]
-17.008: IO Summary: 245762 ops 15357.663 ops/s 0/15358 rd/wr 1919.7mb/s   0.1ms/op
-17.008: Shutting down processes
+14.008: Run took 13 seconds...
+14.008: Per-Operation Breakdown
+finish               245761ops    18901ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.02ms]
+write-file           245762ops    18901ops/s 2362.7mb/s      0.1ms/op [0.02ms -  1.09ms]
+14.008: IO Summary: 245762 ops 18901.318 ops/s 0/18901 rd/wr 2362.7mb/s   0.1ms/op
+14.008: Shutting down processes

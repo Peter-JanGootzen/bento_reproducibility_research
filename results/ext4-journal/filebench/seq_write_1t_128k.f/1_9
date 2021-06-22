@@ -1,0 +1,16 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.001: Populating and pre-allocating filesets
+0.002: Removing seq_write_1t_128k tree (if exists)
+0.745: Pre-allocating directories in seq_write_1t_128k tree
+0.745: Pre-allocating files in seq_write_1t_128k tree
+0.745: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+0.745: Population and pre-allocation of filesets completed
+0.745: Starting 1 filewriter instances
+1.749: Running...
+9.750: Run took 8 seconds...
+9.750: Per-Operation Breakdown
+finish               1ops        0ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.00ms]
+write-file           32001ops     3999ops/s 499.9mb/s      0.2ms/op [0.07ms - 177.84ms]
+9.750: IO Summary: 32001 ops 3999.433 ops/s 0/3999 rd/wr 499.9mb/s   0.2ms/op
+9.750: Shutting down processes

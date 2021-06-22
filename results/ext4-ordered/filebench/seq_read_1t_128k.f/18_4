@@ -3,12 +3,12 @@ Filebench Version 1.5-alpha3
 0.001: Populating and pre-allocating filesets
 0.001: Reusing existing largefile tree
 0.001: Pre-allocating files in largefile tree
-0.001: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
-0.001: Population and pre-allocation of filesets completed
-0.001: Starting 1 filereader instances
-1.007: Running...
-61.015: Run took 60 seconds...
-61.016: Per-Operation Breakdown
-seqread-file         5097425ops    84945ops/s 10617.7mb/s      0.2ms/op [0.00ms - 16.33ms]
-61.016: IO Summary: 5097425 ops 84944.679 ops/s 84945/0 rd/wr 10617.7mb/s   0.2ms/op
-61.016: Shutting down processes
+0.002: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+0.002: Population and pre-allocation of filesets completed
+0.002: Starting 1 filereader instances
+1.006: Running...
+61.012: Run took 60 seconds...
+61.013: Per-Operation Breakdown
+seqread-file         5850517ops    97499ops/s 12186.9mb/s      0.2ms/op [0.00ms - 20.27ms]
+61.013: IO Summary: 5850517 ops 97498.725 ops/s 97499/0 rd/wr 12186.9mb/s   0.2ms/op
+61.013: Shutting down processes

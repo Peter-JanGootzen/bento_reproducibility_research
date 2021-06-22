@@ -7,8 +7,8 @@ Filebench Version 1.5-alpha3
 0.002: Population and pre-allocation of filesets completed
 0.002: Starting 1 filereader instances
 1.006: Running...
-61.016: Run took 60 seconds...
+61.017: Run took 60 seconds...
 61.017: Per-Operation Breakdown
-seqread-file         217157ops     3619ops/s 3617.8mb/s      0.3ms/op [0.00ms -  2.07ms]
-61.017: IO Summary: 217157 ops 3618.650 ops/s 3619/0 rd/wr 3617.8mb/s   0.3ms/op
+seqread-file         280967ops     4682ops/s 4680.8mb/s      0.2ms/op [0.00ms -  5.47ms]
+61.017: IO Summary: 280967 ops 4681.982 ops/s 4682/0 rd/wr 4680.8mb/s   0.2ms/op
 61.017: Shutting down processes

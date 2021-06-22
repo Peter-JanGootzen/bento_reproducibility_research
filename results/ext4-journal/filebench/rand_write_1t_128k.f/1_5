@@ -6,10 +6,10 @@ Filebench Version 1.5-alpha3
 0.002: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
 0.002: Population and pre-allocation of filesets completed
 0.002: Starting 1 filewriter instances
-1.006: Running...
-49.015: Run took 48 seconds...
-49.015: Per-Operation Breakdown
-finish               245761ops     5119ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.03ms]
-write-file           245762ops     5119ops/s 639.9mb/s      0.2ms/op [0.03ms - 287.04ms]
-49.015: IO Summary: 245762 ops 5119.087 ops/s 0/5119 rd/wr 639.9mb/s   0.2ms/op
-49.015: Shutting down processes
+1.005: Running...
+47.014: Run took 46 seconds...
+47.014: Per-Operation Breakdown
+finish               245761ops     5342ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.04ms]
+write-file           245762ops     5342ops/s 667.7mb/s      0.2ms/op [0.02ms - 287.77ms]
+47.014: IO Summary: 245762 ops 5341.721 ops/s 0/5342 rd/wr 667.7mb/s   0.2ms/op
+47.014: Shutting down processes

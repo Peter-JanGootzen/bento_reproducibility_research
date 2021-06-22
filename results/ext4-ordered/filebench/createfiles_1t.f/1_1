@@ -1,19 +1,19 @@
 Filebench Version 1.5-alpha3
 0.000: Allocated 173MB of shared memory
 0.002: Populating and pre-allocating filesets
-0.393: fscreatefiles_1t.f11 populated: 800000 files, avg. dir. width = 1000000, avg. dir. depth = 1.0, 0 leafdirs, 781.250MB total size
-0.393: Removing fscreatefiles_1t.f11 tree (if exists)
-0.396: Pre-allocating directories in fscreatefiles_1t.f11 tree
-0.397: Pre-allocating files in fscreatefiles_1t.f11 tree
-10.678: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
-10.678: Population and pre-allocation of filesets completed
-10.679: Starting 1 filecreate instances
-11.683: Running...
-16.684: Run took 5 seconds...
-16.684: Per-Operation Breakdown
+0.400: fscreatefiles_1t.f11 populated: 800000 files, avg. dir. width = 1000000, avg. dir. depth = 1.0, 0 leafdirs, 781.250MB total size
+0.400: Removing fscreatefiles_1t.f11 tree (if exists)
+0.403: Pre-allocating directories in fscreatefiles_1t.f11 tree
+0.404: Pre-allocating files in fscreatefiles_1t.f11 tree
+10.534: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+10.534: Population and pre-allocation of filesets completed
+10.534: Starting 1 filecreate instances
+11.537: Running...
+16.538: Run took 5 seconds...
+16.538: Per-Operation Breakdown
 finish               250001ops    49991ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.02ms]
-closefile1           250001ops    49991ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.10ms]
-writefile1           250001ops    49991ops/s  48.8mb/s      0.0ms/op [0.00ms -  0.28ms]
-createfile1          250001ops    49991ops/s   0.0mb/s      0.0ms/op [0.01ms -  0.93ms]
-16.684: IO Summary: 750003 ops 149972.795 ops/s 0/49991 rd/wr  48.8mb/s   0.0ms/op
-16.684: Shutting down processes
+closefile1           250001ops    49991ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.31ms]
+writefile1           250001ops    49991ops/s  48.8mb/s      0.0ms/op [0.00ms -  0.95ms]
+createfile1          250001ops    49991ops/s   0.0mb/s      0.0ms/op [0.01ms -  1.20ms]
+16.538: IO Summary: 750003 ops 149972.105 ops/s 0/49991 rd/wr  48.8mb/s   0.0ms/op
+16.538: Shutting down processes

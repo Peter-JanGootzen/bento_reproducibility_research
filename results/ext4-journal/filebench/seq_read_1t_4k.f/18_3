@@ -9,6 +9,6 @@ Filebench Version 1.5-alpha3
 1.007: Running...
 61.011: Run took 60 seconds...
 61.011: Per-Operation Breakdown
-seqread-file         79110931ops  1318427ops/s 5150.1mb/s      0.0ms/op [0.00ms -  5.80ms]
-61.011: IO Summary: 79110931 ops 1318427.402 ops/s 1318427/0 rd/wr 5150.1mb/s   0.0ms/op
+seqread-file         81767409ops  1362697ops/s 5323.0mb/s      0.0ms/op [0.00ms -  1.45ms]
+61.011: IO Summary: 81767409 ops 1362697.010 ops/s 1362697/0 rd/wr 5323.0mb/s   0.0ms/op
 61.011: Shutting down processes

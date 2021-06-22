@@ -1,19 +1,19 @@
 Filebench Version 1.5-alpha3
 0.000: Allocated 173MB of shared memory
 0.002: Populating and pre-allocating filesets
-0.447: fscreatefiles_1t.f181 populated: 800000 files, avg. dir. width = 1000000, avg. dir. depth = 1.0, 0 leafdirs, 781.250MB total size
-0.447: Removing fscreatefiles_1t.f181 tree (if exists)
-0.450: Pre-allocating directories in fscreatefiles_1t.f181 tree
-0.451: Pre-allocating files in fscreatefiles_1t.f181 tree
-10.805: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
-10.805: Population and pre-allocation of filesets completed
-10.805: Starting 1 filecreate instances
-11.810: Running...
-19.812: Run took 8 seconds...
-19.812: Per-Operation Breakdown
-finish               250000ops    31245ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.04ms]
-closefile1           250000ops    31245ops/s   0.0mb/s      0.0ms/op [0.00ms -  7.18ms]
-writefile1           250001ops    31245ops/s  30.5mb/s      0.0ms/op [0.00ms -  2.82ms]
-createfile1          250017ops    31247ops/s   0.0mb/s      0.5ms/op [0.01ms - 98.49ms]
-19.813: IO Summary: 750018 ops 93738.318 ops/s 0/31245 rd/wr  30.5mb/s   0.5ms/op
-19.813: Shutting down processes
+0.402: fscreatefiles_1t.f181 populated: 800000 files, avg. dir. width = 1000000, avg. dir. depth = 1.0, 0 leafdirs, 781.250MB total size
+0.402: Removing fscreatefiles_1t.f181 tree (if exists)
+0.405: Pre-allocating directories in fscreatefiles_1t.f181 tree
+0.406: Pre-allocating files in fscreatefiles_1t.f181 tree
+9.628: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+9.628: Population and pre-allocation of filesets completed
+9.628: Starting 1 filecreate instances
+10.634: Running...
+16.635: Run took 6 seconds...
+16.635: Per-Operation Breakdown
+finish               250000ops    41660ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.04ms]
+closefile1           250000ops    41660ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.81ms]
+writefile1           250001ops    41660ops/s  40.7mb/s      0.0ms/op [0.00ms -  3.46ms]
+createfile1          250017ops    41663ops/s   0.0mb/s      0.4ms/op [0.01ms - 104.77ms]
+16.635: IO Summary: 750018 ops 124983.149 ops/s 0/41660 rd/wr  40.7mb/s   0.4ms/op
+16.635: Shutting down processes
