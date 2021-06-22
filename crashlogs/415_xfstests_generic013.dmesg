@@ -1,0 +1,272 @@
+[136303.438260] INFO: task kworker/u36:0:17328 blocked for more than 120 seconds.
+[136303.438465]       Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+[136303.438613] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[136303.438766] kworker/u36:0   D    0 17328      2 0x80000000
+[136303.438806] Workqueue: writeback wb_workfn (flush-259:0)
+[136303.438810] Call Trace:
+[136303.438864]  __schedule+0x24e/0x890
+[136303.438873]  ? __wake_up_common_lock+0x8e/0xc0
+[136303.438878]  ? atomic_t_wait+0x60/0x60
+[136303.438882]  schedule+0x2c/0x80
+[136303.438885]  bit_wait+0x11/0x60
+[136303.438889]  __wait_on_bit+0x4c/0x90
+[136303.438893]  ? atomic_t_wait+0x60/0x60
+[136303.438897]  __inode_wait_for_writeback+0xb9/0xf0
+[136303.438902]  ? bit_waitqueue+0x40/0x40
+[136303.438910]  inode_wait_for_writeback+0x26/0x40
+[136303.438916]  evict+0xb5/0x1a0
+[136303.438921]  iput+0x19c/0x230
+[136303.438946]  bento_file_put.part.22+0x56/0x110 [bentofs]
+[136303.438951]  ? sb_clear_inode_writeback+0x7b/0xd0
+[136303.438959]  ? test_clear_page_writeback+0x1f1/0x3a0
+[136303.438967]  bento_file_put.constprop.41+0x1a/0x20 [bentofs]
+[136303.438972]  ? bento_file_put.constprop.41+0x1a/0x20 [bentofs]
+[136303.438978]  bento_writepages+0xb1/0xf0 [bentofs]
+[136303.438983]  do_writepages+0x4b/0xe0
+[136303.438992]  ? blk_mq_request_issue_directly+0x60/0xc0
+[136303.438996]  __writeback_single_inode+0x40/0x330
+[136303.439000]  ? __writeback_single_inode+0x40/0x330
+[136303.439004]  writeback_sb_inodes+0x1d7/0x530
+[136303.439009]  wb_writeback+0xfb/0x300
+[136303.439013]  wb_workfn+0xc0/0x400
+[136303.439016]  ? wb_workfn+0xc0/0x400
+[136303.439024]  process_one_work+0x1de/0x420
+[136303.439027]  worker_thread+0x32/0x410
+[136303.439034]  kthread+0x121/0x140
+[136303.439037]  ? process_one_work+0x420/0x420
+[136303.439041]  ? kthread_create_worker_on_cpu+0x70/0x70
+[136303.439046]  ret_from_fork+0x1f/0x40
+[136303.439056] INFO: task fsstress:27398 blocked for more than 120 seconds.
+[136303.439189]       Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+[136303.439321] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[136303.439461] fsstress        D    0 27398  27397 0x00000000
+[136303.439464] Call Trace:
+[136303.439471]  __schedule+0x24e/0x890
+[136303.439477]  ? pagevec_lru_move_fn+0xc3/0xe0
+[136303.439481]  schedule+0x2c/0x80
+[136303.439486]  rwsem_down_write_failed+0x1ea/0x360
+[136303.439499]  call_rwsem_down_write_failed+0x17/0x30
+[136303.439502]  ? call_rwsem_down_write_failed+0x17/0x30
+[136303.439507]  down_write+0x2d/0x40
+[136303.439511]  sync_inodes_sb+0xab/0x2d0
+[136303.439519]  sync_inodes_one_sb+0x16/0x20
+[136303.439525]  iterate_supers+0xa2/0x110
+[136303.439529]  ? SyS_tee+0x370/0x370
+[136303.439533]  sys_sync+0x42/0xb0
+[136303.439542]  do_syscall_64+0x73/0x130
+[136303.439545]  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+[136303.439554] RIP: 0033:0x7ffff76d8067
+[136303.439556] RSP: 002b:00007fffffff9dc8 EFLAGS: 00000206 ORIG_RAX: 00000000000000a2
+[136303.439560] RAX: ffffffffffffffda RBX: 0000000000000081 RCX: 00007ffff76d8067
+[136303.439561] RDX: 00000000ffffffff RSI: 0000000026487d04 RDI: 0000000000000081
+[136303.439563] RBP: 0000555555769220 R08: 0000000000000061 R09: 0000000000000000
+[136303.439565] R10: 0000000000000000 R11: 0000000000000206 R12: 00000000000001f4
+[136303.439572] R13: 0000000051eb851f R14: 00007fffffff9e86 R15: 0000555555557d40
+[136303.439577] INFO: task fsstress:27399 blocked for more than 120 seconds.
+[136303.439707]       Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+[136303.439838] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[136303.439977] fsstress        D    0 27399  27397 0x00000000
+[136303.439980] Call Trace:
+[136303.439985]  __schedule+0x24e/0x890
+[136303.439988]  ? _raw_spin_unlock_bh+0x1e/0x20
+[136303.439993]  schedule+0x2c/0x80
+[136303.439996]  wb_wait_for_completion+0x64/0x90
+[136303.440001]  ? wait_woken+0x80/0x80
+[136303.440004]  sync_inodes_sb+0xc4/0x2d0
+[136303.440010]  sync_inodes_one_sb+0x16/0x20
+[136303.440014]  iterate_supers+0xa2/0x110
+[136303.440018]  ? SyS_tee+0x370/0x370
+[136303.440022]  sys_sync+0x42/0xb0
+[136303.440026]  do_syscall_64+0x73/0x130
+[136303.440029]  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+[136303.440031] RIP: 0033:0x7ffff76d8067
+[136303.440033] RSP: 002b:00007fffffff9dc8 EFLAGS: 00000206 ORIG_RAX: 00000000000000a2
+[136303.440036] RAX: ffffffffffffffda RBX: 0000000000000016 RCX: 00007ffff76d8067
+[136303.440038] RDX: 0000000000000000 RSI: 000000001de039f9 RDI: 0000000000000016
+[136303.440040] RBP: 0000555555769220 R08: 0000000000000032 R09: 0000000000000001
+[136303.440041] R10: 0000000000000000 R11: 0000000000000206 R12: 00000000000001f4
+[136303.440043] R13: 0000000051eb851f R14: 00007fffffff9e86 R15: 0000555555557d40
+[136303.440047] INFO: task fsstress:27400 blocked for more than 120 seconds.
+[136303.440177]       Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+[136303.440307] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[136303.440447] fsstress        D    0 27400  27397 0x00000000
+[136303.440449] Call Trace:
+[136303.440455]  __schedule+0x24e/0x890
+[136303.440462]  ? finish_task_switch+0x71/0x230
+[136303.440466]  schedule+0x2c/0x80
+[136303.440472]  rwsem_down_write_failed+0x1ea/0x360
+[136303.440478]  call_rwsem_down_write_failed+0x17/0x30
+[136303.440481]  ? call_rwsem_down_write_failed+0x17/0x30
+[136303.440486]  down_write+0x2d/0x40
+[136303.440489]  sync_inodes_sb+0xab/0x2d0
+[136303.440496]  sync_inodes_one_sb+0x16/0x20
+[136303.440500]  iterate_supers+0xa2/0x110
+[136303.440504]  ? SyS_tee+0x370/0x370
+[136303.440507]  sys_sync+0x42/0xb0
+[136303.440511]  do_syscall_64+0x73/0x130
+[136303.440514]  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+[136303.440516] RIP: 0033:0x7ffff76d8067
+[136303.440518] RSP: 002b:00007fffffff9dc8 EFLAGS: 00000206 ORIG_RAX: 00000000000000a2
+[136303.440520] RAX: ffffffffffffffda RBX: 0000000000000023 RCX: 00007ffff76d8067
+[136303.440522] RDX: 00000000ffffffff RSI: 0000000026988a90 RDI: 0000000000000023
+[136303.440524] RBP: 0000555555769220 R08: 000000000000002f R09: 0000000000000000
+[136303.440525] R10: 0000000000000000 R11: 0000000000000206 R12: 00000000000001f4
+[136303.440527] R13: 0000000051eb851f R14: 00007fffffff9e86 R15: 0000555555557d40
+[136303.440531] INFO: task fsstress:27401 blocked for more than 120 seconds.
+[136303.440662]       Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+[136303.440837] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[136303.440976] fsstress        D    0 27401  27397 0x00000000
+[136303.440979] Call Trace:
+[136303.440985]  __schedule+0x24e/0x890
+[136303.440990]  ? finish_task_switch+0x71/0x230
+[136303.440994]  schedule+0x2c/0x80
+[136303.440999]  rwsem_down_write_failed+0x1ea/0x360
+[136303.441004]  call_rwsem_down_write_failed+0x17/0x30
+[136303.441006]  ? call_rwsem_down_write_failed+0x17/0x30
+[136303.441011]  down_write+0x2d/0x40
+[136303.441014]  sync_inodes_sb+0xab/0x2d0
+[136303.441020]  sync_inodes_one_sb+0x16/0x20
+[136303.441025]  iterate_supers+0xa2/0x110
+[136303.441028]  ? SyS_tee+0x370/0x370
+[136303.441032]  sys_sync+0x42/0xb0
+[136303.441036]  do_syscall_64+0x73/0x130
+[136303.441039]  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+[136303.441041] RIP: 0033:0x7ffff76d8067
+[136303.441043] RSP: 002b:00007fffffff9dc8 EFLAGS: 00000206 ORIG_RAX: 00000000000000a2
+[136303.441050] RAX: ffffffffffffffda RBX: 0000000000000016 RCX: 00007ffff76d8067
+[136303.441052] RDX: 0000000000000000 RSI: 00000000453f61bf RDI: 0000000000000016
+[136303.441054] RBP: 0000555555769220 R08: 0000000000000000 R09: 0000000000000011
+[136303.441055] R10: 00000000ffffffef R11: 0000000000000206 R12: 00000000000001f4
+[136303.441057] R13: 0000000051eb851f R14: 00007fffffff9e86 R15: 0000555555557d40
+[136303.441062] INFO: task fsstress:27402 blocked for more than 120 seconds.
+[136303.441193]       Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+[136303.441329] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[136303.441475] fsstress        D    0 27402  27397 0x00000000
+[136303.441478] Call Trace:
+[136303.441483]  __schedule+0x24e/0x890
+[136303.441489]  ? pagevec_lru_move_fn+0xc3/0xe0
+[136303.441493]  schedule+0x2c/0x80
+[136303.441498]  rwsem_down_write_failed+0x1ea/0x360
+[136303.441502]  call_rwsem_down_write_failed+0x17/0x30
+[136303.441504]  ? call_rwsem_down_write_failed+0x17/0x30
+[136303.441509]  down_write+0x2d/0x40
+[136303.441512]  sync_inodes_sb+0xab/0x2d0
+[136303.441517]  sync_inodes_one_sb+0x16/0x20
+[136303.441521]  iterate_supers+0xa2/0x110
+[136303.441525]  ? SyS_tee+0x370/0x370
+[136303.441529]  sys_sync+0x42/0xb0
+[136303.441532]  do_syscall_64+0x73/0x130
+[136303.441536]  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+[136303.441537] RIP: 0033:0x7ffff76d8067
+[136303.441539] RSP: 002b:00007fffffff9dc8 EFLAGS: 00000206 ORIG_RAX: 00000000000000a2
+[136303.441541] RAX: ffffffffffffffda RBX: 000000000000000d RCX: 00007ffff76d8067
+[136303.441543] RDX: 00000000ffffffff RSI: 000000004823a6ee RDI: 000000000000000d
+[136303.441545] RBP: 0000555555769220 R08: 0000000000000006 R09: 0000000000000000
+[136303.441546] R10: 0000000000000000 R11: 0000000000000206 R12: 00000000000001f4
+[136303.441548] R13: 0000000051eb851f R14: 00007fffffff9e86 R15: 0000555555557d40
+[136303.441552] INFO: task fsstress:27403 blocked for more than 120 seconds.
+[136303.441680]       Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+[136303.441811] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[136303.441952] fsstress        D    0 27403  27397 0x00000000
+[136303.441954] Call Trace:
+[136303.441959]  __schedule+0x24e/0x890
+[136303.441964]  ? finish_task_switch+0x71/0x230
+[136303.441968]  schedule+0x2c/0x80
+[136303.441973]  rwsem_down_write_failed+0x1ea/0x360
+[136303.441977]  call_rwsem_down_write_failed+0x17/0x30
+[136303.441980]  ? call_rwsem_down_write_failed+0x17/0x30
+[136303.441985]  down_write+0x2d/0x40
+[136303.441988]  sync_inodes_sb+0xab/0x2d0
+[136303.441992]  ? _cond_resched+0x19/0x40
+[136303.441997]  sync_inodes_one_sb+0x16/0x20
+[136303.442001]  iterate_supers+0xa2/0x110
+[136303.442004]  ? SyS_tee+0x370/0x370
+[136303.442008]  sys_sync+0x42/0xb0
+[136303.442012]  do_syscall_64+0x73/0x130
+[136303.442015]  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+[136303.442016] RIP: 0033:0x7ffff76d8067
+[136303.442018] RSP: 002b:00007fffffff9dc8 EFLAGS: 00000206 ORIG_RAX: 00000000000000a2
+[136303.442020] RAX: ffffffffffffffda RBX: 0000000000000086 RCX: 00007ffff76d8067
+[136303.442022] RDX: 0000000000000000 RSI: 0000000047ffdb8b RDI: 0000000000000086
+[136303.442023] RBP: 0000555555769220 R08: 0000000000000042 R09: 0000000000000000
+[136303.442025] R10: 0000000000000000 R11: 0000000000000206 R12: 00000000000001f4
+[136303.442027] R13: 0000000051eb851f R14: 00007fffffff9e86 R15: 0000555555557d40
+[136303.442030] INFO: task fsstress:27404 blocked for more than 120 seconds.
+[136303.442225]       Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+[136303.442360] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[136303.442500] fsstress        D    0 27404  27397 0x00000000
+[136303.442502] Call Trace:
+[136303.442508]  __schedule+0x24e/0x890
+[136303.442513]  ? pagevec_lru_move_fn+0xc3/0xe0
+[136303.442517]  schedule+0x2c/0x80
+[136303.442521]  rwsem_down_write_failed+0x1ea/0x360
+[136303.442526]  call_rwsem_down_write_failed+0x17/0x30
+[136303.442534]  ? call_rwsem_down_write_failed+0x17/0x30
+[136303.442539]  down_write+0x2d/0x40
+[136303.442542]  sync_inodes_sb+0xab/0x2d0
+[136303.442547]  sync_inodes_one_sb+0x16/0x20
+[136303.442551]  iterate_supers+0xa2/0x110
+[136303.442555]  ? SyS_tee+0x370/0x370
+[136303.442558]  sys_sync+0x42/0xb0
+[136303.442563]  do_syscall_64+0x73/0x130
+[136303.442566]  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+[136303.442569] RIP: 0033:0x7ffff76d8067
+[136303.442570] RSP: 002b:00007fffffff9dc8 EFLAGS: 00000206 ORIG_RAX: 00000000000000a2
+[136303.442576] RAX: ffffffffffffffda RBX: 0000000000000028 RCX: 00007ffff76d8067
+[136303.442577] RDX: 0000000000000000 RSI: 000000005dd51d04 RDI: 0000000000000028
+[136303.442579] RBP: 0000555555769220 R08: 0000000000000034 R09: 0000000000000001
+[136303.442581] R10: 0000000000000000 R11: 0000000000000206 R12: 00000000000001f4
+[136303.442582] R13: 0000000051eb851f R14: 00007fffffff9e86 R15: 0000555555557d40
+[136303.442586] INFO: task fsstress:27405 blocked for more than 120 seconds.
+[136303.442715]       Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+[136303.442848] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[136303.442986] fsstress        D    0 27405  27397 0x00000000
+[136303.442988] Call Trace:
+[136303.442993]  __schedule+0x24e/0x890
+[136303.442998]  ? pagevec_lru_move_fn+0xc3/0xe0
+[136303.443002]  schedule+0x2c/0x80
+[136303.443006]  rwsem_down_write_failed+0x1ea/0x360
+[136303.443011]  call_rwsem_down_write_failed+0x17/0x30
+[136303.443013]  ? call_rwsem_down_write_failed+0x17/0x30
+[136303.443018]  down_write+0x2d/0x40
+[136303.443021]  sync_inodes_sb+0xab/0x2d0
+[136303.443026]  sync_inodes_one_sb+0x16/0x20
+[136303.443030]  iterate_supers+0xa2/0x110
+[136303.443033]  ? SyS_tee+0x370/0x370
+[136303.443037]  sys_sync+0x42/0xb0
+[136303.443041]  do_syscall_64+0x73/0x130
+[136303.443044]  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+[136303.443046] RIP: 0033:0x7ffff76d8067
+[136303.443048] RSP: 002b:00007fffffff9dc8 EFLAGS: 00000206 ORIG_RAX: 00000000000000a2
+[136303.443050] RAX: ffffffffffffffda RBX: 0000000000000011 RCX: 00007ffff76d8067
+[136303.443052] RDX: 00000000ffffffff RSI: 00000000328e5ccf RDI: 0000000000000011
+[136303.443054] RBP: 0000555555769220 R08: 0000000000000006 R09: 0000000000000001
+[136303.443056] R10: 0000000000000000 R11: 0000000000000206 R12: 00000000000001f4
+[136303.443057] R13: 0000000051eb851f R14: 00007fffffff9e86 R15: 0000555555557d40
+[136303.443064] INFO: task fsstress:27406 blocked for more than 120 seconds.
+[136303.443195]       Tainted: P           OE    4.15.0-144-generic #148-Ubuntu
+[136303.443336] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[136303.443475] fsstress        D    0 27406  27397 0x00000000
+[136303.443477] Call Trace:
+[136303.443482]  __schedule+0x24e/0x890
+[136303.443487]  ? pagevec_lru_move_fn+0xc3/0xe0
+[136303.443491]  schedule+0x2c/0x80
+[136303.443495]  rwsem_down_write_failed+0x1ea/0x360
+[136303.443500]  call_rwsem_down_write_failed+0x17/0x30
+[136303.443505]  ? call_rwsem_down_write_failed+0x17/0x30
+[136303.443509]  down_write+0x2d/0x40
+[136303.443513]  sync_inodes_sb+0xab/0x2d0
+[136303.443518]  sync_inodes_one_sb+0x16/0x20
+[136303.443522]  iterate_supers+0xa2/0x110
+[136303.443525]  ? SyS_tee+0x370/0x370
+[136303.443529]  sys_sync+0x42/0xb0
+[136303.443533]  do_syscall_64+0x73/0x130
+[136303.443536]  entry_SYSCALL_64_after_hwframe+0x41/0xa6
+[136303.443538] RIP: 0033:0x7ffff76d8067
+[136303.443541] RSP: 002b:00007fffffff9dc8 EFLAGS: 00000206 ORIG_RAX: 00000000000000a2
+[136303.443544] RAX: ffffffffffffffda RBX: 000000000000006c RCX: 00007ffff76d8067
+[136303.443545] RDX: 00000000ffffffff RSI: 0000000040f9548d RDI: 000000000000006c
+[136303.443547] RBP: 0000555555769220 R08: 0000000000000072 R09: 0000000000000000
+[136303.443548] R10: 0000000000000000 R11: 0000000000000206 R12: 00000000000001f4
+[136303.443550] R13: 0000000051eb851f R14: 00007fffffff9e86 R15: 0000555555557d40
+
