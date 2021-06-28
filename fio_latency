@@ -1,7 +1,7 @@
 #!/bin/bash
 
 RESULTS=./results/$FS/fio
-sudo mkdir -p $RESULTS
+mkdir -p $RESULTS
 
 # Broken on Bento-fs
 # sudo fio --output-format=json --name=fio_test --bs=512b --ioengine=sync --iodepth=1 \
