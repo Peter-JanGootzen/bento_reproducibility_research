@@ -35,3 +35,19 @@ for FS in "${FSL[@]}"; do
 
 	./umount
 done
+
+FSL2=( "Bento-fs" "ext4-journal")
+for FS in "${FSL2[@]}"; do
+	export FS=$FS
+	export MNT=/mnt/$FS
+
+	./bento_init
+
+	./prepare_disk
+	./mount
+
+	# writes to the final results dir immediately
+	./fio_latency
+
+	./umount
+done
