@@ -4,20 +4,20 @@ RESULTS=./results/$FS/fio
 sudo mkdir -p $RESULTS
 
 # Broken on Bento-fs
-# sudo fio --output-format=json --name=fio_test --bs=512b --ioengine=sync --iodepth=1  --numa_cpu_nodes=1 \
+# sudo fio --output-format=json --name=fio_test --bs=512b --ioengine=sync --iodepth=1 \
 # 	--numjobs=1 --runtime=5 --size=4G --direct=1 --thread=1 --rw=randread --filename=$MNT/fio \
 # 	--group_reporting --lat_percentiles=1 --percentile_list=25.0:50.0:75.0:99.0 --refill_buffers --norandommap --buffered=0 \
 #	> $RESULTS/randread
 
-sudo fio --output-format=json --name=fio_test --bs=512b --ioengine=sync --iodepth=1  --numa_cpu_nodes=1 \
+sudo fio --output-format=json --name=fio_test --bs=512b --ioengine=sync --iodepth=1 \
 	--numjobs=1 --runtime=5 --size=4G --direct=1 --thread=1 --rw=randwrite --filename=$MNT/fio \
 	--group_reporting --lat_percentiles=1 --percentile_list=25.0:50.0:75.0:99.0 --refill_buffers --norandommap --buffered=0 \
 	> $RESULTS/randwrite
-sudo fio --output-format=json --name=fio_test --bs=512b --ioengine=sync --iodepth=1  --numa_cpu_nodes=1 \
+sudo fio --output-format=json --name=fio_test --bs=512b --ioengine=sync --iodepth=1 \
 	--numjobs=1 --runtime=5 --size=4G --direct=1 --thread=1 --rw=read --filename=$MNT/fio \
 	--group_reporting --lat_percentiles=1 --percentile_list=25.0:50.0:75.0:99.0 --refill_buffers --norandommap --buffered=0 \
 	> $RESULTS/read
-sudo fio --output-format=json --name=fio_test --bs=512b --ioengine=sync --iodepth=1  --numa_cpu_nodes=1 \
+sudo fio --output-format=json --name=fio_test --bs=512b --ioengine=sync --iodepth=1 \
 	--numjobs=1 --runtime=5 --size=4G --direct=1 --thread=1 --rw=write --filename=$MNT/fio \
 	--group_reporting --lat_percentiles=1 --percentile_list=25.0:50.0:75.0:99.0 --refill_buffers --norandommap --buffered=0 \
 	> $RESULTS/write
