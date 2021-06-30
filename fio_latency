@@ -12,12 +12,18 @@ mkdir -p $RESULTS
 sudo fio --output-format=json --name=fio_test --bs=512b --ioengine=sync --iodepth=1 \
 	--numjobs=1 --runtime=5 --size=4G --direct=1 --thread=1 --rw=randwrite --filename=$MNT/fio \
 	--group_reporting --lat_percentiles=1 --percentile_list=25.0:50.0:75.0:99.0 --refill_buffers --norandommap --buffered=0 \
-	> $RESULTS/randwrite
+	--write_lat_log="$RESULTS/randwrite" \
+	> /dev/null
 sudo fio --output-format=json --name=fio_test --bs=512b --ioengine=sync --iodepth=1 \
 	--numjobs=1 --runtime=5 --size=4G --direct=1 --thread=1 --rw=read --filename=$MNT/fio \
 	--group_reporting --lat_percentiles=1 --percentile_list=25.0:50.0:75.0:99.0 --refill_buffers --norandommap --buffered=0 \
-	> $RESULTS/read
+	--write_lat_log="$RESULTS/read" \
+	> /dev/null
 sudo fio --output-format=json --name=fio_test --bs=512b --ioengine=sync --iodepth=1 \
 	--numjobs=1 --runtime=5 --size=4G --direct=1 --thread=1 --rw=write --filename=$MNT/fio \
 	--group_reporting --lat_percentiles=1 --percentile_list=25.0:50.0:75.0:99.0 --refill_buffers --norandommap --buffered=0 \
-	> $RESULTS/write
+	--write_lat_log="$RESULTS/write" \
+	> /dev/null
+
+sudo rm $RESULTS/*_slat*
+sudo rm $RESULTS/*_lat*
