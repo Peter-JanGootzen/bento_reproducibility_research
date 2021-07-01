@@ -1,5 +1,0 @@
-#!/bin/bash
-sudo mkdir -p $MNT
-sudo bento/xv6fs/rust/userspace/target/release/user_xv6fs $DISK $MNT blkdev &
-sleep 5
-sudo mkdir -p $MNT/results

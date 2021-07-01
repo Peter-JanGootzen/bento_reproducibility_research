@@ -1,7 +1,0 @@
-#!/bin/bash
-IMG=xv6fs.img
-if [ ! -f "$IMG" ]; then
-	make -C bento/xv6fs/mkfs
-	./bento/xv6fs/mkfs/mkfs $IMG
-fi
-sudo dd if=$IMG of=$DISK bs=4096 status=progress

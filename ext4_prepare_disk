@@ -1,2 +1,0 @@
-#!/bin/bash
-sudo mkfs.ext4 -F -F $DISK

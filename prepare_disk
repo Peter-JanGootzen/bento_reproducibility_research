@@ -3,7 +3,13 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 if [[ $FS == "Bento-fs" ]] || [[ $FS == "Bento-user" ]] || [[ $FS == "Bento-prov" ]]; then
-	$SCRIPT_DIR/bento_prepare_disk
+	IMG=$SCRIPT_DIR/xv6fs.img
+	if [ ! -f "$IMG" ]; then
+		make -C $SCRIPT_DIR/bento/xv6fs/mkfs
+		$SCRIPT_DIR/bento/xv6fs/mkfs/mkfs $IMG
+	fi
+	sudo dd if=$IMG of=$DISK bs=4096 status=progress
+
 elif [[ $FS == "ext4-ordered" ]] || [[ $FS == "ext4-journal" ]]; then
-	$SCRIPT_DIR/ext4_prepare_disk
+	sudo mkfs.ext4 -F -F $DISK
 fi

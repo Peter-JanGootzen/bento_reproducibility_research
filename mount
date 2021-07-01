@@ -1,14 +1,18 @@
 #!/bin/bash
 
-
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
+sudo mkdir -p $MNT
+
 if [[ $FS == "Bento-fs" ]] || [[ $FS == "Bento-prov" ]]; then
-	$SCRIPT_DIR/bento_mount_disk
+	sudo mount -t bentoblk -o rootmode=40000,user_id=0,group_id=0,allow_other,blksize=4096,name=xv6fs_ll $DISK $MNT
 elif [[ $FS == "Bento-user" ]]; then
-	$SCRIPT_DIR/bento_mount_user
+	sudo $SCRIPT_DIR/bento/xv6fs/rust/userspace/target/release/user_xv6fs $DISK $MNT blkdev &
+	sleep 5
 elif [[ $FS == "ext4-ordered" ]]; then
-	$SCRIPT_DIR/ext4-o_mount_disk
+	sudo mount -o data=ordered $DISK $MNT
 elif [[ $FS == "ext4-journal" ]]; then
-	$SCRIPT_DIR/ext4-j_mount_disk
+	sudo mount -o data=journal $DISK $MNT
 fi
+
+sudo mkdir -p $MNT/results

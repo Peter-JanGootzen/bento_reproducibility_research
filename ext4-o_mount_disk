@@ -1,4 +1,0 @@
-#!/bin/bash
-sudo mkdir -p $MNT
-sudo mount -o data=ordered $DISK $MNT
-sudo mkdir -p $MNT/results
