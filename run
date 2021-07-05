@@ -5,12 +5,6 @@ if [ -z $DISK ]; then
 	exit
 fi
 
-mkdir results
-if [ "$(ls -A results)" ]; then
-	echo "uuh results is not empty"
-	exit
-fi
-
 FSL=( "Bento-fs" "Bento-user" "Bento-prov" "ext4-ordered" "ext4-journal")
 for FS in "${FSL[@]}"; do
 	export FS=$FS
@@ -48,26 +42,6 @@ for FS in "${FSL2[@]}"; do
 
 	# writes to the final results dir immediately
 	./fio_latency
-
-	./umount
-done
-
-sudo rmmod brd
-sudo modprobe brd rd_nr=1 rd_size=500000000
-
-export DISK=/dev/ram0
-FSL3=( "Bento-fs" "ext4-journal")
-for FS in "${FSL3[@]}"; do
-	export FS=$FS
-	export MNT=/mnt/$FS
-
-	./bento_init
-
-	./prepare_disk
-	./mount
-
-	# writes to the final results dir immediately
-	./ram_filebench
 
 	./umount
 done
