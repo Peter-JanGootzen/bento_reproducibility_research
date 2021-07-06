@@ -1,0 +1,13 @@
+\begin{tabular}{lll}
+\toprule
+             Workload &          Bento-fs &     ext4-journal \\
+\midrule
+   seq\_read\_128k, T=1 &  4666.05 (111.07) & 5444.82 (572.69) \\
+  seq\_read\_128k, T=18 & 10071.34 (500.55) & 11934.53 (916.3) \\
+  rand\_read\_128k, T=1 &  3890.34 (647.44) & 3890.32 (647.43) \\
+ rand\_read\_128k, T=18 &    4097.06 (0.14) &    4097.2 (0.13) \\
+  seq\_write\_128k, T=1 &            1333.1 &   495.94 (35.12) \\
+ rand\_write\_128k, T=1 &  2334.53 (280.42) &      585.1 (5.9) \\
+rand\_write\_128k, T=18 &  2217.68 (138.46) &   546.76 (11.24) \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,13 @@
+\begin{tabular}{lrr}
+\toprule
+             Workload &  RAM Bento-fs:ext4-j &  900P Bento-fs:ext4-j \\
+\midrule
+   seq\_read\_128k, T=1 &                 0.86 &                  1.11 \\
+  seq\_read\_128k, T=18 &                 0.84 &                  0.84 \\
+  rand\_read\_128k, T=1 &                 1.00 &                  0.65 \\
+ rand\_read\_128k, T=18 &                 1.00 &                  1.00 \\
+  seq\_write\_128k, T=1 &                 2.69 &                  2.67 \\
+ rand\_write\_128k, T=1 &                 3.99 &                  4.07 \\
+rand\_write\_128k, T=18 &                 4.06 &                  3.57 \\
+\bottomrule
+\end{tabular}
