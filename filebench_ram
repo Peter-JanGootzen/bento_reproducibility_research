@@ -2,7 +2,7 @@
 
 export DISK=/dev/ram0
 RESULTS=../results/ram/$FS/filebench
-FSL3=( "bento-fs" "ext4-journal" )
+FSL3=( "Bento-fs" "ext4-journal" )
 FSET=(  "seq_read_1t_128k.f" "seq_write_1t_128k.f" "rand_read_1t_128k.f" "rand_write_1t_128k.f" )
 TSET=( 18 1 )
 REPS=10
