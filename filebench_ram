@@ -1,18 +1,24 @@
 #!/bin/bash
 
-cd filebenches
-
+export DISK=/dev/ram0
 RESULTS=../results/ram/$FS/filebench
-mkdir -p $RESULTS
-
+FSL3=( "bento-fs" "ext4-journal" )
+FSET=(  "seq_read_1t_128k.f" "seq_write_1t_128k.f" "rand_read_1t_128k.f" "rand_write_1t_128k.f" )
 TSET=( 18 1 )
 REPS=10
 
 sudo sh -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
 
+cd filebenches
+mkdir -p $RESULTS
+
 reinit() {
 	cd ..
 	./umount
+
+	sudo rmmod brd
+	sudo modprobe brd rd_nr=1 rd_size=500000000
+
 	if [ $FS == "Bento-fs" ] || [ $FS == "Bento-user" ]; then
 		./bento_init
 	elif [ $FS == "Bento-prov" ]; then
@@ -23,36 +29,34 @@ reinit() {
 	cd filebenches
 }
 
-FSET=(  "seq_read_1t_128k.f" "seq_write_1t_128k.f" "rand_read_1t_128k.f" "rand_write_1t_128k.f" )
 
-for f in "${FSET[@]}"; do
-	# These workloads are wobly with Bento, so
-	reinit
+for FS in "${FSL3[@]}"; do
+	export FS=$FS
+	export MNT=/mnt/$FS
+	for f in "${FSET[@]}"; do
+		# These workloads are wobly with Bento, so
 
-	sed -i -e "s#set \$dir=.*#set \$dir=$MNT#g" $f
-	echo "Running $f"
-	mkdir -p $RESULTS/$f
+		sed -i -e "s#set \$dir=.*#set \$dir=$MNT#g" $f
+		echo "Running $f"
+		mkdir -p $RESULTS/$f
 
-	for T in "${TSET[@]}"; do
-		sed -i -e "s#set \$nthreads=.*#set \$nthreads=$T#g" $f
+		for T in "${TSET[@]}"; do
+			sed -i -e "s#set \$nthreads=.*#set \$nthreads=$T#g" $f
 
-		WREPS=$REPS
-		# These are bugged :(
-		if [[ ( $FS == "Bento-fs" || $FS == "Bento-prov" ) && ( $f == seq_write_1t_* ) ]]; then
-			WREPS=1
-		fi
-		for i in $(seq 1 $WREPS); do
-			echo "i=$i, T=$T"
-			sudo filebench -f $f > $RESULTS/$f/$T\_$i
-			sudo rm -rf $MNT/*
+			WREPS=$REPS
+			# These are bugged :(
+			if [[ ( $FS == "Bento-fs" || $FS == "Bento-prov" ) && ( $f == seq_write_1t_* ) ]]; then
+				WREPS=1
+			fi
+			for i in $(seq 1 $WREPS); do
+				echo "i=$i, T=$T"
+
+				reinit
+
+				sudo filebench -f $f > $RESULTS/$f/$T\_$i
+				sudo rm -rf $MNT/*
+			done
 		done
-
-		# In some(!) cases this is redundant yes... But these two workloads really require
-		# the disk to be formatted between every single run with Bento....
-		if [[ $f == "createfiles_1t.f" || $f == "deletefiles_1t.f" || $f == seq_write_1t_* ]]; then
-			# These workloads are wobly, so
-			reinit
-		fi
 	done
 done
 
