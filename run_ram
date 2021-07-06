@@ -1,13 +1,14 @@
 #!/bin/bash
 
-sudo rmmod brd
-sudo modprobe brd rd_nr=1 rd_size=500000000
 
 export DISK=/dev/ram0
-FSL3=( "Bento-fs" "ext4-journal")
+FSL3=( "ext4-journal" )
 for FS in "${FSL3[@]}"; do
 	export FS=$FS
 	export MNT=/mnt/$FS
+
+	sudo rmmod brd
+	sudo modprobe brd rd_nr=1 rd_size=500000000
 
 	./bento_init
 
@@ -15,7 +16,7 @@ for FS in "${FSL3[@]}"; do
 	./mount
 
 	# writes to the final results dir immediately
-	./ram_filebench
+	./filebench_ram
 
 	./umount
 done
