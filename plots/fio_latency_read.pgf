@@ -321,7 +321,7 @@
 \pgfsetrectcap%
 \pgfsetroundjoin%
 \pgfsetlinewidth{1.505625pt}%
-\definecolor{currentstroke}{rgb}{0.121569,0.466667,0.705882}%
+\definecolor{currentstroke}{rgb}{0.172549,0.627451,0.172549}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.775655in}{0.486536in}}%
@@ -548,7 +548,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.238928in,y=1.438863in,,base]{\color{textcolor}\rmfamily\fontsize{8.400000}{10.080000}\selectfont read}%
+\pgftext[x=1.238928in,y=1.438863in,,base]{\color{textcolor}\rmfamily\fontsize{8.400000}{10.080000}\selectfont sequential read}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -577,7 +577,7 @@
 \pgfsetrectcap%
 \pgfsetroundjoin%
 \pgfsetlinewidth{1.505625pt}%
-\definecolor{currentstroke}{rgb}{0.121569,0.466667,0.705882}%
+\definecolor{currentstroke}{rgb}{0.172549,0.627451,0.172549}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.048609in}{0.721158in}}%
