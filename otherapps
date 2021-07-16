@@ -7,7 +7,7 @@ sudo mkdir -p $RESULTS_GITCLONE
 
 for i in $(seq 1 $REPS); do
 	sleep 1
-	sudo sh -c "time -o $RESULTS_GITCLONE/gitclone_$i git clone https://github.com/foreverbell/xv6fs.git $MNT/xv6fs$i"
+	sudo sh -c "time -o $RESULTS_GITCLONE/gitclone_$i git clone https://github.com/mit-pdos/xv6-riscv.git $MNT/xv6fs$i"
 	sleep 1
 	sudo rm -rf $MNT/xv6fs$i
 done
