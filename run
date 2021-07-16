@@ -9,6 +9,7 @@ FSL=( "Bento-fs" "Bento-user" "Bento-prov" "ext4-ordered" "ext4-journal")
 for FS in "${FSL[@]}"; do
 	export FS=$FS
 	export MNT=/mnt/$FS
+	mkdir ./results/$FS
 
 	./bento_init
 
@@ -18,7 +19,7 @@ for FS in "${FSL[@]}"; do
 	./rocksdb
 	./otherapps
 
-	sudo cp -r $MNT/results ./results/$FS
+	sudo cp -r -f $MNT/results/* ./results/$FS
 	sudo find results -type d -exec chmod 755 {} \;
 	sudo find results -type f -exec chmod 644 {} \;
 	sudo find results -type f -exec chown -R $USER:$USER {} \;
