@@ -6,7 +6,7 @@ sudo rmmod bentofs
 if [ $FS == "Bento-fs" ]; then
 	(cd bento/bentofs; make; sudo insmod ./bentofs.ko)
 	(cd bento/xv6fs/rust; make; sudo insmod ./kernel/xv6fs.ko)
-elif [ $FS == "Bento-prov" ]; then
+elif [ $FS == "Bento-user" ]; then
 	(cd bento/xv6fs/rust; make userspace)
 elif [ $FS == "Bento-prov" ]; then
 	(cd bento/bentofs; make; sudo insmod ./bentofs.ko)
