@@ -665,7 +665,7 @@
 \pgfsetrectcap%
 \pgfsetroundjoin%
 \pgfsetlinewidth{1.505625pt}%
-\definecolor{currentstroke}{rgb}{1.000000,0.498039,0.054902}%
+\definecolor{currentstroke}{rgb}{0.172549,0.627451,0.172549}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.048609in}{0.721158in}}%
@@ -676,13 +676,13 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.320832in,y=0.687130in,left,base]{\color{textcolor}\rmfamily\fontsize{7.000000}{8.400000}\selectfont ext4-journal}%
+\pgftext[x=1.320832in,y=0.687130in,left,base]{\color{textcolor}\rmfamily\fontsize{7.000000}{8.400000}\selectfont Bento-fs}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
 \pgfsetroundjoin%
 \pgfsetlinewidth{1.505625pt}%
-\definecolor{currentstroke}{rgb}{0.172549,0.627451,0.172549}%
+\definecolor{currentstroke}{rgb}{1.000000,0.498039,0.054902}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.048609in}{0.585587in}}%
@@ -693,7 +693,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.320832in,y=0.551559in,left,base]{\color{textcolor}\rmfamily\fontsize{7.000000}{8.400000}\selectfont Bento-fs}%
+\pgftext[x=1.320832in,y=0.551559in,left,base]{\color{textcolor}\rmfamily\fontsize{7.000000}{8.400000}\selectfont ext4-journal}%
 \end{pgfscope}%
 \end{pgfpicture}%
 \makeatother%
