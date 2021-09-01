@@ -4,7 +4,7 @@ This repository contains all scripts, results and crashlogs from the [paper](htt
 The crashlogs are numbered, and their descriptions can be found in the paper.
 
 ## Reproduction
-To reproduce the results execute the 'run' script with the `DISK` environment variable as follows:
+To reproduce the results, clone the [Bento repository](https://github.com/smiller123/bento) (with it's submodules!) into the root of this repository and execute the 'run' script with the `DISK` environment variable as follows:
 ```bash
 DISK=/dev/nvme0n1 ./run
 ```
